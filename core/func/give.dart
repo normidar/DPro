@@ -2,7 +2,7 @@
 // 値を与える　：＝
 class Give {
   String target;
-  Object 
+  Givable content;
     Give(String target, Object content) {
       
     }
