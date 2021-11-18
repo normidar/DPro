@@ -7,8 +7,9 @@ environment:
   sdk: '>=2.14.4 <3.0.0'
 
 
-# dependencies:
-#   path: ^1.8.0
+dependencies:
+  path: ^1.8.0
+  sprintf: ^6.0.0
 
 dev_dependencies:
   lints: ^1.0.0

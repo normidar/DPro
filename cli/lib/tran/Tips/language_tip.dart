@@ -1,9 +1,4 @@
 abstract class LanguageTip {
-  String give(String target, String content) {
-    // TODO:
-    return "";
-  }
-
   /// 適合したタイプの指向
   Map<String, String> typeMap();
 
