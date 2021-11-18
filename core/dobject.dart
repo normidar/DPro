@@ -1,3 +1,3 @@
 class DObject {
-  String kyashu;
+  String cache = '';
 }
