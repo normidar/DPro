@@ -1,4 +1,4 @@
-import 'Tips/LanguageTip.dart';
+import 'Tips/language_tip.dart';
 import 'Tips/ddart.dart';
 
 class LanguageTips {

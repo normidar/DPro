@@ -1,10 +1,10 @@
 import '../core/code_lines.dart';
-import 'LanguageTips.dart';
-import 'Tips/LanguageTip.dart';
+import 'language_tips.dart';
+import 'Tips/language_tip.dart';
 
 class TranEngine {
   static LanguageTip tip = LanguageTips.dart;
-  static String tran(CodeLines codes) {
+  static String tran({required CodeLines codes}) {
     // TODO:
     return "";
   }
