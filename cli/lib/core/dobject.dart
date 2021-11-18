@@ -1,0 +1,3 @@
+class DObject {
+  String cache = '';
+}
