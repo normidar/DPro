@@ -8,7 +8,8 @@ class DDart extends LanguageTip {
       "give": "%s = %s;",
       "cal": "%s %s %s",
       "str": '"%s"',
-      "if": "if (%s) {\n  %s\n}"
+      "if": "if (%s) {\n  %s}",
+      "print": "print(%s);",
     };
   }
 
