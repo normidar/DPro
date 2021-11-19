@@ -1,6 +1,6 @@
 import 'dobject.dart';
 
 class CodeLines {
-  List<DObject> object;
-  CodeLines({required this.object});
+  List<DObject> objects;
+  CodeLines({required this.objects});
 }

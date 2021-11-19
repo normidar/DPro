@@ -1,5 +1,7 @@
 import 'package:cli/core/code_lines.dart';
 import 'package:cli/core/func/give/def_give.dart';
+import 'package:cli/core/func/value/dint.dart';
+import 'package:cli/core/func/var.dart';
 import 'package:cli/tran/tran_engine.dart';
 
 int calculate() {
@@ -9,7 +11,13 @@ int calculate() {
 String sample() {
   return TranEngine.tran(
     codes: CodeLines(
-      object: [DefGive(target: target, content: content, type: type)],
+      objects: [
+        DefGive(
+          target: Var("a"),
+          content: DInt(12),
+          type: "int",
+        ),
+      ],
     ),
   );
 }
