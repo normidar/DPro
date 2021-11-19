@@ -6,6 +6,7 @@ import 'package:cli/core/func/output/dprint.dart';
 import 'package:cli/core/func/value/dint.dart';
 import 'package:cli/core/func/value/dstring.dart';
 import 'package:cli/core/func/var.dart';
+import 'package:cli/tran/language_tips.dart';
 import 'package:cli/tran/tran_engine.dart';
 
 int calculate() {
@@ -13,6 +14,7 @@ int calculate() {
 }
 
 String sample() {
+  TranEngine.tip = LanguageTips.python;
   return TranEngine.tran(
     codes: CodeLines(
       objects: [
