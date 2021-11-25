@@ -10,7 +10,7 @@ class DJava extends LanguageTip {
       "str": '"%s"',
       "if": "if (%s) {\n  %s}",
       "print": 'Log.d("log",%s);',
-      "fori": "for (int i = \$s;i < \$s;i += \$s) {\n  \$s\n}",
+      "fori": "for (int i = %s;i < %s;i += %s) {\n  %s\n}",
     };
   }
 

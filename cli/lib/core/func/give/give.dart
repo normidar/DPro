@@ -11,8 +11,7 @@ class Give extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["def_give"]!;
-    // TODO: type change
+    final format = tip.ruleMap()["give"]!;
     return sprintf(format, [
       target.tran(tip),
       content.tran(tip),

@@ -10,7 +10,7 @@ class DPython extends LanguageTip {
       "str": '"%s"',
       "if": "if %s:\n  %s",
       "print": "print(%s)",
-      "fori": "for i in range(\$s, \$s, \$s):\n  %s",
+      "fori": "for i in range(%s, %s, %s):\n  %s",
     };
   }
 

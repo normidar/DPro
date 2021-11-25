@@ -2,25 +2,31 @@ import 'package:cli/core/code_lines.dart';
 import 'package:cli/core/dobject.dart';
 import 'package:cli/core/func/value/dint.dart';
 import 'package:cli/tran/Tips/language_tip.dart';
+import 'package:sprintf/sprintf.dart';
 
 class DForI extends DObject {
-  DObject begin;
-  late DObject end;
+  late DObject begin;
+  DObject end;
   late DObject step;
   CodeLines lines;
   DForI({
-    required this.begin,
-    required this.lines,
-    DObject? end,
+    DObject? begin,
+    required this.end,
     DObject? step,
+    required this.lines,
   }) {
-    this.end = end ?? DInt(0);
+    this.begin = begin ?? DInt(0);
     this.step = step ?? DInt(1);
   }
 
   @override
   String tran(LanguageTip tip) {
-    // TODO: implement tran
-    throw UnimplementedError();
+    final format = tip.ruleMap()["fori"]!;
+    return sprintf(format, [
+      begin.tran(tip),
+      end.tran(tip),
+      step.tran(tip),
+      lines.tran(tip),
+    ]);
   }
 }
