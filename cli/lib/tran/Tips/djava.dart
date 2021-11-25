@@ -11,6 +11,7 @@ class DJava extends LanguageTip {
       "if": "if (%s) {\n  %s}",
       "print": 'Log.d("log",%s);',
       "fori": "for (int i = %s;i < %s;i += %s) {\n  %s\n}",
+      "func": "%s %s(%s){\n  %s\n}",
     };
   }
 

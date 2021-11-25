@@ -7,8 +7,12 @@ class CodeLines {
   CodeLines({required this.objects});
   String tran(LanguageTip tip) {
     String rt = "";
-    for (var i in objects) {
-      rt += i.tran(tip) + "\n";
+    for (var i = 0; i < objects.length; i++) {
+      if (i == objects.length - 1) {
+        rt += objects[i].tran(tip);
+        break;
+      }
+      rt += objects[i].tran(tip) + "\n";
     }
     return rt;
   }
