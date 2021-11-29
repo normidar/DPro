@@ -8,7 +8,7 @@ class DJava extends LanguageTip {
       "give": "%s = %s;",
       "cal": "%s %s %s",
       "str": '"%s"',
-      "if": "if (%s) {\n%s}",
+      "if": "if (%s) {\n%s\n}",
       "print": 'Log.d("log",%s);',
       "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n}",
       "func": "%s %s(%s){\n  %s\n}",
