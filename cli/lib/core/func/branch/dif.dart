@@ -10,6 +10,7 @@ class DIf extends DObject {
 
   @override
   String tran(LanguageTip tip) {
+    lines.addIndent();
     final format = tip.ruleMap()["if"]!;
     return sprintf(format, [
       condition.tran(tip),

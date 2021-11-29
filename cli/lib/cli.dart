@@ -59,7 +59,11 @@ String sampleFor(LanguageTip tip) {
             Give(
               target: Var("sum"),
               content: Calculate("+", Var("sum"), Var("i")),
-            )
+            ),
+            Give(
+              target: Var("sum"),
+              content: Calculate("+", Var("sum"), Var("i")),
+            ),
           ]),
         ),
         DPrint(Var("sum"))

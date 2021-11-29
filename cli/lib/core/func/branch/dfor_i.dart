@@ -21,6 +21,7 @@ class DForI extends DObject {
 
   @override
   String tran(LanguageTip tip) {
+    lines.addIndent();
     final format = tip.ruleMap()["fori"]!;
     return sprintf(format, [
       begin.tran(tip),

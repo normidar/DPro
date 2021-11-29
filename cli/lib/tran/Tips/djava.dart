@@ -8,9 +8,9 @@ class DJava extends LanguageTip {
       "give": "%s = %s;",
       "cal": "%s %s %s",
       "str": '"%s"',
-      "if": "if (%s) {\n  %s}",
+      "if": "if (%s) {\n%s}",
       "print": 'Log.d("log",%s);',
-      "fori": "for (int i = %s;i < %s;i += %s) {\n  %s\n}",
+      "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n}",
       "func": "%s %s(%s){\n  %s\n}",
       "class": "class %s {\n%s}"
     };

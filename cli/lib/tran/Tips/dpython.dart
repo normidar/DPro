@@ -8,10 +8,10 @@ class DPython extends LanguageTip {
       "give": "%s = %s",
       "cal": "%s %s %s",
       "str": '"%s"',
-      "if": "if %s:\n  %s",
+      "if": "if %s:\n%s",
       "print": "print(%s)",
-      "fori": "for i in range(%s, %s, %s):\n  %s",
-      "func": "def %2\$s(%3\$s):\n  %4\$s",
+      "fori": "for i in range(%s, %s, %s):\n%s",
+      "func": "def %2\$s(%3\$s):\n%4\$s",
       "class": "class %s:\n%s",
     };
   }
