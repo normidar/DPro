@@ -15,6 +15,7 @@ class DJava extends LanguageTip {
       "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n%s}",
       // タイプ、ネーム、パラメータ、コード、インデント
       "func": "%s %s(%s){\n%s\n%s}",
+      // ネーム、コード、インデント
       "class": "class %s {\n%s\n%s}"
     };
   }
