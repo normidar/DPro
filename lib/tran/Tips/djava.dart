@@ -8,11 +8,14 @@ class DJava extends LanguageTip {
       "give": "%s = %s;",
       "cal": "%s %s %s",
       "str": '"%s"',
-      "if": "if (%s) {\n%s\n}",
+      // 条件、コード、インデント
+      "if": "if (%s) {\n%s\n%s}",
       "print": 'Log.d("log",%s);',
-      "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n}",
-      "func": "%s %s(%s){\n  %s\n}",
-      "class": "class %s {\n%s}"
+      // 始まり、終わり、ステップ、コード、インデント
+      "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n%s}",
+      // タイプ、ネーム、パラメータ、コード、インデント
+      "func": "%s %s(%s){\n%s\n%s}",
+      "class": "class %s {\n%s\n%s}"
     };
   }
 

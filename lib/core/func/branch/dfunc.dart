@@ -3,17 +3,21 @@ import 'package:cli/core/dobject.dart';
 import 'package:cli/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-class DIf extends DObject {
-  DObject condition;
+class DFunc extends DObject {
+  String type;
+  String name;
   CodeLines lines;
-  DIf({required this.condition, required this.lines});
+  DFunc({required this.type, required this.name, required this.lines});
 
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["if"]!;
+    final format = tip.ruleMap()["func"]!;
+    String _type = tip.typeMap()[type] ?? type;
     return sprintf(format, [
-      condition.tran(tip),
+      _type,
+      name,
+      '',
       lines.tran(tip),
       " " * tip.indent,
     ]);

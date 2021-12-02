@@ -13,9 +13,9 @@ class DefGive extends DObject {
   @override
   String tran(LanguageTip tip) {
     final format = tip.ruleMap()["def_give"]!;
-    type = tip.typeMap()[type] ?? type;
+    String _type = tip.typeMap()[type] ?? type;
     return sprintf(format, [
-      type,
+      _type,
       target.tran(tip),
       content.tran(tip),
     ]);

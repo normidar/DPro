@@ -28,6 +28,7 @@ class DForI extends DObject {
       end.tran(tip),
       step.tran(tip),
       lines.tran(tip),
+      " " * tip.indent,
     ]);
   }
 }
