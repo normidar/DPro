@@ -11,8 +11,8 @@ class DJava extends LanguageTip {
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
       "print": 'Log.d("log",%s);',
-      // 始まり、終わり、ステップ、コード、インデント
-      "fori": "for (int i = %s;i < %s;i += %s) {\n%s\n%s}",
+      // 始まり、終わり、ステップ、コード、インデント、変数名
+      "fori": "for (int %6\$s = %s;%6\$s < %s;%6\$s += %s) {\n%s\n%s}",
       // タイプ、ネーム、パラメータ、コード、インデント
       "func": "%s %s(%s){\n%s\n%s}",
       // ネーム、コード、インデント

@@ -9,11 +9,13 @@ class DForI extends DObject {
   DObject end;
   late DObject step;
   CodeLines lines;
+  String varName;
   DForI({
     DObject? begin,
     required this.end,
     DObject? step,
     required this.lines,
+    this.varName = "i",
   }) {
     this.begin = begin ?? DInt(0);
     this.step = step ?? DInt(1);
@@ -29,6 +31,7 @@ class DForI extends DObject {
       step.tran(tip),
       lines.tran(tip),
       " " * tip.indent,
+      varName,
     ]);
   }
 }
