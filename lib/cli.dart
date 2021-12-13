@@ -2,7 +2,7 @@ import 'package:cli/core/code_lines.dart';
 import 'package:cli/core/func/branch/dclass.dart';
 import 'package:cli/core/func/branch/dfor_i.dart';
 import 'package:cli/core/func/branch/dfunc.dart';
-import 'package:cli/core/func/branch/dif.dart';
+import 'package:cli/core/func/branch/if/dif.dart';
 import 'package:cli/core/func/calculate/calculate.dart';
 import 'package:cli/core/func/give/def_give.dart';
 import 'package:cli/core/func/give/give.dart';
@@ -25,8 +25,14 @@ CodeLines sampleIf() {
           Var("a"),
           DInt(12),
         ),
-        lines: CodeLines(objects: [DPrint(DString("月ではない"))]),
-        elseLines: CodeLines(objects: [DPrint(DString("月です"))]),
+        lines: CodeLines(objects: [
+          DPrint(DString("月ではない")),
+          DPrint(DString("月ではない")),
+        ]),
+        elseLines: CodeLines(objects: [
+          DPrint(DString("月です")),
+          DPrint(DString("月です")),
+        ]),
       ),
     ],
   );

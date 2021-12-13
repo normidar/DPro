@@ -3,7 +3,7 @@ import 'package:cli/tran/language_tips.dart';
 import 'package:cli/tran/tran_engine.dart';
 
 void main(List<String> arguments) {
-  TranEngine.tip = LanguageTips.java;
+  TranEngine.tip = LanguageTips.python;
   print(TranEngine.tran(
     codes: cli.sampleIf(),
   ));
