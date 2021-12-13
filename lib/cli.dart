@@ -26,6 +26,7 @@ CodeLines sampleIf() {
           DInt(12),
         ),
         lines: CodeLines(objects: [DPrint(DString("月ではない"))]),
+        elseLines: CodeLines(objects: [DPrint(DString("月です"))]),
       ),
     ],
   );

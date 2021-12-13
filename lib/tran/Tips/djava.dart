@@ -10,9 +10,13 @@ class DJava extends LanguageTip {
       "str": '"%s"',
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
+      "elif": "} else if (%s) {\n%s",
+      "else": "} else {",
       "print": 'Log.d("log",%s);',
       // 始まり、終わり、ステップ、コード、インデント、変数名
       "fori": "for (int %6\$s = %s;%6\$s < %s;%6\$s += %s) {\n%s\n%s}",
+      // タイプ、変数名、リストネーム、コード、インデント
+      "foreach": "for (%s %s : %s) {\n%s\n%s}",
       // タイプ、ネーム、パラメータ、コード、インデント
       "func": "%s %s(%s){\n%s\n%s}",
       // ネーム、コード、インデント

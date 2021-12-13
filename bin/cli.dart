@@ -5,6 +5,6 @@ import 'package:cli/tran/tran_engine.dart';
 void main(List<String> arguments) {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
-    codes: cli.sampleFunc(),
+    codes: cli.sampleIf(),
   ));
 }
