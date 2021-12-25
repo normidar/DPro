@@ -1,4 +1,5 @@
 import 'package:cli/core/code_lines.dart';
+import 'package:cli/core/dtypes.dart';
 import 'package:cli/core/func/branch/dclass.dart';
 import 'package:cli/core/func/branch/dfor_i.dart';
 import 'package:cli/core/func/branch/dfunc.dart';
@@ -73,7 +74,7 @@ CodeLines sampleFunc() {
   return CodeLines(
     objects: [
       DFunc(
-        type: 'void',
+        type: DTypes.dInt,
         name: "test",
         lines: sampleFor(),
       ),
