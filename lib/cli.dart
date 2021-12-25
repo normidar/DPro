@@ -1,6 +1,7 @@
 import 'package:cli/core/code_lines.dart';
 import 'package:cli/core/dtypes.dart';
 import 'package:cli/core/func/branch/dclass.dart';
+import 'package:cli/core/func/branch/dfor_e.dart';
 import 'package:cli/core/func/branch/dfor_i.dart';
 import 'package:cli/core/func/branch/dfunc.dart';
 import 'package:cli/core/func/branch/if/dif.dart';
@@ -9,6 +10,7 @@ import 'package:cli/core/func/give/def_give.dart';
 import 'package:cli/core/func/give/give.dart';
 import 'package:cli/core/func/output/dprint.dart';
 import 'package:cli/core/func/value/dint.dart';
+import 'package:cli/core/func/value/dlist.dart';
 import 'package:cli/core/func/value/dstring.dart';
 import 'package:cli/core/func/var.dart';
 
@@ -88,5 +90,18 @@ CodeLines sampleClass() {
       name: "Dog",
       lines: sampleFunc(),
     )
+  ]);
+}
+
+CodeLines foreachList() {
+  return CodeLines(objects: [
+    DForE(
+        type: DTypes.dStr,
+        list: DList(
+            type: DTypes.dStr,
+            values: [DString("a"), DString("b"), DString("c"), DString("d")]),
+        lines: CodeLines(objects: [
+          DPrint(Var("e")),
+        ]))
   ]);
 }

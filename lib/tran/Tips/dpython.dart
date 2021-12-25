@@ -8,6 +8,7 @@ class DPython extends LanguageTip {
       "give": "%s = %s",
       "cal": "%s %s %s",
       "str": '"%s"',
+      "list": "[%2\$s]",
       "if": "if %s:\n%s",
       "elif": "elif %s:\n%s",
       "else": "else:",

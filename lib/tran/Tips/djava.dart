@@ -8,6 +8,7 @@ class DJava extends LanguageTip {
       "give": "%s = %s;",
       "cal": "%s %s %s",
       "str": '"%s"',
+      "list": "new ArrayList<%s>(Arrays.asList(%s))",
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
       "elif": "} else if (%s) {\n%s",
