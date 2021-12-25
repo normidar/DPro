@@ -2,9 +2,9 @@ import 'package:cli/tran/Tips/language_tip.dart';
 
 import '../dobject.dart';
 
-class Var extends DObject {
+class DVar extends DObject {
   String name;
-  Var(this.name);
+  DVar(this.name);
 
   @override
   String tran(LanguageTip tip) {

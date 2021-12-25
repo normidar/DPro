@@ -18,14 +18,14 @@ CodeLines sampleIf() {
   return CodeLines(
     objects: [
       DefGive(
-        target: Var("a"),
+        target: DVar("a"),
         content: DInt(13),
         type: "int",
       ),
       DIf(
         condition: Calculate(
           ">",
-          Var("a"),
+          DVar("a"),
           DInt(12),
         ),
         lines: CodeLines(objects: [
@@ -45,12 +45,12 @@ CodeLines sampleFor() {
   return CodeLines(
     objects: [
       DefGive(
-        target: Var("max"),
+        target: DVar("max"),
         content: DInt(100),
         type: "int",
       ),
       DefGive(
-        target: Var("sum"),
+        target: DVar("sum"),
         content: DInt(0),
         type: "int",
       ),
@@ -58,16 +58,16 @@ CodeLines sampleFor() {
         end: DInt(100),
         lines: CodeLines(objects: [
           Give(
-            target: Var("sum"),
-            content: Calculate("+", Var("sum"), Var("i")),
+            target: DVar("sum"),
+            content: Calculate("+", DVar("sum"), DVar("i")),
           ),
           Give(
-            target: Var("sum"),
-            content: Calculate("+", Var("sum"), Var("i")),
+            target: DVar("sum"),
+            content: Calculate("+", DVar("sum"), DVar("i")),
           ),
         ]),
       ),
-      DPrint(Var("sum"))
+      DPrint(DVar("sum"))
     ],
   );
 }
@@ -101,7 +101,7 @@ CodeLines foreachList() {
             type: DTypes.dStr,
             values: [DString("a"), DString("b"), DString("c"), DString("d")]),
         lines: CodeLines(objects: [
-          DPrint(Var("e")),
+          DPrint(DVar("e")),
         ]))
   ]);
 }
