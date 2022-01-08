@@ -1,3 +1,6 @@
+import 'package:auto_exporter/auto_exporter.dart';
+
+@AutoExporter()
 class DTypes {
   static String dStr = "str";
   static String dChar = "char";

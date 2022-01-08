@@ -1,7 +1,9 @@
 import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'value.dart';
+import 'package:auto_exporter/auto_exporter.dart';
 
+@AutoExporter()
 class DBool extends Value {
   bool value;
   DBool(this.value);

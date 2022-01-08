@@ -1,7 +1,7 @@
 name: dpro
 description: A sample command-line application.
 version: 0.0.1
-# homepage: https://www.example.com
+homepage: https://figbox.com
 
 environment:
   sdk: '>=2.14.3 <3.0.0'
@@ -10,9 +10,9 @@ environment:
 dependencies:
   path: ^1.8.0
   sprintf: ^6.0.0
+  auto_exporter: ^1.2.4
 
 dev_dependencies:
-  auto_exporter: ^1.2.4
   build_runner: ^2.1.0
   build_test: ^2.1.0
   lints: ^1.0.0

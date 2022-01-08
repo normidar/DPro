@@ -1,7 +1,9 @@
 import 'package:dpro/core/func/value/value.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
+import 'package:auto_exporter/auto_exporter.dart';
 
+@AutoExporter()
 class DList extends Value {
   String type;
   List<Value> values;

@@ -2,6 +2,9 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../../dobject.dart';
+import 'package:auto_exporter/auto_exporter.dart';
+
+@AutoExporter()
 
 /// 定義して 値を与える　：＝
 class DefGive extends DObject {

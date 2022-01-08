@@ -3,7 +3,9 @@ import 'package:sprintf/sprintf.dart';
 
 import '../../../code_lines.dart';
 import '../../../dobject.dart';
+import 'package:auto_exporter/auto_exporter.dart';
 
+@AutoExporter()
 class DIf extends DObject {
   DObject condition;
   CodeLines lines;
