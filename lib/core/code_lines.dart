@@ -1,7 +1,9 @@
-import 'package:cli/tran/Tips/language_tip.dart';
+import 'package:auto_exporter/auto_exporter.dart';
+import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'dobject.dart';
 
+@AutoExporter()
 class CodeLines {
   List<DObject> objects;
   CodeLines({required this.objects});

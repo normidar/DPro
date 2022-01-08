@@ -1,6 +1,7 @@
-import 'package:cli/core/dobject.dart';
-import 'package:cli/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
+
+import '../../dobject.dart';
 
 class DPrint extends DObject {
   DObject context;

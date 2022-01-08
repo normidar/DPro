@@ -1,8 +1,9 @@
-import 'package:cli/core/code_lines.dart';
-import 'package:cli/core/dobject.dart';
-import 'package:cli/core/func/value/dint.dart';
-import 'package:cli/tran/Tips/language_tip.dart';
+import 'package:dpro/core/func/value/dint.dart';
+import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
+
+import '../../code_lines.dart';
+import '../../dobject.dart';
 
 class DForI extends DObject {
   late DObject begin;

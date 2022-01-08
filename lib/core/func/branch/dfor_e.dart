@@ -1,7 +1,8 @@
-import 'package:cli/core/code_lines.dart';
-import 'package:cli/core/dobject.dart';
-import 'package:cli/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
+
+import '../../code_lines.dart';
+import '../../dobject.dart';
 
 class DForE extends DObject {
   String type;

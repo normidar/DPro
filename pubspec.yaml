@@ -1,6 +1,6 @@
-name: cli
+name: dpro
 description: A sample command-line application.
-version: 1.0.0
+version: 0.0.1
 # homepage: https://www.example.com
 
 environment:
@@ -12,5 +12,9 @@ dependencies:
   sprintf: ^6.0.0
 
 dev_dependencies:
+  auto_exporter: ^1.2.4
+  build_runner: ^2.1.0
+  build_test: ^2.1.0
   lints: ^1.0.0
   test: ^1.16.0
+

@@ -13,6 +13,7 @@ class DJava extends LanguageTip {
       "if": "if (%s) {\n%s\n%s}",
       "elif": "} else if (%s) {\n%s",
       "else": "} else {",
+      "while": "while (%s) {\n%s\n%s}",
       "print": 'Log.d("log",%s);',
       // 始まり、終わり、ステップ、コード、インデント、変数名
       "fori": "for (int %6\$s = %s;%6\$s < %s;%6\$s += %s) {\n%s\n%s}",
