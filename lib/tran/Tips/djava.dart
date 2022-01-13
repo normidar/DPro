@@ -4,6 +4,7 @@ class DJava extends LanguageTip {
   @override
   Map<String, String> ruleMap() {
     return {
+      "def": "%s %s",
       "def_give": "%s %s = %s;",
       "give": "%s = %s;",
       "cal": "%s %s %s",
@@ -29,5 +30,10 @@ class DJava extends LanguageTip {
   @override
   Map<String, String> typeMap() {
     return {"str": "String"};
+  }
+
+  @override
+  String toString() {
+    return "java";
   }
 }

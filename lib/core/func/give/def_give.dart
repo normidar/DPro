@@ -15,11 +15,17 @@ class DefGive extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["def_give"]!;
+    final defFormat = tip.ruleMap()["def"]!;
+    final giveFormat = tip.ruleMap()["give"]!;
     String _type = tip.typeMap()[type] ?? type;
-    return sprintf(format, [
-      _type,
-      target.tran(tip),
+
+    var targetStr = target.tran(tip);
+    // 与える時に定義するかどうかを判定
+    if(tip.toString() == "java"){
+      targetStr = sprintf(defFormat,[_type, targetStr]);
+    }
+    return sprintf(giveFormat, [
+      targetStr,
       content.tran(tip),
     ]);
   }

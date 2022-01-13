@@ -41,7 +41,7 @@ CodeLines sampleFor() {
         type: "int",
       ),
       DForI(
-        end: DInt(100),
+        end: DVar("max"),
         lines: CodeLines(objects: [
           Give(
             target: DVar("sum"),
