@@ -11,6 +11,8 @@
 - const value
  - const list
  - const map
+- list.get
+- map.get
 - var
 - ouput(print)
 - calculate

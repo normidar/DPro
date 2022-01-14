@@ -9,4 +9,5 @@ class DTypes {
   static String dDouble = "double";
   static String dBool = "bool";
   static String dVoid = "void";
+  static String dList = "list";
 }

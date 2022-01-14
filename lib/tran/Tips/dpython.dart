@@ -10,6 +10,12 @@ class DPython extends LanguageTip {
       "cal": "%s %s %s",
       "str": '"%s"',
       "list": "[%2\$s]",
+      "list_search": "%s[%s]",
+      // map の定数作成
+      "map": "{%2\$s}",
+      "map_kv": "",
+      "map_kv_wrap": "%s:%s",
+      "map_items_interval": ", ",
       "if": "if %s:\n%s",
       "elif": "elif %s:\n%s",
       "else": "else:",

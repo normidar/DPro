@@ -1,3 +1,6 @@
+import 'package:dpro/core/func/value/calculate/calculate.dart';
+import 'package:dpro/core/func/value/search/dsearch_list.dart';
+
 import 'export.dart';
 
 CodeLines sampleIf() {
@@ -89,5 +92,28 @@ CodeLines foreachList() {
         lines: CodeLines(objects: [
           DPrint(DVar("e")),
         ]))
+  ]);
+}
+
+CodeLines listToMap() {
+  return CodeLines(objects: [
+    DefGive(
+        target: DVar("list"),
+        content: DList(type: DTypes.dStr, values: [
+          DString("零"),
+          DString("壱"),
+          DString("弐"),
+        ]),
+        type: DTypes.dList),
+    DForE(
+        type: DTypes.dStr,
+        list: DVar("list"),
+        lines: CodeLines(objects: [
+          DPrint(DVar("e")),
+        ])),
+    DPrint(DSearchList(
+      list: DVar("list"),
+      index: DInt(1),
+    )),
   ]);
 }
