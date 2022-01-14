@@ -10,6 +10,11 @@ class DJava extends LanguageTip {
       "cal": "%s %s %s",
       "str": '"%s"',
       "list": "new ArrayList<%s>(Arrays.asList(%s))",
+      // map の定数作成
+      "map":"new HashMap<%s>(){{%s}}",
+      "map_kv":"%s, %s",
+      "map_kv_wrap":"put(%s, %s);",
+      "map_items_interval":"",
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
       "elif": "} else if (%s) {\n%s",
