@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/reset/dreset_map.dart';
 import 'package:dpro/core/func/value/calculate/calculate.dart';
 import 'package:dpro/core/func/value/search/dsearch_list.dart';
 
@@ -9,7 +10,7 @@ CodeLines sampleIf() {
       DefGive(
         target: DVar("a"),
         content: DInt(13),
-        type: "int",
+        type: DTypes.dInt,
       ),
       DIf(
         condition: Calculate(
@@ -36,12 +37,12 @@ CodeLines sampleFor() {
       DefGive(
         target: DVar("max"),
         content: DInt(100),
-        type: "int",
+        type: DTypes.dInt,
       ),
       DefGive(
         target: DVar("sum"),
         content: DInt(0),
-        type: "int",
+        type: DTypes.dInt,
       ),
       DForI(
         end: DVar("max"),
@@ -98,21 +99,29 @@ CodeLines foreachList() {
 CodeLines listToMap() {
   return CodeLines(objects: [
     DefGive(
-        target: DVar("list"),
+        target: DVar("mylist"),
         content: DList(type: DTypes.dStr, values: [
           DString("零"),
           DString("壱"),
           DString("弐"),
         ]),
         type: DTypes.dList),
+    DefGive(
+        target: DVar("mymap"),
+        content: DMap(
+          keyType: DTypes.dStr,
+          valueType: DTypes.dStr,
+          map: {},
+        ),
+        type: DTypes.dMap),
     DForE(
         type: DTypes.dStr,
-        list: DVar("list"),
+        list: DVar("mylist"),
         lines: CodeLines(objects: [
-          DPrint(DVar("e")),
+          DResetMap(map: DVar("mymap"), index: DVar("e"), value: DVar("e")),
         ])),
     DPrint(DSearchList(
-      list: DVar("list"),
+      list: DVar("mylist"),
       index: DInt(1),
     )),
   ]);

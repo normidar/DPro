@@ -3,7 +3,7 @@
 // dpro
 export 'package:dpro/core/dobject.dart';
 export 'package:dpro/core/code_lines.dart';
-export 'package:dpro/core/dtypes.dart';
+export 'package:dpro/core/type/dtypes.dart';
 export 'package:dpro/core/func/branch/dfor_i.dart';
 export 'package:dpro/core/func/branch/dwhile.dart';
 export 'package:dpro/core/func/branch/dfor_e.dart';

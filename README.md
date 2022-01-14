@@ -25,3 +25,7 @@
 - func
 - class
 - extend
+
+
+TODO:
+- リストの長さを獲得

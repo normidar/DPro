@@ -1,22 +1,22 @@
 import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/value/value.dart';
-import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DList extends Value {
-  DType type;
-  List<DObject> values;
-  DList({required this.type, required this.values});
+class DResetMap extends Value {
+  DObject map;
+  DObject index;
+  DObject value;
+  DResetMap({required this.map, required this.index, required this.value});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["list"]!;
-    final _values = values.map((v) => v.tran(tip)).toList();
+    final format = tip.ruleMap()["map_reset"]!;
     return sprintf(format, [
-      type.tran(tip),
-      _values.join(", "),
+      map.tran(tip),
+      index.tran(tip),
+      value.tran(tip),
     ]);
   }
 }

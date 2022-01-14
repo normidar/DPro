@@ -11,12 +11,14 @@ class DJava extends LanguageTip {
       "str": '"%s"',
       "list": "new ArrayList<%s>(Arrays.asList(%s))",
       "list_search": "%s.get(%s)",
+      "list_reset": "%s.put(%s, %s);",
       // map の定数作成
       "map": "new HashMap<%s>(){{%s}}",
       "map_kv": "%s, %s",
       "map_kv_wrap": "put(%s, %s);",
       "map_items_interval": "",
-
+      "map_search": "%s.get(%s)",
+      "map_reset": "%s.put(%s, %s);",
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
       "elif": "} else if (%s) {\n%s",
@@ -36,7 +38,11 @@ class DJava extends LanguageTip {
 
   @override
   Map<String, String> typeMap() {
-    return {"str": "String"};
+    return {
+      "str": "String",
+      "list": "List",
+      "map": "Map",
+    };
   }
 
   @override
