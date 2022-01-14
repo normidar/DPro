@@ -7,10 +7,10 @@ import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
 class DMap extends Value {
-  DType? keyType;
-  DType? valueType;
+  DType keyType;
+  DType valueType;
   Map<DObject, DObject> map;
-  DMap({this.keyType, this.valueType, required this.map});
+  DMap({required this.keyType, required this.valueType, required this.map});
   @override
   String tran(LanguageTip tip) {
     final format = tip.ruleMap()["map"]!;
@@ -23,7 +23,7 @@ class DMap extends Value {
   String _keyValuesType(LanguageTip tip) {
     DType? _keyType = keyType;
     DType? _valueType = valueType;
-    if (_keyType == null || _valueType == null) {
+    if (_valueType == null) {
       return "";
     }
     final format = tip.ruleMap()["map_kv"]!;

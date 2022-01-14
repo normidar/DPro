@@ -19,6 +19,7 @@ class DJava extends LanguageTip {
       "map_items_interval": "",
       "map_search": "%s.get(%s)",
       "map_reset": "%s.put(%s, %s);",
+      "generic": "%s<%s>",
       // 条件、コード、インデント
       "if": "if (%s) {\n%s\n%s}",
       "elif": "} else if (%s) {\n%s",

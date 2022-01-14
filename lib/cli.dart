@@ -99,21 +99,21 @@ CodeLines foreachList() {
 CodeLines listToMap() {
   return CodeLines(objects: [
     DefGive(
-        target: DVar("mylist"),
-        content: DList(type: DTypes.dStr, values: [
-          DString("零"),
-          DString("壱"),
-          DString("弐"),
-        ]),
-        type: DTypes.dList),
+      target: DVar("mylist"),
+      content: DList(type: DTypes.dStr, values: [
+        DString("零"),
+        DString("壱"),
+        DString("弐"),
+      ]),
+    ),
     DefGive(
-        target: DVar("mymap"),
-        content: DMap(
-          keyType: DTypes.dStr,
-          valueType: DTypes.dStr,
-          map: {},
-        ),
-        type: DTypes.dMap),
+      target: DVar("mymap"),
+      content: DMap(
+        keyType: DTypes.dStr,
+        valueType: DTypes.dStr,
+        map: {},
+      ),
+    ),
     DForE(
         type: DTypes.dStr,
         list: DVar("mylist"),

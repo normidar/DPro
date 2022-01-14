@@ -8,10 +8,10 @@ import '../../dobject.dart';
 /// 定義して 値を与える　：＝
 @AutoExporter()
 class DefGive extends DObject {
-  DType type;
+  DType? type;
   DObject target;
   DObject content;
-  DefGive({required this.target, required this.content, required this.type});
+  DefGive({required this.target, required this.content, this.type});
 
   @override
   String tran(LanguageTip tip) {
@@ -21,7 +21,8 @@ class DefGive extends DObject {
     var targetStr = target.tran(tip);
     // 与える時に定義するかどうかを判定
     if (tip.toString() == "java") {
-      targetStr = sprintf(defFormat, [type.tran(tip), targetStr]);
+      DType _type = type ?? DType.fromValue(content);
+      targetStr = sprintf(defFormat, [_type.tran(tip), targetStr]);
     }
     return sprintf(giveFormat, [
       targetStr,

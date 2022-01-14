@@ -19,6 +19,7 @@ class DPython extends LanguageTip {
       "map_items_interval": ", ",
       "map_search": "%s[%s]",
       "map_reset": "%s[%s] = %s",
+      "generic": "%s[%s]",
       "if": "if %s:\n%s",
       "elif": "elif %s:\n%s",
       "else": "else:",
