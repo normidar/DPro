@@ -5,16 +5,18 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DSearchMap extends Value {
-  DObject map;
+class DReplace extends Value {
+  DObject iterator;
   DObject index;
-  DSearchMap({required this.map, required this.index});
+  DObject value;
+  DReplace({required this.iterator, required this.index, required this.value});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("map_search");
+    final format = tip.getRule("replace");
     return sprintf(format, [
-      map.tran(tip),
+      iterator.tran(tip),
       index.tran(tip),
+      value.tran(tip),
     ]);
   }
 }

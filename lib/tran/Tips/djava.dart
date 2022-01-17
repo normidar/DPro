@@ -8,15 +8,13 @@ class DJava extends LanguageTip {
     "cal": "%s %s %s",
     "str": '"%s"',
     "list": "new ArrayList<%s>(Arrays.asList(%s))",
-    "list_search": "%s.get(%s)",
-    "list_reset": "%s.put(%s, %s);",
+    "search": "%s.get(%s)",
+    "replace": "%s.put(%s, %s);",
     // map の定数作成
     "map": "new HashMap<%s>(){{%s}}",
     "map_kv": "%s, %s",
     "map_kv_wrap": "put(%s, %s);",
     "map_items_interval": "",
-    "map_search": "%s.get(%s)",
-    "map_reset": "%s.put(%s, %s);",
     "generic": "%s<%s>",
     // 条件、コード、インデント
     "if": "if (%s) {\n%s\n%s}",
@@ -31,6 +29,7 @@ class DJava extends LanguageTip {
     // タイプ、ネーム、パラメータ、コード、インデント
     "func": "%s %s(%s){\n%s\n%s}",
     "para": "%s %s",
+    "return": "return %s;",
     // ネーム、コード、インデント
     "class": "class %s {\n%s\n%s}"
   };

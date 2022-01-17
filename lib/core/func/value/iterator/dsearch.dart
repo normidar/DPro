@@ -5,15 +5,15 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DSearchList extends Value {
-  DObject list;
+class DSearch extends Value {
+  DObject iterator;
   DObject index;
-  DSearchList({required this.list, required this.index});
+  DSearch({required this.iterator, required this.index});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("list_search");
+    final format = tip.getRule("search");
     return sprintf(format, [
-      list.tran(tip),
+      iterator.tran(tip),
       index.tran(tip),
     ]);
   }

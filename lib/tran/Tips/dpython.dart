@@ -8,15 +8,13 @@ class DPython extends LanguageTip {
     "cal": "%s %s %s",
     "str": '"%s"',
     "list": "[%2\$s]",
-    "list_search": "%s[%s]",
-    "list_reset": "%s[%s] = %s",
+    "search": "%s[%s]",
+    "replace": "%s[%s] = %s",
     // map の定数作成
     "map": "{%2\$s}",
     "map_kv": "",
     "map_kv_wrap": "%s:%s",
     "map_items_interval": ", ",
-    "map_search": "%s[%s]",
-    "map_reset": "%s[%s] = %s",
     "generic": "%s[%s]",
     "if": "if %s:\n%s",
     "elif": "elif %s:\n%s",
@@ -28,6 +26,7 @@ class DPython extends LanguageTip {
     "foreach": "for %2\$s in %3\$s:\n%4\$s",
     "func": "def %2\$s(%3\$s):\n%4\$s",
     "para": "%2\$s",
+    "return": "return %s",
     "class": "class %s:\n%s",
   };
 

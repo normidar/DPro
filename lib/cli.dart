@@ -1,7 +1,7 @@
 import 'package:dpro/core/func/branch/function/dpara.dart';
 import 'package:dpro/core/func/reset/dreset_map.dart';
 import 'package:dpro/core/func/value/calculate/calculate.dart';
-import 'package:dpro/core/func/value/search/dsearch_list.dart';
+import 'package:dpro/core/func/value/iterator/dsearch.dart';
 
 import 'export.dart';
 
@@ -125,8 +125,8 @@ CodeLines listToMap() {
         lines: CodeLines(objects: [
           DResetMap(map: DVar("mymap"), index: DVar("e"), value: DVar("e")),
         ])),
-    DPrint(DSearchList(
-      list: DVar("mylist"),
+    DPrint(DSearch(
+      iterator: DVar("mylist"),
       index: DInt(1),
     )),
   ]);
