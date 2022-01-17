@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/branch/function/dpara.dart';
 import 'package:dpro/core/func/reset/dreset_map.dart';
 import 'package:dpro/core/func/value/calculate/calculate.dart';
 import 'package:dpro/core/func/value/search/dsearch_list.dart';
@@ -69,6 +70,10 @@ CodeLines sampleFunc() {
         type: DTypes.dInt,
         name: "test",
         lines: sampleFor(),
+        paras: [
+          DPara(type: DTypes.dStr, name: "param1"),
+          DPara(type: DTypes.dStr, name: "param2"),
+        ],
       ),
     ],
   );

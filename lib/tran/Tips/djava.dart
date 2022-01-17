@@ -32,6 +32,7 @@ class DJava extends LanguageTip {
       "foreach": "for (%s %s : %s) {\n%s\n%s}",
       // タイプ、ネーム、パラメータ、コード、インデント
       "func": "%s %s(%s){\n%s\n%s}",
+      "para": "%s %s",
       // ネーム、コード、インデント
       "class": "class %s {\n%s\n%s}"
     };
