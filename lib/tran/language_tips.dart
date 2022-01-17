@@ -6,7 +6,7 @@ import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
 class LanguageTips {
-  static LanguageTip dart = DDart();
+  // static LanguageTip dart = DDart();
   static LanguageTip python = DPython();
   static LanguageTip java = DJava();
   // static LanguageTip swift;

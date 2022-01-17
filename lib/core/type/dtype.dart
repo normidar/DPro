@@ -40,7 +40,7 @@ class DType extends DObject {
       return _type;
     }
     // 総称がある時に
-    String format = tip.ruleMap()["generic"]!;
+    String format = tip.getRule("generic");
     List<String> _generics = generics.map((e) => e.tran(tip)).toList();
     return sprintf(format, [
       _type,

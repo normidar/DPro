@@ -11,7 +11,7 @@ class DSearchList extends Value {
   DSearchList({required this.list, required this.index});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["list_search"]!;
+    final format = tip.getRule("list_search");
     return sprintf(format, [
       list.tran(tip),
       index.tran(tip),

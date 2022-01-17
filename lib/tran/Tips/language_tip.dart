@@ -3,7 +3,9 @@ abstract class LanguageTip {
   Map<String, String> typeMap();
 
   /// 転換ルールの指向
-  Map<String, String> ruleMap();
+  // Map<String, String> ruleMap();
+
+  String getRule(String index);
 
   /// 今のインデント
   int indent = 0;

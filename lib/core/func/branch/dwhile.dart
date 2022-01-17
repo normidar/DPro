@@ -13,7 +13,7 @@ class DWhile extends DObject {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["while"]!;
+    final format = tip.getRule("while");
     return sprintf(format, [
       condition.tran(tip),
       lines.tran(tip),

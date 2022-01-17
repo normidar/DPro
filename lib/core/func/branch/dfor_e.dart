@@ -22,7 +22,7 @@ class DForE extends DObject {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["foreach"]!;
+    final format = tip.getRule("foreach");
     return sprintf(format, [
       type.tran(tip),
       varName,

@@ -14,7 +14,7 @@ class DClass extends DObject {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["class"]!;
+    final format = tip.getRule("class");
     return sprintf(format, [
       name,
       lines.tran(tip),
