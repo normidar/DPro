@@ -1,6 +1,4 @@
-![badge](https://github.com/normidar/dpro/actions/workflows/dart.yml/badge.svg?branch=main)
-
-[![pub package](https://img.shields.io/pub/v/dpro.svg)](https://pub.dev/packages/dpro)
+![badge](https://github.com/normidar/dpro/actions/workflows/dart.yml/badge.svg?branch=main)       [![pub package](https://img.shields.io/pub/v/dpro.svg)](https://pub.dev/packages/dpro)
 
 
 # DPro
