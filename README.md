@@ -68,6 +68,10 @@ for (int i = 0;i < max;i += 1) {
 Log.d("log",sum);
 ```
 
+## スポンサー
+
+[![twitter](https://raw.githubusercontent.com/normidar/svgs/main/twitter.svg)](https://twitter.com/itpharmacy1212?ref_src=twsrc%5Etfw)
+
 ## how would we create the engine from zero
 
 - lines
