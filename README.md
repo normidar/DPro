@@ -1,3 +1,6 @@
+![badge](https://github.com/normidar/dpro/actions/workflows/dart.yml/badge.svg?branch=main)
+
+
 # DPro
 
 ## DProとはなんですか？
