@@ -6,7 +6,7 @@ import 'language_tips.dart';
 
 @AutoExporter()
 class TranEngine {
-  static LanguageTip tip = LanguageTips.dart;
+  static LanguageTip tip = LanguageTips.java;
   static String tran({required CodeLines codes}) {
     String rt = "";
     for (var i in codes.objects) {
