@@ -12,7 +12,7 @@ class Calculate extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["cal"]!;
+    final format = tip.getRule("cal");
     return sprintf(format, [
       left.tran(tip),
       calStr,

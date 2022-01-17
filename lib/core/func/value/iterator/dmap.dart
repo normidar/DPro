@@ -13,7 +13,7 @@ class DMap extends Value {
   DMap({required this.keyType, required this.valueType, required this.map});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["map"]!;
+    final format = tip.getRule("map");
     return sprintf(format, [
       _keyValuesType(tip),
       _keyValuesString(tip),
@@ -26,7 +26,7 @@ class DMap extends Value {
     if (_valueType == null) {
       return "";
     }
-    final format = tip.ruleMap()["map_kv"]!;
+    final format = tip.getRule("map_kv");
     return sprintf(format, [
       _keyType.tran(tip),
       _valueType.tran(tip),
@@ -35,8 +35,8 @@ class DMap extends Value {
 
   /// mapのアイテムのところの文字列を返す
   String _keyValuesString(LanguageTip tip) {
-    final mapKvWrapFormat = tip.ruleMap()["map_kv_wrap"]!;
-    final mapItemsIntervalFormat = tip.ruleMap()["map_items_interval"]!;
+    final mapKvWrapFormat = tip.getRule("map_kv_wrap");
+    final mapItemsIntervalFormat = tip.getRule("map_items_interval");
     final itemList = <String>[];
     map.forEach((key, value) {
       itemList.add(sprintf(mapKvWrapFormat, [key.tran(tip), value.tran(tip)]));

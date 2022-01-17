@@ -12,7 +12,7 @@ class DResetMap extends Value {
   DResetMap({required this.map, required this.index, required this.value});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["map_reset"]!;
+    final format = tip.getRule("map_reset");
     return sprintf(format, [
       map.tran(tip),
       index.tran(tip),

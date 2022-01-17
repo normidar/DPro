@@ -22,7 +22,7 @@ class DFunc extends DObject {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["func"]!;
+    final format = tip.getRule("func");
     final _paraStr = paras.map((e) => e.tran(tip)).join(", ");
     return sprintf(format, [
       type.tran(tip),

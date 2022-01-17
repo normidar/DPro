@@ -13,7 +13,7 @@ class Give extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["give"]!;
+    final format = tip.getRule("give");
     return sprintf(format, [
       target.tran(tip),
       content.tran(tip),

@@ -13,7 +13,7 @@ class DElseIf extends DObject {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.ruleMap()["elif"]!;
+    final format = tip.getRule("elif");
     return sprintf(format, [
       condition.tran(tip),
       lines.tran(tip),

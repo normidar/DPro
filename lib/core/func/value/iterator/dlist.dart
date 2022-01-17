@@ -12,7 +12,7 @@ class DList extends Value {
   DList({required this.type, required this.values});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["list"]!;
+    final format = tip.getRule("list");
     final _values = values.map((v) => v.tran(tip)).toList();
     return sprintf(format, [
       type.tran(tip),

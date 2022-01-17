@@ -15,8 +15,8 @@ class DefGive extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final defFormat = tip.ruleMap()["def"]!;
-    final giveFormat = tip.ruleMap()["give"]!;
+    final defFormat = tip.getRule("def");
+    final giveFormat = tip.getRule("give");
 
     var targetStr = target.tran(tip);
     // 与える時に定義するかどうかを判定

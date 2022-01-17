@@ -13,7 +13,7 @@ class DPara extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["para"]!;
+    final format = tip.getRule("para");
     return sprintf(format, [
       type.tran(tip),
       name,

@@ -21,11 +21,11 @@ class DIf extends DObject {
       _lineString = lines.tran(tip);
     } else {
       _lineString = lines.tran(tip);
-      _lineString += "\n" + " " * tip.indent + tip.ruleMap()["else"]! + "\n";
+      _lineString += "\n" + " " * tip.indent + tip.getRule("else") + "\n";
       _elseLines.addIndent();
       _lineString += _elseLines.tran(tip);
     }
-    final format = tip.ruleMap()["if"]!;
+    final format = tip.getRule("if");
     return sprintf(format, [
       condition.tran(tip),
       _lineString,

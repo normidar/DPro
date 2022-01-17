@@ -12,7 +12,7 @@ class DResetList extends Value {
   DResetList({required this.list, required this.index, required this.value});
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["list_reset"]!;
+    final format = tip.getRule("list_reset");
     return sprintf(format, [
       list.tran(tip),
       index.tran(tip),

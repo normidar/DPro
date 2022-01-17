@@ -11,7 +11,7 @@ class DPrint extends DObject {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["print"]!;
+    final format = tip.getRule("print");
     return sprintf(format, [
       context.tran(tip),
     ]);

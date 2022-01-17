@@ -11,7 +11,7 @@ class DString extends Value {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.ruleMap()["str"]!;
+    final format = tip.getRule("str");
     return sprintf(format, [value]);
   }
 }
