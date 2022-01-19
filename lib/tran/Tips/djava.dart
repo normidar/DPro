@@ -28,6 +28,7 @@ class DJava extends LanguageTip {
     "foreach": "for (%s %s : %s) {\n%s\n%s}",
     // タイプ、ネーム、パラメータ、コード、インデント
     "func": "%s %s(%s){\n%s\n%s}",
+    "constructor": "%s(%s){\n%s\n%s}",
     "para": "%s %s",
     "return": "return %s;",
     // ネーム、コード、インデント

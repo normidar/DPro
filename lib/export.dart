@@ -7,7 +7,7 @@ export 'package:dpro/core/type/dtypes.dart';
 export 'package:dpro/core/func/branch/dfor_i.dart';
 export 'package:dpro/core/func/branch/dwhile.dart';
 export 'package:dpro/core/func/branch/dfor_e.dart';
-export 'package:dpro/core/func/branch/dclass.dart';
+export 'package:dpro/core/func/branch/class/dclass.dart';
 export 'package:dpro/core/func/branch/if/delse_if.dart';
 export 'package:dpro/core/func/branch/if/dif.dart';
 export 'package:dpro/core/func/var.dart';

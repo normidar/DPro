@@ -25,6 +25,7 @@ class DPython extends LanguageTip {
     // タイプ、変数名、リストネーム、コード、インデント
     "foreach": "for %2\$s in %3\$s:\n%4\$s",
     "func": "def %2\$s(%3\$s):\n%4\$s",
+    "constructor": "def __init__(%2\$s):\n%3\$s",
     "para": "%2\$s",
     "return": "return %s",
     "class": "class %s:\n%s",

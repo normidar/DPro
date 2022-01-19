@@ -1,6 +1,5 @@
 import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/func/branch/function/dparams.dart';
-import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -8,24 +7,22 @@ import '../../../code_lines.dart';
 import '../../../dobject.dart';
 
 @AutoExporter()
-class DFunc extends DObject {
-  DType type;
-  String name;
-  DParams? paras;
+class DConstructor extends DObject {
+  String? name;
+  DParams? params;
   CodeLines lines;
-  DFunc(
-      {required this.type,
-      required this.name,
-      required this.lines,
-      this.paras});
+  DConstructor({
+    this.name,
+    this.params,
+    required this.lines,
+  });
 
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
     final format = tip.getRule("func");
-    final _paras = paras;
+    final _paras = params;
     return sprintf(format, [
-      type.tran(tip),
       name,
       _paras != null ? _paras.tran(tip) : "",
       lines.tran(tip),
