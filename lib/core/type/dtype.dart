@@ -48,3 +48,16 @@ class DType extends DObject {
     ]);
   }
 }
+
+abstract class IType implements IObject{
+  String get type;
+  @override
+  DObject toDObject() {
+    return toDType();
+  }
+
+  DType toDType() {
+    return DType(type);
+  }
+}
+

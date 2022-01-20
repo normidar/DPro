@@ -1,3 +1,4 @@
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -13,5 +14,13 @@ class DString extends Value {
   String tran(LanguageTip tip) {
     final format = tip.getRule("str");
     return sprintf(format, [value]);
+  }
+}
+
+abstract class IString implements IObject{
+  String get value;
+  @override
+  DObject toDObject() {
+    return DString(value);
   }
 }

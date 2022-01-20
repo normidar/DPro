@@ -5,3 +5,7 @@ import 'package:auto_exporter/auto_exporter.dart';
 abstract class DObject {
   String tran(LanguageTip tip);
 }
+
+abstract class IObject{
+  DObject toDObject();
+}

@@ -1,3 +1,4 @@
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'value.dart';
@@ -11,5 +12,13 @@ class DInt extends Value {
   @override
   String tran(LanguageTip tip) {
     return value.toString();
+  }
+}
+
+abstract class IInt implements IObject{
+  int get value;
+  @override
+  DObject toDObject() {
+    return DInt(value);
   }
 }

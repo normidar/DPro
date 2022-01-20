@@ -2,6 +2,7 @@ import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'dobject.dart';
+import 'func/output/dprint.dart';
 
 @AutoExporter()
 class CodeLines {
@@ -28,5 +29,14 @@ class CodeLines {
 
   String putin(DObject object, LanguageTip tip) {
     return " " * tip.indent + object.tran(tip);
+  }
+}
+
+abstract class ICodeLines  {
+  // FIXME: 
+  IObject get context;
+
+  CodeLines toCodeLines() {
+    throw Exception();
   }
 }

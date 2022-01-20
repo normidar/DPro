@@ -1,9 +1,7 @@
 import 'package:auto_exporter/auto_exporter.dart';
+import 'package:dpro/export.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
-
-import '../../../code_lines.dart';
-import '../../../dobject.dart';
 
 @AutoExporter()
 class DClass extends DObject {
@@ -23,5 +21,14 @@ class DClass extends DObject {
       lines.tran(tip),
       " " * tip.indent,
     ]);
+  }
+}
+
+abstract class IClass implements IObject {
+  String get name;
+  ICodeLines get lines;
+  @override
+  DObject toDObject() {
+    return DClass(name: name, lines: lines.toCodeLines());
   }
 }

@@ -1,4 +1,5 @@
 import 'package:dpro/core/func/value/dint.dart';
+import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -67,4 +68,15 @@ class DForI extends DObject {
       varName,
     ]);
   }
+}
+
+abstract class IForI implements IObject{
+  // FIXME
+  IType get type;
+  IObject get list;
+  ICodeLines get lines;
+  String get varName;
+  @override
+  DObject toDObject() {
+throw Exception();  }
 }
