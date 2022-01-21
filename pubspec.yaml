@@ -1,6 +1,6 @@
 name: dpro
 description: A tool to transform programing langrage.
-version: 0.2.3
+version: 0.2.4
 homepage: https://figbox.net
 
 environment:
