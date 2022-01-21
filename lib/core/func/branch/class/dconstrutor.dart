@@ -7,15 +7,10 @@ import '../../../code_lines.dart';
 import '../../../dobject.dart';
 
 @AutoExporter()
-class DConstructor extends DObject {
-  String? name;
-  DParams? params;
-  CodeLines lines;
-  DConstructor({
-    this.name,
-    this.params,
-    required this.lines,
-  });
+abstract class DConstructor implements DObject {
+  String? get name;
+  DParams? get params;
+  CodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -31,16 +26,17 @@ class DConstructor extends DObject {
   }
 }
 
-abstract class IConstructor implements IObject {
-  String? get name;
-  ICodeLines get lines;
-  IParams? get params;
-
+class OConstructor with DConstructor {
   @override
-  T toDObject<T extends DObject>() {
-    return DConstructor(
-        name: name,
-        lines: lines.toCodeLines(),
-        params: params?.toDObject()) as T;
-  }
+  String? name;
+  @override
+  CodeLines lines;
+  @override
+  DParams? params;
+
+  OConstructor({
+    this.name,
+    this.params,
+    required this.lines,
+  });
 }

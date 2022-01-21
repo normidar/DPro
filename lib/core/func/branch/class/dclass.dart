@@ -4,13 +4,9 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DClass extends DObject {
-  String name;
-  CodeLines lines;
-  DClass({
-    required this.name,
-    required this.lines,
-  });
+abstract class DClass implements DObject {
+  String get name;
+  CodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -24,11 +20,13 @@ class DClass extends DObject {
   }
 }
 
-abstract class IClass implements IObject {
-  String get name;
-  ICodeLines get lines;
+class OClass with DClass {
   @override
-  T toDObject<T extends DObject>() {
-    return DClass(name: name, lines: lines.toCodeLines()) as T;
-  }
+  String name;
+  @override
+  CodeLines lines;
+  OClass({
+    required this.name,
+    required this.lines,
+  });
 }

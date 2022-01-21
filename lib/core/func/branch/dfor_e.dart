@@ -7,17 +7,11 @@ import '../../code_lines.dart';
 import '../../dobject.dart';
 
 @AutoExporter()
-class DForE extends DObject {
-  DType type;
-  DObject list;
-  CodeLines lines;
-  String varName;
-  DForE({
-    required this.type,
-    required this.list,
-    required this.lines,
-    this.varName = "e",
-  });
+abstract class DForE implements DObject {
+  DType get type;
+  DObject get list;
+  CodeLines get lines;
+  String get varName;
 
   @override
   String tran(LanguageTip tip) {
@@ -33,16 +27,19 @@ class DForE extends DObject {
   }
 }
 
-abstract class IForE implements IObject {
-  IType get type;
-  IObject get list;
-  ICodeLines get lines;
-  String get varName;
+class OForE with DForE {
   @override
-  T toDObject<T extends DObject>() {
-    return DForE(
-        type: type.toDObject(),
-        list: list.toDObject(),
-        lines: lines.toCodeLines()) as T;
-  }
+  DType type;
+  @override
+  DObject list;
+  @override
+  CodeLines lines;
+  @override
+  String varName;
+  OForE({
+    required this.type,
+    required this.list,
+    required this.lines,
+    this.varName = "e",
+  });
 }

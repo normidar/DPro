@@ -6,8 +6,8 @@ void main(List<String> arguments) {
 }
 
 void engineTest() {
-  TranEngine.tip = LanguageTips.java;
-  print(TranEngine.tran(
-    codes: cli.sampleFunc(),
-  ));
+  // TranEngine.tip = LanguageTips.java;
+  // print(TranEngine.tran(
+  //   codes: cli.sampleFunc(),
+  // ));
 }

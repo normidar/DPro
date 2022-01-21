@@ -5,9 +5,8 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import '../../../dobject.dart';
 
 @AutoExporter()
-class DParams extends DObject {
-  List<DPara> params;
-  DParams({required this.params});
+abstract class DParams implements DObject {
+  List<DPara> get params;
 
   @override
   String tran(LanguageTip tip) {
@@ -15,12 +14,9 @@ class DParams extends DObject {
   }
 }
 
-abstract class IParams implements IObject {
-  List<IPara> get params;
-
+class OParams with DParams {
   @override
-  T toDObject<T extends DObject>() {
-    return DParams(params: params.map((e) => e.toDObject<DPara>()).toList())
-        as T;
-  }
+  List<DPara> params;
+
+  OParams({required this.params});
 }

@@ -8,32 +8,14 @@ import '../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DForI extends DObject {
-  late DObject begin;
-  DObject end;
-  late DObject step;
-  CodeLines lines;
-  String varName;
+abstract class DForI implements DObject {
+  DObject get begin;
+  DObject get end;
+  DObject get step;
+  CodeLines get lines;
+  String get varName;
   // 簡略化できるかどうか
   bool canSimpler = false;
-  DForI({
-    DObject? begin,
-    required this.end,
-    DObject? step,
-    required this.lines,
-    this.varName = "i",
-  }) {
-    this.begin = begin ?? DInt(0);
-    this.step = step ?? DInt(1);
-    final _begin = this.begin;
-    final _step = this.step;
-    if (_begin is DInt &&
-        _step is DInt &&
-        _begin.value == 0 &&
-        _step.value == 1) {
-      canSimpler = true;
-    }
-  }
 
   @override
   String tran(LanguageTip tip) {
@@ -70,14 +52,33 @@ class DForI extends DObject {
   }
 }
 
-abstract class IForI implements IObject {
-  // FIXME
-  IType get type;
-  IObject get list;
-  ICodeLines get lines;
-  String get varName;
+class OForI with DForI {
   @override
-  T toDObject<T extends DObject>() {
-    throw Exception();
+  late DObject begin;
+  @override
+  DObject end;
+  @override
+  late DObject step;
+  CodeLines lines;
+  String varName;
+  // 簡略化できるかどうか
+  bool canSimpler = false;
+  OForI({
+    DObject? begin,
+    required this.end,
+    DObject? step,
+    required this.lines,
+    this.varName = "i",
+  }) {
+    this.begin = begin ?? DInt(0);
+    this.step = step ?? DInt(1);
+    final _begin = this.begin;
+    final _step = this.step;
+    if (_begin is DInt &&
+        _step is DInt &&
+        _begin.value == 0 &&
+        _step.value == 1) {
+      canSimpler = true;
+    }
   }
 }

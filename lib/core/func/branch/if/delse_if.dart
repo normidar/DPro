@@ -6,10 +6,10 @@ import '../../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DElseIf extends DObject {
-  DObject condition;
-  CodeLines lines;
-  DElseIf({required this.condition, required this.lines});
+abstract class DElseIf implements DObject {
+  DObject get condition;
+  CodeLines get lines;
+
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
@@ -19,4 +19,13 @@ class DElseIf extends DObject {
       lines.tran(tip),
     ]);
   }
+}
+
+class OElseIf with DElseIf {
+  @override
+  DObject condition;
+  @override
+  CodeLines lines;
+
+  OElseIf({required this.condition, required this.lines});
 }

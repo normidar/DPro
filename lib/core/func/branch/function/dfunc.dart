@@ -8,16 +8,11 @@ import '../../../code_lines.dart';
 import '../../../dobject.dart';
 
 @AutoExporter()
-class DFunc extends DObject {
-  DType type;
-  String name;
-  DParams? paras;
-  CodeLines lines;
-  DFunc(
-      {required this.type,
-      required this.name,
-      required this.lines,
-      this.paras});
+abstract class DFunc implements DObject {
+  DType get type;
+  String get name;
+  DParams? get paras;
+  CodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -34,18 +29,19 @@ class DFunc extends DObject {
   }
 }
 
-abstract class IFunc implements IObject {
-  String get name;
-  IType get type;
-  IParams? get paras;
-  ICodeLines get lines;
-
+class OFunc with DFunc {
   @override
-  T toDObject<T extends DObject>() {
-    return DFunc(
-        type: type.toDObject(),
-        name: name,
-        lines: lines.toCodeLines(),
-        paras: paras?.toDObject()) as T;
-  }
+  String name;
+  @override
+  DType type;
+  @override
+  DParams? paras;
+  @override
+  CodeLines lines;
+
+  OFunc(
+      {required this.type,
+      required this.name,
+      required this.lines,
+      this.paras});
 }

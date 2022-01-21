@@ -6,9 +6,9 @@ import '../../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DReturn extends DObject {
-  DObject value;
-  DReturn({required this.value});
+abstract class DReturn implements DObject {
+  DObject get value;
+
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("return");
@@ -18,11 +18,9 @@ class DReturn extends DObject {
   }
 }
 
-abstract class IFunc implements IObject {
-  IObject get value;
-
+class OReturn with DReturn {
   @override
-  T toDObject<T extends DObject>() {
-    return DReturn(value: value.toDObject()) as T;
-  }
+  DObject value;
+
+  OReturn({required this.value});
 }
