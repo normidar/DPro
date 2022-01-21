@@ -6,11 +6,10 @@ import '../../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DIf extends DObject {
-  DObject condition;
-  CodeLines lines;
-  CodeLines? elseLines;
-  DIf({required this.condition, required this.lines, this.elseLines});
+abstract class DIf implements DObject {
+  DObject get condition;
+  CodeLines get lines;
+  CodeLines? get elseLines;
 
   @override
   String tran(LanguageTip tip) {
@@ -32,4 +31,14 @@ class DIf extends DObject {
       " " * tip.indent,
     ]);
   }
+}
+
+class OIf with DIf {
+  @override
+  DObject condition;
+  @override
+  CodeLines lines;
+  @override
+  CodeLines? elseLines;
+  OIf({required this.condition, required this.lines, this.elseLines});
 }
