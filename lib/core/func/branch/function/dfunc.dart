@@ -33,3 +33,19 @@ class DFunc extends DObject {
     ]);
   }
 }
+
+abstract class IFunc implements IObject {
+  String get name;
+  IType get type;
+  IParams? get paras;
+  ICodeLines get lines;
+
+  @override
+  T toDObject<T extends DObject>() {
+    return DFunc(
+        type: type.toDObject(),
+        name: name,
+        lines: lines.toCodeLines(),
+        paras: paras?.toDObject()) as T;
+  }
+}
