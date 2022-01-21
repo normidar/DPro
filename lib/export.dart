@@ -24,6 +24,7 @@ export 'package:dpro/core/func/value/calculate/calculate.dart';
 export 'package:dpro/core/type/dtypes.dart';
 export 'package:dpro/core/func/value/iterator/dmap.dart';
 export 'package:dpro/core/func/value/iterator/dlist.dart';
+export 'package:dpro/core/func/branch/function/dreturn.dart';
 export 'package:dpro/core/func/branch/function/dparams.dart';
 export 'package:dpro/core/func/branch/class/dclass.dart';
 export 'package:dpro/core/func/branch/class/dconstrutor.dart';

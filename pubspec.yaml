@@ -1,7 +1,7 @@
 name: dpro
-description: A sample command-line application.
-version: 0.1.0
-homepage: https://figbox.com
+description: A tool to transform programing langrage.
+version: 0.2.1
+homepage: https://figbox.net
 
 environment:
   sdk: '>=2.14.3 <3.0.0'

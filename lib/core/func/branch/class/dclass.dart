@@ -1,5 +1,6 @@
 import 'package:auto_exporter/auto_exporter.dart';
-import 'package:dpro/export.dart';
+import 'package:dpro/core/code_lines.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
