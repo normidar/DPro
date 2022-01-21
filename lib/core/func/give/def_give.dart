@@ -1,12 +1,9 @@
-import 'package:auto_exporter/auto_exporter.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../dobject.dart';
-
 /// 定義して 値を与える　：＝
-@AutoExporter()
 abstract class DefGive implements DObject {
   DType? get type;
   DObject get target;

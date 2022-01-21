@@ -1,10 +1,8 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import 'value.dart';
+import 'dvalue.dart';
 
-@AutoExporter()
 abstract class DString implements Value {
   String get value;
 

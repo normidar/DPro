@@ -1,10 +1,7 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'dobject.dart';
-import 'func/output/dprint.dart';
 
-@AutoExporter()
 abstract class DCodeLines implements DObject {
   List<DObject> get objects;
   bool _isAddIndent = false;

@@ -1,11 +1,8 @@
-import 'package:auto_exporter/auto_exporter.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../../dobject.dart';
-
-@AutoExporter()
 abstract class DPara implements DObject {
   DType get type;
   String get name;
@@ -20,7 +17,7 @@ abstract class DPara implements DObject {
   }
 }
 
-abstract class OPara with DPara {
+class OPara with DPara {
   @override
   String name;
   @override

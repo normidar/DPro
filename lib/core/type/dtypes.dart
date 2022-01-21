@@ -1,7 +1,5 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/type/dtype.dart';
 
-@AutoExporter()
 class DTypes {
   static DType dStr = DType("str");
   static DType dChar = DType("char");

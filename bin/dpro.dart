@@ -1,13 +1,13 @@
 import 'package:dpro/cli.dart' as cli;
-import 'package:dpro/export.dart';
+import 'package:dpro/dpro.dart';
 
 void main(List<String> arguments) {
   engineTest();
 }
 
 void engineTest() {
-  // TranEngine.tip = LanguageTips.java;
-  // print(TranEngine.tran(
-  //   codes: cli.sampleFunc(),
-  // ));
+  TranEngine.tip = LanguageTips.java;
+  print(TranEngine.tran(
+    codes: cli.sampleFunc(),
+  ));
 }

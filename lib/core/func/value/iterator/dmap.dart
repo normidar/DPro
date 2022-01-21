@@ -1,11 +1,9 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/dobject.dart';
-import 'package:dpro/core/func/value/value.dart';
+import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-@AutoExporter()
 abstract class DMap implements Value {
   DType get keyType;
   DType get valueType;
@@ -22,9 +20,6 @@ abstract class DMap implements Value {
   String _keyValuesType(LanguageTip tip) {
     DType? _keyType = keyType;
     DType? _valueType = valueType;
-    if (_valueType == null) {
-      return "";
-    }
     final format = tip.getRule("map_kv");
     return sprintf(format, [
       _keyType.tran(tip),

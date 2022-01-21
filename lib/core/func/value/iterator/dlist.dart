@@ -1,11 +1,9 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/dobject.dart';
-import 'package:dpro/core/func/value/value.dart';
+import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-@AutoExporter()
 abstract class DList implements Value {
   DType get type;
   List<DObject> get values;

@@ -1,13 +1,9 @@
+import 'package:dpro/core/code_lines.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/value/dint.dart';
-import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../code_lines.dart';
-import '../../dobject.dart';
-import 'package:auto_exporter/auto_exporter.dart';
-
-@AutoExporter()
 abstract class DForI implements DObject {
   DObject get begin;
   DObject get end;

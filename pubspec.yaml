@@ -1,6 +1,6 @@
 name: dpro
 description: A tool to transform programing langrage.
-version: 0.2.1
+version: 0.2.3
 homepage: https://figbox.net
 
 environment:
@@ -10,9 +10,9 @@ environment:
 dependencies:
   path: ^1.8.0
   sprintf: ^6.0.0
-  auto_exporter: ^1.2.4
 
 dev_dependencies:
+  # auto_exporter: ^1.2.4 please use Dart Barrel File Generator
   build_runner: ^2.1.0
   build_test: ^2.1.0
   lints: ^1.0.0

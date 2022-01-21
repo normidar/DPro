@@ -1,134 +1,128 @@
-// import 'package:dpro/core/func/branch/function/dpara.dart';
-// import 'package:dpro/core/func/branch/function/dparams.dart';
-// import 'package:dpro/core/func/reset/dreset_map.dart';
-// import 'package:dpro/core/func/value/calculate/calculate.dart';
-// import 'package:dpro/core/func/value/iterator/dsearch.dart';
+import 'package:dpro/dpro.dart';
 
-// import 'export.dart';
+OCodeLines sampleIf() {
+  return OCodeLines(
+    objects: [
+      ODefGive(
+        target: OVar("a"),
+        content: OInt(13),
+        type: DTypes.dInt,
+      ),
+      OIf(
+        condition: OCalculate(
+          ">",
+          OVar("a"),
+          OInt(12),
+        ),
+        lines: OCodeLines(objects: [
+          OPrint(OString("月ではない")),
+          OPrint(OString("月ではない")),
+        ]),
+        elseLines: OCodeLines(objects: [
+          OPrint(OString("月です")),
+          OPrint(OString("月です")),
+        ]),
+      ),
+    ],
+  );
+}
 
-// CodeLines sampleIf() {
-//   return CodeLines(
-//     objects: [
-//       DefGive(
-//         target: DVar("a"),
-//         content: DInt(13),
-//         type: DTypes.dInt,
-//       ),
-//       DIf(
-//         condition: Calculate(
-//           ">",
-//           DVar("a"),
-//           DInt(12),
-//         ),
-//         lines: CodeLines(objects: [
-//           DPrint(DString("月ではない")),
-//           DPrint(DString("月ではない")),
-//         ]),
-//         elseLines: CodeLines(objects: [
-//           DPrint(DString("月です")),
-//           DPrint(DString("月です")),
-//         ]),
-//       ),
-//     ],
-//   );
-// }
+OCodeLines sampleFor() {
+  return OCodeLines(
+    objects: [
+      ODefGive(
+        target: OVar("max"),
+        content: OInt(100),
+        type: DTypes.dInt,
+      ),
+      ODefGive(
+        target: OVar("sum"),
+        content: OInt(0),
+        type: DTypes.dInt,
+      ),
+      OForI(
+        end: OVar("max"),
+        lines: OCodeLines(objects: [
+          OGive(
+            target: OVar("sum"),
+            content: OCalculate("+", OVar("sum"), OVar("i")),
+          ),
+          OGive(
+            target: OVar("sum"),
+            content: OCalculate("+", OVar("sum"), OVar("i")),
+          ),
+        ]),
+      ),
+      OPrint(OVar("sum"))
+    ],
+  );
+}
 
-// CodeLines sampleFor() {
-//   return CodeLines(
-//     objects: [
-//       DefGive(
-//         target: DVar("max"),
-//         content: DInt(100),
-//         type: DTypes.dInt,
-//       ),
-//       DefGive(
-//         target: DVar("sum"),
-//         content: DInt(0),
-//         type: DTypes.dInt,
-//       ),
-//       DForI(
-//         end: DVar("max"),
-//         lines: CodeLines(objects: [
-//           Give(
-//             target: DVar("sum"),
-//             content: Calculate("+", DVar("sum"), DVar("i")),
-//           ),
-//           Give(
-//             target: DVar("sum"),
-//             content: Calculate("+", DVar("sum"), DVar("i")),
-//           ),
-//         ]),
-//       ),
-//       DPrint(DVar("sum"))
-//     ],
-//   );
-// }
+OCodeLines sampleFunc() {
+  return OCodeLines(
+    objects: [
+      OFunc(
+        type: DTypes.dInt,
+        name: "test",
+        lines: sampleFor(),
+        paras: OParams(params: [
+          OPara(type: DTypes.dStr, name: "param1"),
+          OPara(type: DTypes.dStr, name: "param2"),
+        ]),
+      ),
+    ],
+  );
+}
 
-// CodeLines sampleFunc() {
-//   return CodeLines(
-//     objects: [
-//       DFunc(
-//         type: DTypes.dInt,
-//         name: "test",
-//         lines: sampleFor(),
-//         paras: DParams(params: [
-//           DPara(type: DTypes.dStr, name: "param1"),
-//           DPara(type: DTypes.dStr, name: "param2"),
-//         ]),
-//       ),
-//     ],
-//   );
-// }
+OCodeLines sampleClass() {
+  return OCodeLines(objects: [
+    OClass(
+      name: "Oog",
+      lines: sampleFunc(),
+    )
+  ]);
+}
 
-// CodeLines sampleClass() {
-//   return CodeLines(objects: [
-//     DClass(
-//       name: "Dog",
-//       lines: sampleFunc(),
-//     )
-//   ]);
-// }
+OCodeLines foreachList() {
+  return OCodeLines(objects: [
+    OForE(
+        type: DTypes.dStr,
+        list: OList(
+            type: DTypes.dStr,
+            values: [OString("a"), OString("b"), OString("c"), OString("d")]),
+        lines: OCodeLines(objects: [
+          OPrint(OVar("e")),
+        ]))
+  ]);
+}
 
-// CodeLines foreachList() {
-//   return CodeLines(objects: [
-//     DForE(
-//         type: DTypes.dStr,
-//         list: DList(
-//             type: DTypes.dStr,
-//             values: [DString("a"), DString("b"), DString("c"), DString("d")]),
-//         lines: CodeLines(objects: [
-//           DPrint(DVar("e")),
-//         ]))
-//   ]);
-// }
-
-// CodeLines listToMap() {
-//   return CodeLines(objects: [
-//     DefGive(
-//       target: DVar("mylist"),
-//       content: DList(type: DTypes.dStr, values: [
-//         DString("零"),
-//         DString("壱"),
-//         DString("弐"),
-//       ]),
-//     ),
-//     DefGive(
-//       target: DVar("mymap"),
-//       content: DMap(
-//         keyType: DTypes.dStr,
-//         valueType: DTypes.dStr,
-//         map: {},
-//       ),
-//     ),
-//     DForE(
-//         type: DTypes.dStr,
-//         list: DVar("mylist"),
-//         lines: CodeLines(objects: [
-//           DResetMap(map: DVar("mymap"), index: DVar("e"), value: DVar("e")),
-//         ])),
-//     DPrint(DSearch(
-//       iterator: DVar("mylist"),
-//       index: DInt(1),
-//     )),
-//   ]);
-// }
+OCodeLines listToMap() {
+  return OCodeLines(objects: [
+    ODefGive(
+      target: OVar("mylist"),
+      content: OList(type: DTypes.dStr, values: [
+        OString("零"),
+        OString("壱"),
+        OString("弐"),
+      ]),
+    ),
+    ODefGive(
+      target: OVar("mymap"),
+      content: OMap(
+        keyType: DTypes.dStr,
+        valueType: DTypes.dStr,
+        map: {},
+      ),
+    ),
+    OForE(
+        type: DTypes.dStr,
+        list: OVar("mylist"),
+        lines: OCodeLines(objects: [
+          OReplace(index: OVar("e"), value: OVar("e"), iterator: OVar("mymap")),
+        ])),
+    OPrint(OSearch(
+      iterator: OVar("mylist"),
+      index: OInt(1),
+    )),
+  ]);
+}

@@ -1,13 +1,10 @@
-import 'package:auto_exporter/auto_exporter.dart';
+import 'package:dpro/core/code_lines.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/branch/function/dparams.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../../code_lines.dart';
-import '../../../dobject.dart';
-
-@AutoExporter()
 abstract class DFunc implements DObject {
   DType get type;
   String get name;

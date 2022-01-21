@@ -1,13 +1,13 @@
-import 'package:auto_exporter/auto_exporter.dart';
 import 'package:dpro/core/code_lines.dart';
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/func/branch/class/dconstrutor.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-@AutoExporter()
 abstract class DClass implements DObject {
   String get name;
   DCodeLines get lines;
+  DConstructor? get constructor;
 
   @override
   String tran(LanguageTip tip) {
@@ -26,8 +26,12 @@ class OClass with DClass {
   String name;
   @override
   DCodeLines lines;
+
+  @override
+  DConstructor? constructor;
   OClass({
     required this.name,
     required this.lines,
+    this.constructor,
   });
 }

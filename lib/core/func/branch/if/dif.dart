@@ -1,11 +1,8 @@
+import 'package:dpro/core/code_lines.dart';
+import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../../code_lines.dart';
-import '../../../dobject.dart';
-import 'package:auto_exporter/auto_exporter.dart';
-
-@AutoExporter()
 abstract class DIf implements DObject {
   DObject get condition;
   DCodeLines get lines;
