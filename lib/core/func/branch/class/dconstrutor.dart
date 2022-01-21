@@ -30,3 +30,17 @@ class DConstructor extends DObject {
     ]);
   }
 }
+
+abstract class IConstructor implements IObject {
+  String? get name;
+  ICodeLines get lines;
+  IParams? get params;
+
+  @override
+  T toDObject<T extends DObject>() {
+    return DConstructor(
+        name: name,
+        lines: lines.toCodeLines(),
+        params: params?.toDObject()) as T;
+  }
+}

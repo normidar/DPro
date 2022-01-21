@@ -28,7 +28,7 @@ abstract class IClass implements IObject {
   String get name;
   ICodeLines get lines;
   @override
-  DObject toDObject() {
-    return DClass(name: name, lines: lines.toCodeLines());
+  T toDObject<T extends DObject>() {
+    return DClass(name: name, lines: lines.toCodeLines()) as T;
   }
 }

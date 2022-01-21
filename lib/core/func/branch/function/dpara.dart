@@ -20,3 +20,13 @@ class DPara extends DObject {
     ]);
   }
 }
+
+abstract class IPara implements IObject {
+  String get name;
+  IType get type;
+
+  @override
+  T toDObject<T extends DObject>() {
+    return DPara(type: type.toDObject(), name: name) as T;
+  }
+}

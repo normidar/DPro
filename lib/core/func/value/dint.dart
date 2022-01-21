@@ -15,10 +15,10 @@ class DInt extends Value {
   }
 }
 
-abstract class IInt implements IObject{
+abstract class IInt implements IObject {
   int get value;
   @override
-  DObject toDObject() {
-    return DInt(value);
+  T toDObject<T extends DObject>() {
+    return DInt(value) as T;
   }
 }

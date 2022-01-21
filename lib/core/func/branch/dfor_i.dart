@@ -70,13 +70,14 @@ class DForI extends DObject {
   }
 }
 
-abstract class IForI implements IObject{
+abstract class IForI implements IObject {
   // FIXME
   IType get type;
   IObject get list;
   ICodeLines get lines;
   String get varName;
   @override
-  DObject toDObject() {
-throw Exception();  }
+  T toDObject<T extends DObject>() {
+    throw Exception();
+  }
 }

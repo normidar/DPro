@@ -6,6 +6,6 @@ abstract class DObject {
   String tran(LanguageTip tip);
 }
 
-abstract class IObject{
-  DObject toDObject();
+abstract class IObject {
+  T toDObject<T extends DObject>();
 }

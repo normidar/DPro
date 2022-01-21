@@ -33,13 +33,16 @@ class DForE extends DObject {
   }
 }
 
-abstract class IForE implements IObject{
+abstract class IForE implements IObject {
   IType get type;
   IObject get list;
   ICodeLines get lines;
   String get varName;
   @override
-  DObject toDObject() {
-    return DForE(type: type.toDType( ), list: list.toDObject(), lines: lines.toCodeLines());
+  T toDObject<T extends DObject>() {
+    return DForE(
+        type: type.toDObject(),
+        list: list.toDObject(),
+        lines: lines.toCodeLines()) as T;
   }
 }

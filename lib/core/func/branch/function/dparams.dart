@@ -14,3 +14,13 @@ class DParams extends DObject {
     return params.map((e) => e.tran(tip)).join(", ");
   }
 }
+
+abstract class IParams implements IObject {
+  List<IPara> get params;
+
+  @override
+  T toDObject<T extends DObject>() {
+    return DParams(params: params.map((e) => e.toDObject<DPara>()).toList())
+        as T;
+  }
+}

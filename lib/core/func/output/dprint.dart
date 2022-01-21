@@ -1,4 +1,3 @@
-
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -22,7 +21,7 @@ class DPrint extends DObject {
 abstract class IPrint implements IObject {
   IObject get context;
   @override
-  DObject toDObject() {
-    return DPrint(context.toDObject());
+  T toDObject<T extends DObject>() {
+    return DPrint(context.toDObject()) as T;
   }
 }

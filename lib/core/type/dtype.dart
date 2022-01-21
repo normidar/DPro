@@ -49,15 +49,11 @@ class DType extends DObject {
   }
 }
 
-abstract class IType implements IObject{
+abstract class IType implements IObject {
   String get type;
-  @override
-  DObject toDObject() {
-    return toDType();
-  }
 
-  DType toDType() {
-    return DType(type);
+  @override
+  T toDObject<T extends DObject>() {
+    return DType(type) as T;
   }
 }
-

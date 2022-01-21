@@ -17,10 +17,10 @@ class DString extends Value {
   }
 }
 
-abstract class IString implements IObject{
+abstract class IString implements IObject {
   String get value;
   @override
-  DObject toDObject() {
-    return DString(value);
+  T toDObject<T extends DObject>() {
+    return DString(value) as T;
   }
 }

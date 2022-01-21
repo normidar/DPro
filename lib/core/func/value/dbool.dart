@@ -14,10 +14,11 @@ class DBool extends Value {
     return value.toString();
   }
 }
-abstract class IBool implements IObject{
+
+abstract class IBool implements IObject {
   bool get value;
   @override
-  DObject toDObject() {
-    return DBool(value);
+  T toDObject<T extends DObject>() {
+    return DBool(value) as T;
   }
 }
