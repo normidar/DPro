@@ -6,10 +6,9 @@ import '../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class Give extends DObject {
-  DObject target;
-  DObject content;
-  Give({required this.target, required this.content});
+abstract class DGive implements DObject {
+  DObject get target;
+  DObject get content;
 
   @override
   String tran(LanguageTip tip) {
@@ -19,4 +18,12 @@ class Give extends DObject {
       content.tran(tip),
     ]);
   }
+}
+
+class OGive with DGive {
+  @override
+  DObject target;
+  @override
+  DObject content;
+  OGive({required this.target, required this.content});
 }

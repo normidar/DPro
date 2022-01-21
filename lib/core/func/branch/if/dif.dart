@@ -8,8 +8,8 @@ import 'package:auto_exporter/auto_exporter.dart';
 @AutoExporter()
 abstract class DIf implements DObject {
   DObject get condition;
-  CodeLines get lines;
-  CodeLines? get elseLines;
+  DCodeLines get lines;
+  DCodeLines? get elseLines;
 
   @override
   String tran(LanguageTip tip) {
@@ -37,8 +37,8 @@ class OIf with DIf {
   @override
   DObject condition;
   @override
-  CodeLines lines;
+  DCodeLines lines;
   @override
-  CodeLines? elseLines;
+  DCodeLines? elseLines;
   OIf({required this.condition, required this.lines, this.elseLines});
 }

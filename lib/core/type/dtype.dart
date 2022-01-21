@@ -3,7 +3,7 @@ import 'package:dpro/export.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-class DType extends DObject {
+class DType implements DObject {
   late String type;
   late List<DType> generics;
   DType(this.type, {this.generics = const []});
@@ -46,14 +46,5 @@ class DType extends DObject {
       _type,
       _generics.join(", "),
     ]);
-  }
-}
-
-abstract class IType implements IObject {
-  String get type;
-
-  @override
-  T toDObject<T extends DObject>() {
-    return DType(type) as T;
   }
 }

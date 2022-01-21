@@ -22,8 +22,6 @@ export 'package:dpro/core/func/branch/function/dpara.dart';
 export 'package:dpro/core/func/branch/function/dfunc.dart';
 export 'package:dpro/core/func/value/calculate/calculate.dart';
 export 'package:dpro/core/type/dtypes.dart';
-export 'package:dpro/core/func/reset/dreset_map.dart';
-export 'package:dpro/core/func/reset/dreset_list.dart';
 export 'package:dpro/core/func/value/iterator/dmap.dart';
 export 'package:dpro/core/func/value/iterator/dlist.dart';
 export 'package:dpro/core/func/branch/function/dparams.dart';

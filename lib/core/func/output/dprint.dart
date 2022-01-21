@@ -5,9 +5,8 @@ import '../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DPrint extends DObject {
-  DObject context;
-  DPrint(this.context);
+abstract class DPrint implements DObject {
+  DObject get context;
 
   @override
   String tran(LanguageTip tip) {
@@ -18,10 +17,8 @@ class DPrint extends DObject {
   }
 }
 
-abstract class IPrint implements IObject {
-  IObject get context;
+class OPrint with DPrint {
   @override
-  T toDObject<T extends DObject>() {
-    return DPrint(context.toDObject()) as T;
-  }
+  DObject context;
+  OPrint(this.context);
 }

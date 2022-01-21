@@ -7,11 +7,10 @@ import '../../dobject.dart';
 
 /// 定義して 値を与える　：＝
 @AutoExporter()
-class DefGive extends DObject {
-  DType? type;
-  DObject target;
-  DObject content;
-  DefGive({required this.target, required this.content, this.type});
+abstract class DefGive implements DObject {
+  DType? get type;
+  DObject get target;
+  DObject get content;
 
   @override
   String tran(LanguageTip tip) {
@@ -29,4 +28,14 @@ class DefGive extends DObject {
       content.tran(tip),
     ]);
   }
+}
+
+class ODefGive with DefGive {
+  @override
+  DType? type;
+  @override
+  DObject target;
+  @override
+  DObject content;
+  ODefGive({required this.target, required this.content, this.type});
 }

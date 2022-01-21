@@ -10,7 +10,7 @@ import '../../dobject.dart';
 abstract class DForE implements DObject {
   DType get type;
   DObject get list;
-  CodeLines get lines;
+  DCodeLines get lines;
   String get varName;
 
   @override
@@ -33,7 +33,7 @@ class OForE with DForE {
   @override
   DObject list;
   @override
-  CodeLines lines;
+  DCodeLines lines;
   @override
   String varName;
   OForE({

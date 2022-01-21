@@ -6,7 +6,7 @@ import 'package:sprintf/sprintf.dart';
 @AutoExporter()
 abstract class DClass implements DObject {
   String get name;
-  CodeLines get lines;
+  DCodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -24,7 +24,7 @@ class OClass with DClass {
   @override
   String name;
   @override
-  CodeLines lines;
+  DCodeLines lines;
   OClass({
     required this.name,
     required this.lines,

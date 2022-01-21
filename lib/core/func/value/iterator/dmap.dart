@@ -6,11 +6,10 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DMap extends Value {
-  DType keyType;
-  DType valueType;
-  Map<DObject, DObject> map;
-  DMap({required this.keyType, required this.valueType, required this.map});
+abstract class DMap implements Value {
+  DType get keyType;
+  DType get valueType;
+  Map<DObject, DObject> get map;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("map");
@@ -43,4 +42,14 @@ class DMap extends Value {
     });
     return itemList.join(mapItemsIntervalFormat);
   }
+}
+
+class OMap with DMap {
+  @override
+  DType keyType;
+  @override
+  DType valueType;
+  @override
+  Map<DObject, DObject> map;
+  OMap({required this.keyType, required this.valueType, required this.map});
 }

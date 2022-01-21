@@ -10,7 +10,7 @@ import '../../../dobject.dart';
 abstract class DConstructor implements DObject {
   String? get name;
   DParams? get params;
-  CodeLines get lines;
+  DCodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -30,7 +30,7 @@ class OConstructor with DConstructor {
   @override
   String? name;
   @override
-  CodeLines lines;
+  DCodeLines lines;
   @override
   DParams? params;
 

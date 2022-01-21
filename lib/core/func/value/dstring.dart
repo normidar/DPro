@@ -1,4 +1,5 @@
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/export.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -6,9 +7,8 @@ import 'value.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DString extends Value {
-  String value;
-  DString(this.value);
+abstract class DString implements Value {
+  String get value;
 
   @override
   String tran(LanguageTip tip) {
@@ -17,10 +17,8 @@ class DString extends Value {
   }
 }
 
-abstract class IString implements IObject {
-  String get value;
+class OString with DString {
   @override
-  T toDObject<T extends DObject>() {
-    return DString(value) as T;
-  }
+  String value;
+  OString(this.value);
 }

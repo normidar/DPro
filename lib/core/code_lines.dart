@@ -5,14 +5,14 @@ import 'dobject.dart';
 import 'func/output/dprint.dart';
 
 @AutoExporter()
-class CodeLines {
-  List<DObject> objects;
-  CodeLines({required this.objects});
+abstract class DCodeLines implements DObject {
+  List<DObject> get objects;
   bool _isAddIndent = false;
   void addIndent() {
     _isAddIndent = true;
   }
 
+  @override
   String tran(LanguageTip tip) {
     if (_isAddIndent) tip.addIndent();
     String rt = "";
@@ -32,11 +32,8 @@ class CodeLines {
   }
 }
 
-abstract class ICodeLines  {
-  // FIXME: 
-  IObject get context;
-
-  CodeLines toCodeLines() {
-    throw Exception();
-  }
+class OCodeLines with DCodeLines {
+  @override
+  List<DObject> objects;
+  OCodeLines({required this.objects});
 }

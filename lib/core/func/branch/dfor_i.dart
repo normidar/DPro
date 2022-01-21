@@ -12,10 +12,10 @@ abstract class DForI implements DObject {
   DObject get begin;
   DObject get end;
   DObject get step;
-  CodeLines get lines;
+  DCodeLines get lines;
   String get varName;
   // 簡略化できるかどうか
-  bool canSimpler = false;
+  bool get canSimpler;
 
   @override
   String tran(LanguageTip tip) {
@@ -59,9 +59,12 @@ class OForI with DForI {
   DObject end;
   @override
   late DObject step;
-  CodeLines lines;
+  @override
+  DCodeLines lines;
+  @override
   String varName;
   // 簡略化できるかどうか
+  @override
   bool canSimpler = false;
   OForI({
     DObject? begin,
@@ -70,8 +73,8 @@ class OForI with DForI {
     required this.lines,
     this.varName = "i",
   }) {
-    this.begin = begin ?? DInt(0);
-    this.step = step ?? DInt(1);
+    this.begin = begin ?? OInt(0);
+    this.step = step ?? OInt(1);
     final _begin = this.begin;
     final _step = this.step;
     if (_begin is DInt &&

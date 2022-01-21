@@ -7,7 +7,7 @@ import 'language_tips.dart';
 @AutoExporter()
 class TranEngine {
   static LanguageTip tip = LanguageTips.java;
-  static String tran({required CodeLines codes}) {
+  static String tran({required DCodeLines codes}) {
     String rt = "";
     for (var i in codes.objects) {
       rt += i.tran(tip) + "\n";

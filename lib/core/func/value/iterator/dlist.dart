@@ -6,10 +6,9 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 @AutoExporter()
-class DList extends Value {
-  DType type;
-  List<DObject> values;
-  DList({required this.type, required this.values});
+abstract class DList implements Value {
+  DType get type;
+  List<DObject> get values;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("list");
@@ -19,4 +18,12 @@ class DList extends Value {
       _values.join(", "),
     ]);
   }
+}
+
+class OList with DList {
+  @override
+  DType type;
+  @override
+  List<DObject> values;
+  OList({required this.type, required this.values});
 }

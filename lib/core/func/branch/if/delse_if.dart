@@ -8,7 +8,7 @@ import 'package:auto_exporter/auto_exporter.dart';
 @AutoExporter()
 abstract class DElseIf implements DObject {
   DObject get condition;
-  CodeLines get lines;
+  DCodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -25,7 +25,7 @@ class OElseIf with DElseIf {
   @override
   DObject condition;
   @override
-  CodeLines lines;
+  DCodeLines lines;
 
   OElseIf({required this.condition, required this.lines});
 }

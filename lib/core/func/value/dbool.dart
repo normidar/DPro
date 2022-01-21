@@ -5,9 +5,8 @@ import 'value.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DBool extends Value {
-  bool value;
-  DBool(this.value);
+abstract class DBool implements Value {
+  bool get value;
 
   @override
   String tran(LanguageTip tip) {
@@ -15,10 +14,8 @@ class DBool extends Value {
   }
 }
 
-abstract class IBool implements IObject {
-  bool get value;
+class OBool with DBool {
   @override
-  T toDObject<T extends DObject>() {
-    return DBool(value) as T;
-  }
+  bool value;
+  OBool(this.value);
 }

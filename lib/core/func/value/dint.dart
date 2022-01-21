@@ -5,9 +5,8 @@ import 'value.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DInt extends Value {
-  int value;
-  DInt(this.value);
+abstract class DInt implements Value {
+  int get value;
 
   @override
   String tran(LanguageTip tip) {
@@ -15,10 +14,8 @@ class DInt extends Value {
   }
 }
 
-abstract class IInt implements IObject {
-  int get value;
+class OInt with DInt {
   @override
-  T toDObject<T extends DObject>() {
-    return DInt(value) as T;
-  }
+  int value;
+  OInt(this.value);
 }

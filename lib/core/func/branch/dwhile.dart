@@ -6,10 +6,9 @@ import '../../dobject.dart';
 import 'package:auto_exporter/auto_exporter.dart';
 
 @AutoExporter()
-class DWhile extends DObject {
-  DObject condition;
-  CodeLines lines;
-  DWhile({required this.condition, required this.lines});
+abstract class DWhile implements DObject {
+  DObject get condition;
+  DCodeLines get lines;
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
@@ -20,4 +19,12 @@ class DWhile extends DObject {
       " " * tip.indent,
     ]);
   }
+}
+
+class OWhile with DWhile {
+  @override
+  DObject condition;
+  @override
+  DCodeLines lines;
+  OWhile({required this.condition, required this.lines});
 }

@@ -12,7 +12,7 @@ abstract class DFunc implements DObject {
   DType get type;
   String get name;
   DParams? get paras;
-  CodeLines get lines;
+  DCodeLines get lines;
 
   @override
   String tran(LanguageTip tip) {
@@ -37,7 +37,7 @@ class OFunc with DFunc {
   @override
   DParams? paras;
   @override
-  CodeLines lines;
+  DCodeLines lines;
 
   OFunc(
       {required this.type,
