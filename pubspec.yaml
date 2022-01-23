@@ -1,7 +1,7 @@
 name: dpro
-description: A tool to transform programing langrage.
+description: A tool to transform programing langrage. it can transform algorithm to Python and Java now. !! it is a lowcode develop engine.
 version: 0.2.4
-homepage: https://figbox.net
+homepage: https://github.com/normidar/DPro
 
 environment:
   sdk: '>=2.14.3 <3.0.0'
