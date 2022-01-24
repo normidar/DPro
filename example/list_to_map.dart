@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/value/iterator/dlenght.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines listToMapFunc() {
@@ -8,7 +9,9 @@ OCodeLines listToMapFunc() {
         name: "listToMap",
         lines: funcLines(),
         paras: OParams(params: [
-          OPara(type: DTypes.dList, name: "myList"),
+          OPara(
+              type: DType(DTypeStr.dList, generics: [DTypes.dStr]),
+              name: "myList"),
         ]),
       ),
     ],
@@ -17,6 +20,28 @@ OCodeLines listToMapFunc() {
 
 OCodeLines funcLines() {
   return OCodeLines(
-    objects: [],
+    objects: [
+      ODefGive(
+          target: OVar("myMap"),
+          content: OMap(
+            keyType: DTypes.dInt,
+            valueType: DTypes.dStr,
+            map: {},
+          )),
+      OForI(
+        end: OLenght(iterator: OVar("myList")),
+        lines: OCodeLines(
+          objects: [
+            OGive(
+                target: OVar("myMap"),
+                content: OSearch(
+                  iterator: OVar("myList"),
+                  index: OVar("i"),
+                )),
+          ],
+        ),
+      ),
+      OReturn(value: OVar("myMap")),
+    ],
   );
 }
