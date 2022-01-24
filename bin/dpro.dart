@@ -1,13 +1,5 @@
-import 'package:dpro/cli.dart' as cli;
-import 'package:dpro/dpro.dart';
+import '../example/runnner.dart' as runner;
 
 void main(List<String> arguments) {
-  engineTest();
-}
-
-void engineTest() {
-  TranEngine.tip = LanguageTips.java;
-  print(TranEngine.tran(
-    codes: cli.sampleFunc(),
-  ));
+  runner.main(arguments);
 }
