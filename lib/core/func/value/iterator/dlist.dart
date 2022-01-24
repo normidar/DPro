@@ -1,10 +1,11 @@
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/func/value/constant/dconstant.dart';
 import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DList implements Value {
+abstract class DList implements DValue {
   DType get type;
   List<DObject> get values;
   @override

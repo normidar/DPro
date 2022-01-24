@@ -1,4 +1,4 @@
-import '../../dobject.dart';
+import 'package:dpro/core/core.dart';
 
-/// プログラムに書き込む定数値
-abstract class Value implements DObject {}
+/// A Value is a can get value object.
+abstract class DValue extends DObject {}

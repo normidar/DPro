@@ -1,9 +1,9 @@
 import 'package:dpro/tran/Tips/language_tip.dart';
 
-import 'dvalue.dart';
+import 'dconstant.dart';
 
-abstract class DBool implements Value {
-  bool get value;
+abstract class DInt implements DConstant {
+  int get value;
 
   @override
   String tran(LanguageTip tip) {
@@ -11,8 +11,8 @@ abstract class DBool implements Value {
   }
 }
 
-class OBool with DBool {
+class OInt with DInt {
   @override
-  bool value;
-  OBool(this.value);
+  int value;
+  OInt(this.value);
 }

@@ -1,9 +1,9 @@
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import 'dvalue.dart';
+import 'dconstant.dart';
 
-abstract class DString implements Value {
+abstract class DString implements DConstant {
   String get value;
 
   @override

@@ -1,6 +1,6 @@
 export 'calculate/calculate.dart';
-export 'dbool.dart';
-export 'dint.dart';
-export 'dstring.dart';
-export 'dvalue.dart';
+export 'constant/dbool.dart';
+export 'constant/dint.dart';
+export 'constant/dstring.dart';
+export 'constant/dconstant.dart';
 export 'iterator/iterator.dart';
