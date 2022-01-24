@@ -1,8 +1,9 @@
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DReturn implements DObject {
+abstract class DReturn implements DAction {
   DObject get value;
 
   @override

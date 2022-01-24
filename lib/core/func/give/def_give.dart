@@ -1,10 +1,11 @@
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// 定義して 値を与える　：＝
-abstract class DefGive implements DObject {
+abstract class DefGive implements DAction {
   DType? get type;
   DObject get target;
   DObject get content;
