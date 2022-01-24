@@ -10,6 +10,7 @@ class DPython extends LanguageTip {
     "list": "[%2\$s]",
     "search": "%s[%s]",
     "replace": "%s[%s] = %s",
+    "len": "len(%s)",
     // map の定数作成
     "map": "{%2\$s}",
     "map_kv": "",

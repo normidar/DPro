@@ -10,6 +10,7 @@ class DJava extends LanguageTip {
     "list": "new ArrayList<%s>(Arrays.asList(%s))",
     "search": "%s.get(%s)",
     "replace": "%s.put(%s, %s);",
+    "len": "%s.size()",
     // map の定数作成
     "map": "new HashMap<%s>(){{%s}}",
     "map_kv": "%s, %s",
