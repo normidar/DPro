@@ -30,6 +30,7 @@ class DPython extends LanguageTip {
     "para": "%2\$s",
     "return": "return %s",
     "class": "class %s:\n%s",
+    "new": "%s(%s)",
   };
 
   @override

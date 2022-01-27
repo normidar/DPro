@@ -33,7 +33,8 @@ class DJava extends LanguageTip {
     "para": "%s %s",
     "return": "return %s;",
     // ネーム、コード、インデント
-    "class": "class %s {\n%s\n%s}"
+    "class": "class %s {\n%s\n%s}",
+    "new": "new %s(%s)",
   };
 
   @override
