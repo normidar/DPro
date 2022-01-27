@@ -35,6 +35,7 @@ class DJava extends LanguageTip {
     // ネーム、コード、インデント
     "class": "class %s {\n%s\n%s}",
     "new": "new %s(%s)",
+    "member": "%s.%s",
   };
 
   @override

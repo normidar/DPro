@@ -3,6 +3,7 @@ import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
+// TODO: make it be new
 abstract class DNew implements DValue {
   String get className;
   List<DObject> get parameters;

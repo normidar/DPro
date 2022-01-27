@@ -31,6 +31,7 @@ class DPython extends LanguageTip {
     "return": "return %s",
     "class": "class %s:\n%s",
     "new": "%s(%s)",
+    "member": "%s.%s",
   };
 
   @override
