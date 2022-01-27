@@ -1,18 +1,18 @@
 import 'package:dpro/core/type/dtype.dart';
 
 class DTypes {
-  static DType dStr = DType(DTypeStr.dStr);
-  static DType dChar = DType(DTypeStr.dChar);
-  static DType dInt = DType(DTypeStr.dInt);
-  static DType dFloat = DType(DTypeStr.dFloat);
-  static DType dDouble = DType(DTypeStr.dDouble);
-  static DType dBool = DType(DTypeStr.dBool);
-  static DType dVoid = DType(DTypeStr.dVoid);
-  static DType dList = DType(DTypeStr.dList);
-  static DType dMap = DType(DTypeStr.dMap);
+  static DType dStr = DType(DTypeStrs.dStr);
+  static DType dChar = DType(DTypeStrs.dChar);
+  static DType dInt = DType(DTypeStrs.dInt);
+  static DType dFloat = DType(DTypeStrs.dFloat);
+  static DType dDouble = DType(DTypeStrs.dDouble);
+  static DType dBool = DType(DTypeStrs.dBool);
+  static DType dVoid = DType(DTypeStrs.dVoid);
+  static DType dList = DType(DTypeStrs.dList);
+  static DType dMap = DType(DTypeStrs.dMap);
 }
 
-class DTypeStr {
+class DTypeStrs {
   static String dStr = "str";
   static String dChar = "char";
   static String dInt = "int";
