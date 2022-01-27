@@ -10,7 +10,7 @@ OCodeLines listToMapFunc() {
         lines: funcLines(),
         paras: OParams(params: [
           OPara(
-              type: DType(DTypeStr.dList, generics: [DTypes.dStr]),
+              type: DType(DTypeStrs.dList, generics: [DTypes.dStr]),
               name: "myList"),
         ]),
       ),
