@@ -33,6 +33,9 @@ class DPython extends LanguageTip {
     "class": "class %s:\n%s",
     "new": "%s(%s)",
     "member": "%s.%s",
+    // tools
+    "str_to_num": "float(%s)",
+    "str_search": "%s.find(%s)", // str,key
   };
 
   @override

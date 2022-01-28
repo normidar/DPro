@@ -1,6 +1,12 @@
 
 instance create
 function call
+
 string tool
+v to int or float
+v search
+- regular expression
+- split 文字をリストに分割
+-
 
-
+error check

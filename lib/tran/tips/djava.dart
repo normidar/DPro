@@ -37,6 +37,9 @@ class DJava extends LanguageTip {
     "class": "class %s {\n%s\n%s}",
     "new": "new %s(%s)",
     "member": "%s.%s",
+    // tools
+    "str_to_num": "Float.valueOf(%s)",
+    "str_search": "%s.indexOf(%s)", // str,key
   };
 
   @override
