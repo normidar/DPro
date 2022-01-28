@@ -1,30 +1,48 @@
 import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/func/value/calculate/dcals.dart';
 import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DCalculate implements DValue {
-  String get calStr;
+  DCal get cal;
   DObject get left;
   DObject get right;
 
+  bool isPriority = false;
+
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("cal");
+    String format = tip.getRule("cal");
+    if (isPriority) {
+      format = "($format)";
+    }
+    checkLeftRight();
     return sprintf(format, [
       left.tran(tip),
-      calStr,
+      cal.str,
       right.tran(tip),
     ]);
+  }
+
+  void checkLeftRight() {
+    final _left = left;
+    if (_left is DCalculate) {
+      _left.isPriority = true;
+    }
+    final _right = right;
+    if (_right is DCalculate) {
+      _right.isPriority = true;
+    }
   }
 }
 
 class OCalculate with DCalculate {
   @override
-  String calStr;
+  DCal cal;
   @override
   DObject left;
   @override
   DObject right;
-  OCalculate(this.calStr, this.left, this.right);
+  OCalculate({required this.cal, required this.left, required this.right});
 }

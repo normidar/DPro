@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/value/calculate/dcals.dart';
 import 'package:dpro/core/func/value/iterator/dlenght.dart';
 import 'package:dpro/dpro.dart';
 
@@ -26,12 +27,17 @@ OCodeLines funcLines() {
           objects: [
             OGive(
               target: OVar("rt"),
-              content: OCalculate(calStr, left, right),
+              content: OCalculate(
+                left: OVar("rt"),
+                cal: DCals.dTimes,
+                right: OCalculate(
+                    cal: DCals.dPlus, left: OVar("i"), right: OInt(1)),
+              ),
             ),
           ],
         ),
       ),
-      OReturn(value: OVar("myMap")),
+      OReturn(value: OVar("rt")),
     ],
   );
 }

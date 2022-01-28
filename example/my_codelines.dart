@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/value/calculate/dcals.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines sampleIf() {
@@ -10,9 +11,9 @@ OCodeLines sampleIf() {
       ),
       OIf(
         condition: OCalculate(
-          ">",
-          OVar("a"),
-          OInt(12),
+          cal: DCals.dBigger,
+          left: OVar("a"),
+          right: OInt(12),
         ),
         lines: OCodeLines(objects: [
           OPrint(OString("月ではない")),
@@ -45,11 +46,19 @@ OCodeLines sampleFor() {
         lines: OCodeLines(objects: [
           OGive(
             target: OVar("sum"),
-            content: OCalculate("+", OVar("sum"), OVar("i")),
+            content: OCalculate(
+              cal: DCals.dPlus,
+              left: OVar("sum"),
+              right: OVar("i"),
+            ),
           ),
           OGive(
             target: OVar("sum"),
-            content: OCalculate("+", OVar("sum"), OVar("i")),
+            content: OCalculate(
+              cal: DCals.dPlus,
+              left: OVar("sum"),
+              right: OVar("i"),
+            ),
           ),
         ]),
       ),
