@@ -7,6 +7,7 @@ class DJava extends LanguageTip {
     "give": "%s = %s;",
     "cal": "%s %s %s",
     "str": '"%s"',
+    "float": "%sf",
     "list": "new ArrayList<%s>(Arrays.asList(%s))",
     "search": "%s.get(%s)",
     "replace": "%s.put(%s, %s);",

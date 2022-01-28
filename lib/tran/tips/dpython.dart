@@ -7,6 +7,7 @@ class DPython extends LanguageTip {
     "give": "%s = %s",
     "cal": "%s %s %s",
     "str": '"%s"',
+    "float": "%s",
     "list": "[%2\$s]",
     "search": "%s[%s]",
     "replace": "%s[%s] = %s",
