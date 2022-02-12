@@ -1,3 +1,5 @@
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -11,6 +13,9 @@ abstract class DString implements DConstant {
     final format = tip.getRule("str");
     return sprintf(format, [value]);
   }
+
+  @override
+  final DType type = DTypes.dStr;
 }
 
 class OString with DString {

@@ -1,4 +1,7 @@
 import 'package:dpro/core/func/value/dvalue.dart';
+import 'package:dpro/core/type/dtype.dart';
 
 /// プログラムに書き込む定数値
-abstract class DConstant implements DValue {}
+abstract class DConstant implements DValue {
+  DType get type;
+}

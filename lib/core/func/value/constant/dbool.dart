@@ -1,3 +1,5 @@
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 
 import 'dconstant.dart';
@@ -9,6 +11,9 @@ abstract class DBool implements DConstant {
   String tran(LanguageTip tip) {
     return value.toString();
   }
+
+  @override
+  final DType type = DTypes.dBool;
 }
 
 class OBool with DBool {

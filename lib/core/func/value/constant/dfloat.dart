@@ -1,3 +1,5 @@
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -11,6 +13,9 @@ abstract class DFloat implements DConstant {
     final format = tip.getRule("float");
     return sprintf(format, [value]);
   }
+
+  @override
+  final DType type = DTypes.dFloat;
 }
 
 class OFloat with DFloat {
