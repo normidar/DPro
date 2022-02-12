@@ -1,11 +1,11 @@
 import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/value/constant/dconstant.dart';
-import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DMap implements DValue {
+abstract class DMap implements DConstant {
   DType get keyType;
   DType get valueType;
   Map<DObject, DObject> get map;
@@ -37,6 +37,11 @@ abstract class DMap implements DValue {
       itemList.add(sprintf(mapKvWrapFormat, [key.tran(tip), value.tran(tip)]));
     });
     return itemList.join(mapItemsIntervalFormat);
+  }
+
+  @override
+  DType get type {
+    return DType(DTypeStrs.dMap, generics: [keyType, valueType]);
   }
 }
 
