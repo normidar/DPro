@@ -1,3 +1,9 @@
+## 0.2.6
+
+- export all
+- fix float canot auto cheak type
+
+
 ## 0.2.5
 
 - Float support
