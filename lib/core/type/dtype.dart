@@ -1,9 +1,5 @@
+import 'package:dpro/core/core.dart';
 import 'package:dpro/core/dobject.dart';
-import 'package:dpro/core/func/value/constant/dbool.dart';
-import 'package:dpro/core/func/value/constant/dint.dart';
-import 'package:dpro/core/func/value/constant/dstring.dart';
-import 'package:dpro/core/func/value/iterator/dlist.dart';
-import 'package:dpro/core/func/value/iterator/dmap.dart';
 import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -11,31 +7,6 @@ class DType implements DObject {
   late String type;
   late List<DType> generics;
   DType(this.type, {this.generics = const []});
-
-  DType.fromValue(DObject target) {
-    generics = [];
-    reType(target);
-  }
-
-  void reType(DObject target) {
-    // TODO: support char float float double
-    if (target is DString) {
-      type = "str";
-    } else if (target is DInt) {
-      type = "int";
-    } else if (target is DBool) {
-      type = "bool";
-    } else if (target is DList) {
-      type = "list";
-      generics.add(target.type);
-    } else if (target is DMap) {
-      type = "map";
-      generics.add(target.keyType);
-      generics.add(target.valueType);
-    } else {
-      throw Exception("this target can not support retype");
-    }
-  }
 
   @override
   String tran(LanguageTip tip) {

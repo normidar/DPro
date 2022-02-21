@@ -4,7 +4,7 @@ import 'package:dpro/tran/Tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 // TODO: make it be new
-abstract class DNew implements DValue {
+abstract class DCall implements DValue {
   String get className;
   List<DObject> get parameters;
 
@@ -19,13 +19,13 @@ abstract class DNew implements DValue {
   }
 }
 
-class ONew with DNew {
+class OCall with DCall {
   @override
   String className;
   @override
   List<DObject> parameters;
 
-  ONew({
+  OCall({
     required this.className,
     this.parameters = const [],
   });
