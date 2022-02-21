@@ -1,3 +1,9 @@
+## 0.2.5
+
+- Float support
+- Auto type when define
+
+
 ## 0.2.4
 
 - fix Dart error import of dart:mirrors 
