@@ -97,7 +97,7 @@ OCodeLines foreachList() {
     OForE(
         type: DTypes.dStr,
         list: OList(
-            type: DTypes.dStr,
+            valueType: DTypes.dStr,
             values: [OString("a"), OString("b"), OString("c"), OString("d")]),
         lines: OCodeLines(objects: [
           OPrint(OVar("e")),
@@ -109,7 +109,7 @@ OCodeLines listToMap() {
   return OCodeLines(objects: [
     ODefGive(
       target: OVar("mylist"),
-      content: OList(type: DTypes.dStr, values: [
+      content: OList(valueType: DTypes.dStr, values: [
         OString("零"),
         OString("壱"),
         OString("弐"),
