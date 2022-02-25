@@ -1,3 +1,8 @@
+## 0.3.0
+
+- let it only has one export file
+
+
 ## 0.2.6
 
 - export all
