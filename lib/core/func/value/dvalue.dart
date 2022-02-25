@@ -1,4 +1,4 @@
-import 'package:dpro/core/core.dart';
+import 'package:dpro/core/dobject.dart';
 
 /// A Value is a can get value object.
 abstract class DValue extends DObject {}
