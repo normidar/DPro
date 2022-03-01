@@ -1,7 +1,7 @@
 import 'package:dpro/core/code_lines.dart';
 import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/branch/function/dparams.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DConstructor implements DObject {

@@ -1,6 +1,6 @@
-import 'Tips/djava.dart';
-import 'Tips/dpython.dart';
-import 'Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/djava.dart';
+import 'package:dpro/tran/lang_tips/dpython.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 class LanguageTips {
   // static LanguageTip dart = DDart();

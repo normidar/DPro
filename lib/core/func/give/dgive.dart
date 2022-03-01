@@ -1,6 +1,6 @@
 // 値を与える　：＝
 import 'package:dpro/core/func/daction.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 import '../../dobject.dart';

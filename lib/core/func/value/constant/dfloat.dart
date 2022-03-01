@@ -1,6 +1,6 @@
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';

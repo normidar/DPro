@@ -1,6 +1,6 @@
-import '../core/code_lines.dart';
-import 'Tips/language_tip.dart';
-import 'language_tips.dart';
+import 'package:dpro/core/code_lines.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/tran/language_tips.dart';
 
 class TranEngine {
   static LanguageTip tip = LanguageTips.java;

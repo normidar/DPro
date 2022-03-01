@@ -1,5 +1,5 @@
 import 'package:dpro/core/func/value/dvalue.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// use a key to search in str(it will return int, when cant find it will return -1)

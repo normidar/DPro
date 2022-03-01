@@ -1,3 +1,7 @@
+## 0.3.1
+
+- change and get pub points
+
 ## 0.3.0
 
 - let it only has one export file

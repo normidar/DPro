@@ -1,7 +1,6 @@
 import 'package:dpro/core/dobject.dart';
-import 'package:dpro/core/func/value/constant/dconstant.dart';
 import 'package:dpro/core/func/value/dvalue.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DSearch implements DValue {

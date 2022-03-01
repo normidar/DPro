@@ -1,7 +1,7 @@
 import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/value/calculate/dcals.dart';
 import 'package:dpro/core/func/value/dvalue.dart';
-import 'package:dpro/tran/Tips/language_tip.dart';
+import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DCalculate implements DValue {
