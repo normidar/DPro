@@ -35,7 +35,7 @@ export 'package:dpro/core/func/value/constant/dconstant.dart';
 export 'package:dpro/core/func/value/constant/dfloat.dart';
 export 'package:dpro/core/func/value/constant/dint.dart';
 export 'package:dpro/core/func/value/constant/dbool.dart';
-export 'package:dpro/core/func/value/dvalue.dart';
+export 'package:dpro/core/func/value/dexpression.dart';
 export 'package:dpro/core/func/output/dprint.dart';
 export 'package:dpro/core/func/daction.dart';
 export 'package:dpro/core/func/give/def_give.dart';

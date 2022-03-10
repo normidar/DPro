@@ -1,4 +1,4 @@
-import 'package:dpro/core/func/value/dvalue.dart';
+import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 
 /// プログラムに書き込む定数値
