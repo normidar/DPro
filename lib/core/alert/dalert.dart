@@ -1,0 +1,1 @@
+class DAlert implements Exception {}
