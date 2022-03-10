@@ -3,7 +3,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// use a key to search in str(it will return int, when cant find it will return -1)
-abstract class DStrSearch implements DValue {
+abstract class DStrSearch implements DExpression {
   String get str;
   String get key;
 

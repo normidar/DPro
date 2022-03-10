@@ -3,7 +3,7 @@ import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DNew implements DValue {
+abstract class DNew implements DExpression {
   String get className;
   List<DStatement> get parameters;
 

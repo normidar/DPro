@@ -4,7 +4,7 @@ import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DCalculate implements DValue {
+abstract class DCalculate implements DExpression {
   DCal get cal;
   DStatement get left;
   DStatement get right;

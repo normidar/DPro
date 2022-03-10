@@ -1,4 +1,5 @@
 import 'package:dpro/core/dobject.dart';
 
 /// A Value is a can get value object.
-abstract class DValue extends DStatement {}
+/// expression allway return a value.
+abstract class DExpression extends DStatement {}

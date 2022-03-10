@@ -3,7 +3,7 @@ import 'package:dpro/core/func/value/dvalue.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DSearch implements DValue {
+abstract class DSearch implements DExpression {
   DStatement get iterator;
   DStatement get index;
   @override

@@ -4,7 +4,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 // TODO: make it be new
-abstract class DCall implements DValue {
+abstract class DCall implements DExpression {
   String get className;
   List<DStatement> get parameters;
 

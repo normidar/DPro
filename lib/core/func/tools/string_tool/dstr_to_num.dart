@@ -3,7 +3,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// form string to number(Float)
-abstract class DStrToNum implements DValue {
+abstract class DStrToNum implements DExpression {
   String get str;
 
   @override
