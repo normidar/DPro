@@ -1,6 +1,6 @@
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 
-import '../dobject.dart';
+import '../dstatement.dart';
 
 abstract class DVar implements DStatement {
   String get name;

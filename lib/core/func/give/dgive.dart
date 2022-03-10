@@ -3,7 +3,7 @@ import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../dobject.dart';
+import '../../dstatement.dart';
 
 abstract class DGive implements DAction {
   DStatement get target;

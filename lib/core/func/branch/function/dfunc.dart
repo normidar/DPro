@@ -1,5 +1,5 @@
 import 'package:dpro/core/code_lines.dart';
-import 'package:dpro/core/dobject.dart';
+import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/branch/function/dparams.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
