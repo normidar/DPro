@@ -2,7 +2,7 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-class DType implements DObject {
+class DType implements DStatement {
   late String type;
   late List<DType> generics;
   DType(this.type, {this.generics = const []});

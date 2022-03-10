@@ -6,8 +6,8 @@ import 'package:sprintf/sprintf.dart';
 
 abstract class DCalculate implements DValue {
   DCal get cal;
-  DObject get left;
-  DObject get right;
+  DStatement get left;
+  DStatement get right;
 
   bool isPriority = false;
 
@@ -41,8 +41,8 @@ class OCalculate with DCalculate {
   @override
   DCal cal;
   @override
-  DObject left;
+  DStatement left;
   @override
-  DObject right;
+  DStatement right;
   OCalculate({required this.cal, required this.left, required this.right});
 }

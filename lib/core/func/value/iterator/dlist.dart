@@ -7,7 +7,7 @@ import 'package:sprintf/sprintf.dart';
 
 abstract class DList implements DConstant {
   DType get valueType;
-  List<DObject> get values;
+  List<DStatement> get values;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("list");
@@ -28,6 +28,6 @@ class OList with DList {
   @override
   DType valueType;
   @override
-  List<DObject> values;
+  List<DStatement> values;
   OList({required this.valueType, required this.values});
 }

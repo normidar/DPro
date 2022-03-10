@@ -4,10 +4,10 @@ import 'package:dpro/core/func/value/constant/dint.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DForI implements DObject {
-  DObject get begin;
-  DObject get end;
-  DObject get step;
+abstract class DForI implements DStatement {
+  DStatement get begin;
+  DStatement get end;
+  DStatement get step;
   DCodeLines get lines;
   String get varName;
   // 簡略化できるかどうか
@@ -50,11 +50,11 @@ abstract class DForI implements DObject {
 
 class OForI with DForI {
   @override
-  late DObject begin;
+  late DStatement begin;
   @override
-  DObject end;
+  DStatement end;
   @override
-  late DObject step;
+  late DStatement step;
   @override
   DCodeLines lines;
   @override
@@ -63,9 +63,9 @@ class OForI with DForI {
   @override
   bool canSimpler = false;
   OForI({
-    DObject? begin,
+    DStatement? begin,
     required this.end,
-    DObject? step,
+    DStatement? step,
     required this.lines,
     this.varName = "i",
   }) {

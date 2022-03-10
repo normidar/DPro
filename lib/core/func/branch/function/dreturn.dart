@@ -4,7 +4,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DReturn implements DAction {
-  DObject get value;
+  DStatement get value;
 
   @override
   String tran(LanguageTip tip) {
@@ -17,7 +17,7 @@ abstract class DReturn implements DAction {
 
 class OReturn with DReturn {
   @override
-  DObject value;
+  DStatement value;
 
   OReturn({required this.value});
 }

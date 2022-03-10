@@ -2,8 +2,8 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import 'dobject.dart';
 
-abstract class DCodeLines implements DObject {
-  List<DObject> get objects;
+abstract class DCodeLines implements DStatement {
+  List<DStatement> get objects;
   bool _isAddIndent = false;
   void addIndent() {
     _isAddIndent = true;
@@ -24,13 +24,13 @@ abstract class DCodeLines implements DObject {
     return rt;
   }
 
-  String putin(DObject object, LanguageTip tip) {
+  String putin(DStatement object, LanguageTip tip) {
     return " " * tip.indent + object.tran(tip);
   }
 }
 
 class OCodeLines with DCodeLines {
   @override
-  List<DObject> objects;
+  List<DStatement> objects;
   OCodeLines({required this.objects});
 }

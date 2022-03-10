@@ -1,5 +1,6 @@
 import '../tran/lang_tips/language_tip.dart';
 
-abstract class DObject {
+/// everything is Statement
+abstract class DStatement {
   String tran(LanguageTip tip);
 }

@@ -3,7 +3,7 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DPara implements DObject {
+abstract class DPara implements DStatement {
   DType get type;
   String get name;
 

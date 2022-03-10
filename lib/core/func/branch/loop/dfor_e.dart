@@ -4,9 +4,9 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DForE implements DObject {
+abstract class DForE implements DStatement {
   DType get type;
-  DObject get list;
+  DStatement get list;
   DCodeLines get lines;
   String get varName;
 
@@ -28,7 +28,7 @@ class OForE with DForE {
   @override
   DType type;
   @override
-  DObject list;
+  DStatement list;
   @override
   DCodeLines lines;
   @override

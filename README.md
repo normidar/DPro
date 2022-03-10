@@ -31,6 +31,10 @@ DPro is a auto programing langrage transfrom tool.
   ]);
 }
 
+// output java code:
+for (String e : new ArrayList<String>(Arrays.asList("a", "b", "c", "d"))) {
+  Log.d("log",e);
+}
 ```
 
 ## スポンサー
@@ -64,6 +68,7 @@ DPro is a auto programing langrage transfrom tool.
 
 
 TODO:
-- let it can run!
+- export to json and import with json
+- let it can run code objects!
 - modules!
 - UI designer!

@@ -1,7 +1,6 @@
 import 'package:dpro/dpro.dart';
+
 import 'my_codelines.dart' as cdls;
-import 'calculate_factorial.dart' as cf;
-import 'list_to_map.dart' as ltm;
 
 void main(List<String> arguments) {
   engineTest();
@@ -10,6 +9,6 @@ void main(List<String> arguments) {
 void engineTest() {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
-    codes: cf.calculateFactorial(),
+    codes: cdls.foreachList(),
   ));
 }

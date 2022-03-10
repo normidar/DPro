@@ -4,7 +4,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DLenght implements DValue {
-  DObject get iterator;
+  DStatement get iterator;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("len");
@@ -16,6 +16,6 @@ abstract class DLenght implements DValue {
 
 class OLenght with DLenght {
   @override
-  DObject iterator;
+  DStatement iterator;
   OLenght({required this.iterator});
 }

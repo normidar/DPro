@@ -6,8 +6,8 @@ import 'package:sprintf/sprintf.dart';
 import '../../dobject.dart';
 
 abstract class DGive implements DAction {
-  DObject get target;
-  DObject get content;
+  DStatement get target;
+  DStatement get content;
 
   @override
   String tran(LanguageTip tip) {
@@ -21,8 +21,8 @@ abstract class DGive implements DAction {
 
 class OGive with DGive {
   @override
-  DObject target;
+  DStatement target;
   @override
-  DObject content;
+  DStatement content;
   OGive({required this.target, required this.content});
 }

@@ -4,7 +4,7 @@ import 'package:dpro/core/func/branch/class/dconstrutor.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DClass implements DObject {
+abstract class DClass implements DStatement {
   String get name;
   DCodeLines get lines;
   DConstructor? get constructor;

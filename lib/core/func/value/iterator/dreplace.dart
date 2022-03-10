@@ -2,10 +2,10 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DReplace implements DObject {
-  DObject get iterator;
-  DObject get index;
-  DObject get value;
+abstract class DReplace implements DStatement {
+  DStatement get iterator;
+  DStatement get index;
+  DStatement get value;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("replace");
@@ -19,10 +19,10 @@ abstract class DReplace implements DObject {
 
 class OReplace with DReplace {
   @override
-  DObject iterator;
+  DStatement iterator;
   @override
-  DObject index;
+  DStatement index;
   @override
-  DObject value;
+  DStatement value;
   OReplace({required this.iterator, required this.index, required this.value});
 }

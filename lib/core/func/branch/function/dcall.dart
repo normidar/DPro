@@ -6,7 +6,7 @@ import 'package:sprintf/sprintf.dart';
 // TODO: make it be new
 abstract class DCall implements DValue {
   String get className;
-  List<DObject> get parameters;
+  List<DStatement> get parameters;
 
   @override
   String tran(LanguageTip tip) {
@@ -23,7 +23,7 @@ class OCall with DCall {
   @override
   String className;
   @override
-  List<DObject> parameters;
+  List<DStatement> parameters;
 
   OCall({
     required this.className,

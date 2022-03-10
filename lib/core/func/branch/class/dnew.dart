@@ -5,7 +5,7 @@ import 'package:sprintf/sprintf.dart';
 
 abstract class DNew implements DValue {
   String get className;
-  List<DObject> get parameters;
+  List<DStatement> get parameters;
 
   @override
   String tran(LanguageTip tip) {
@@ -22,7 +22,7 @@ class ONew with DNew {
   @override
   String className;
   @override
-  List<DObject> parameters;
+  List<DStatement> parameters;
 
   ONew({
     required this.className,

@@ -3,8 +3,8 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DElseIf implements DObject {
-  DObject get condition;
+abstract class DElseIf implements DStatement {
+  DStatement get condition;
   DCodeLines get lines;
 
   @override
@@ -20,7 +20,7 @@ abstract class DElseIf implements DObject {
 
 class OElseIf with DElseIf {
   @override
-  DObject condition;
+  DStatement condition;
   @override
   DCodeLines lines;
 

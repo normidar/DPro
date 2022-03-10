@@ -2,8 +2,8 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DMember implements DObject {
-  DObject get instance;
+abstract class DMember implements DStatement {
+  DStatement get instance;
   String get memberName;
 
   @override
@@ -18,7 +18,7 @@ abstract class DMember implements DObject {
 
 class OMember with DMember {
   @override
-  DObject instance;
+  DStatement instance;
   @override
   String memberName;
 

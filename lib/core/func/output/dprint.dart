@@ -2,8 +2,8 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DPrint implements DObject {
-  DObject get context;
+abstract class DPrint implements DStatement {
+  DStatement get context;
 
   @override
   String tran(LanguageTip tip) {
@@ -16,6 +16,6 @@ abstract class DPrint implements DObject {
 
 class OPrint with DPrint {
   @override
-  DObject context;
+  DStatement context;
   OPrint(this.context);
 }

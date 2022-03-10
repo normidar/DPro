@@ -3,8 +3,8 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DIf implements DObject {
-  DObject get condition;
+abstract class DIf implements DStatement {
+  DStatement get condition;
   DCodeLines get lines;
   DCodeLines? get elseLines;
 
@@ -32,7 +32,7 @@ abstract class DIf implements DObject {
 
 class OIf with DIf {
   @override
-  DObject condition;
+  DStatement condition;
   @override
   DCodeLines lines;
   @override

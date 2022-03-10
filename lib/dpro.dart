@@ -5,7 +5,7 @@ export 'package:dpro/core/dobject.dart';
 export 'package:dpro/core/code_lines.dart';
 export 'package:dpro/core/type/dtype.dart';
 export 'package:dpro/core/type/dtypes.dart';
-export 'package:dpro/core/exception/set_action_as_value_Exception.dart';
+export 'package:dpro/core/exception/set_action_as_value_exception.dart';
 export 'package:dpro/core/exception/empty_child_exception.dart';
 export 'package:dpro/core/exception/deception.dart';
 export 'package:dpro/core/func/branch/if/delse_if.dart';

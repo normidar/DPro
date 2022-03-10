@@ -3,8 +3,8 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DWhile implements DObject {
-  DObject get condition;
+abstract class DWhile implements DStatement {
+  DStatement get condition;
   DCodeLines get lines;
   @override
   String tran(LanguageTip tip) {
@@ -20,7 +20,7 @@ abstract class DWhile implements DObject {
 
 class OWhile with DWhile {
   @override
-  DObject condition;
+  DStatement condition;
   @override
   DCodeLines lines;
   OWhile({required this.condition, required this.lines});

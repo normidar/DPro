@@ -8,8 +8,8 @@ import 'package:sprintf/sprintf.dart';
 /// 定義して 値を与える　：＝
 abstract class DefGive implements DAction {
   DType? get type;
-  DObject get target;
-  DObject get content;
+  DStatement get target;
+  DStatement get content;
 
   @override
   String tran(LanguageTip tip) {
@@ -32,7 +32,7 @@ abstract class DefGive implements DAction {
   DType getType() {
     DType? _type = type;
     if (_type != null) return _type;
-    DObject _content = content;
+    DStatement _content = content;
     if (_content is DConstant) {
       return _content.type;
     }
@@ -44,8 +44,8 @@ class ODefGive with DefGive {
   @override
   DType? type;
   @override
-  DObject target;
+  DStatement target;
   @override
-  DObject content;
+  DStatement content;
   ODefGive({required this.target, required this.content, this.type});
 }

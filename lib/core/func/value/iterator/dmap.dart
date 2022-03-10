@@ -8,7 +8,7 @@ import 'package:sprintf/sprintf.dart';
 abstract class DMap implements DConstant {
   DType get keyType;
   DType get valueType;
-  Map<DObject, DObject> get map;
+  Map<DStatement, DStatement> get map;
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("map");
@@ -51,6 +51,6 @@ class OMap with DMap {
   @override
   DType valueType;
   @override
-  Map<DObject, DObject> map;
+  Map<DStatement, DStatement> map;
   OMap({required this.keyType, required this.valueType, required this.map});
 }

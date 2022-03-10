@@ -2,7 +2,7 @@ import 'package:dpro/core/dobject.dart';
 import 'package:dpro/core/func/branch/function/dpara.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 
-abstract class DParams implements DObject {
+abstract class DParams implements DStatement {
   List<DPara> get params;
 
   @override
