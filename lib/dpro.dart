@@ -2,9 +2,6 @@
 
 export 'package:dpro/core/code_lines.dart';
 export 'package:dpro/core/dstatement.dart';
-export 'package:dpro/core/exception/deception.dart';
-export 'package:dpro/core/exception/empty_child_exception.dart';
-export 'package:dpro/core/exception/set_action_as_value_exception.dart';
 export 'package:dpro/core/func/branch/class/dclass.dart';
 export 'package:dpro/core/func/branch/class/dconstrutor.dart';
 export 'package:dpro/core/func/branch/class/dmember.dart';

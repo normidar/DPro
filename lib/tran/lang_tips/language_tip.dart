@@ -1,3 +1,5 @@
+import 'package:dpro/core/alert/transform/dtransform_alert.dart';
+
 abstract class LanguageTip {
   /// 適合したタイプの指向
   Map<String, String> typeMap();
@@ -6,6 +8,8 @@ abstract class LanguageTip {
   // Map<String, String> ruleMap();
 
   String getRule(String index);
+
+  DTransformAlert getAlert(String index);
 
   /// 今のインデント
   int indent = 0;
