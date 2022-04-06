@@ -1,5 +1,3 @@
-import 'package:dpro/core/alert/transform/dtransform_alert.dart';
-
 abstract class LanguageTip {
   /// 適合したタイプの指向
   Map<String, String> typeMap();
@@ -9,7 +7,7 @@ abstract class LanguageTip {
 
   String getRule(String index);
 
-  DTransformAlert getAlert(String index);
+  OperatorInfo getOperatorInfo(String index);
 
   /// 今のインデント
   int indent = 0;
@@ -21,4 +19,28 @@ abstract class LanguageTip {
     indent -= 2;
     indent = indent < 0 ? 0 : indent;
   }
+}
+
+/// 結合性
+enum Fixity { left, right, none }
+
+class OperatorInfo {
+  OperatorInfo({
+    required this.fixity,
+    required this.preceding,
+    required this.sign,
+  });
+  Fixity fixity;
+  int preceding;
+  String sign;
+
+  @override
+  bool operator ==(dynamic other) {
+    return other is OperatorInfo &&
+        other.sign == sign &&
+        other.preceding == preceding;
+  }
+
+  @override
+  int get hashCode => Object.hash(sign, fixity, preceding);
 }

@@ -1,7 +1,9 @@
+import 'package:dpro/core/alert/transform/dtransform_alert.dart';
+
 import 'language_tip.dart';
 
 class DJava extends LanguageTip {
-  final Map<String, String> _rule = {
+  final Map<String, String> rule = {
     "def": "%s %s",
     "def_give": "%s %s = %s;",
     "give": "%s = %s;",
@@ -44,7 +46,7 @@ class DJava extends LanguageTip {
 
   @override
   String getRule(String index) {
-    return _rule[index]!;
+    return rule[index]!;
   }
 
   @override
@@ -60,4 +62,19 @@ class DJava extends LanguageTip {
   String toString() {
     return "java";
   }
+
+  @override
+  OperatorInfo getOperatorInfo(String index) {
+    return operatorInfoMap[index]!;
+  }
+
+  // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+  Map<String, OperatorInfo> operatorInfoMap = {
+    "^": OperatorInfo(sign: "**", preceding: 14, fixity: Fixity.right),
+    "*": OperatorInfo(sign: "*", preceding: 13, fixity: Fixity.left),
+    "/": OperatorInfo(sign: "/", preceding: 13, fixity: Fixity.left),
+    "%": OperatorInfo(sign: "%", preceding: 13, fixity: Fixity.left),
+    "+": OperatorInfo(sign: "+", preceding: 12, fixity: Fixity.left),
+    "-": OperatorInfo(sign: "-", preceding: 12, fixity: Fixity.left),
+  };
 }

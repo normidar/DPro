@@ -5,21 +5,21 @@ import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';
 
-abstract class DChar implements DConstant {
-  String get value;
+abstract class DDouble implements DConstant {
+  double get value;
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("char");
-    return sprintf(format, [value.substring(0, 1)]);
+    final format = tip.getRule("double");
+    return sprintf(format, [value]);
   }
 
   @override
-  final DType type = DTypes.dStr;
+  final DType type = DTypes.dFloat;
 }
 
-class OChar with DChar {
+class ODouble with DDouble {
   @override
-  String value;
-  OChar(this.value);
+  double value;
+  ODouble(this.value);
 }

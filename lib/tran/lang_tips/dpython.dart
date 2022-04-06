@@ -1,7 +1,9 @@
+import 'package:dpro/core/alert/transform/dtransform_alert.dart';
+
 import 'language_tip.dart';
 
 class DPython extends LanguageTip {
-  final Map<String, String> _rule = {
+  final Map<String, String> rule = {
     "def": "%2\$s:%1\$s",
     "def_give": "%2\$s:%1\$s = %3\$s",
     "give": "%s = %s",
@@ -40,7 +42,7 @@ class DPython extends LanguageTip {
 
   @override
   String getRule(String index) {
-    return _rule[index]!;
+    return rule[index]!;
   }
 
   @override
@@ -51,5 +53,11 @@ class DPython extends LanguageTip {
   @override
   String toString() {
     return "python";
+  }
+
+  @override
+  OperatorInfo getOperatorInfo(String index) {
+    // TODO: implement getOperatorInfo
+    throw UnimplementedError();
   }
 }

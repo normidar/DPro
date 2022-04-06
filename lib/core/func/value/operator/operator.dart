@@ -4,7 +4,10 @@ import 'package:dpro/core/func/value/operator/dcals.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DOperator extends DExpression {}
+abstract class DOperator extends DExpression {
+  String get signIndex;
+  // String getSign(LanguageTip tip) {}
+}
 
 abstract class DCalculate implements DExpression {
   DCal get cal;

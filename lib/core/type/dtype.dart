@@ -3,8 +3,8 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 class DType implements DStatement {
-  late String type;
-  late List<DType> generics;
+  String type;
+  List<DType> generics;
   DType(this.type, {this.generics = const []});
 
   @override
