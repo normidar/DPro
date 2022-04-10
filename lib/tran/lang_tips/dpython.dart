@@ -57,7 +57,16 @@ class DPython extends LanguageTip {
 
   @override
   OperatorInfo getOperatorInfo(String index) {
-    // TODO: implement getOperatorInfo
-    throw UnimplementedError();
+    return operatorInfoMap[index]!;
   }
+
+  // https://qiita.com/tTAGUCHI/items/1dee92cd058f975ffce3#comment-c851e9266681654a0783
+  Map<String, OperatorInfo> operatorInfoMap = {
+    "^": OperatorInfo(sign: "**", preceding: 14, fixity: Fixity.right),
+    "times": OperatorInfo(sign: "*", preceding: 13, fixity: Fixity.left),
+    "divide": OperatorInfo(sign: "/", preceding: 13, fixity: Fixity.left),
+    "mod": OperatorInfo(sign: "%", preceding: 13, fixity: Fixity.left),
+    "plus": OperatorInfo(sign: "+", preceding: 12, fixity: Fixity.left),
+    "minus": OperatorInfo(sign: "-", preceding: 12, fixity: Fixity.left),
+  };
 }

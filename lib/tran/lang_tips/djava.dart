@@ -71,10 +71,10 @@ class DJava extends LanguageTip {
   // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
   Map<String, OperatorInfo> operatorInfoMap = {
     "^": OperatorInfo(sign: "**", preceding: 14, fixity: Fixity.right),
-    "*": OperatorInfo(sign: "*", preceding: 13, fixity: Fixity.left),
-    "/": OperatorInfo(sign: "/", preceding: 13, fixity: Fixity.left),
-    "%": OperatorInfo(sign: "%", preceding: 13, fixity: Fixity.left),
-    "+": OperatorInfo(sign: "+", preceding: 12, fixity: Fixity.left),
-    "-": OperatorInfo(sign: "-", preceding: 12, fixity: Fixity.left),
+    "times": OperatorInfo(sign: "*", preceding: 13, fixity: Fixity.left),
+    "divide": OperatorInfo(sign: "/", preceding: 13, fixity: Fixity.left),
+    "mod": OperatorInfo(sign: "%", preceding: 13, fixity: Fixity.left),
+    "plus": OperatorInfo(sign: "+", preceding: 12, fixity: Fixity.left),
+    "minus": OperatorInfo(sign: "-", preceding: 12, fixity: Fixity.left),
   };
 }
