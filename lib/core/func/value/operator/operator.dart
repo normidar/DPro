@@ -1,3 +1,4 @@
+import 'package:dpro/core/alert/error/this_is_not_expression.dart';
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
@@ -10,13 +11,31 @@ abstract class DOperator extends DExpression {
 }
 
 abstract class DCalculate implements DExpression {
-  OperatorEnum get operator;
+  DCalculate(this.operator, this.left, this.right);
+
+  OperatorEnum operator;
   // why we use DStatement? because we should throw the exception to the user,
   // we should not let user lose free
-  DStatement get left;
-  DStatement get right;
+  DStatement left;
+  DStatement right;
 
   bool isPriority = false;
+
+  String getOperatorSign(LanguageTip tip);
+
+  DExpression getLeftExpression() {
+    if (left is DExpression) {
+      return left as DExpression;
+    }
+    throw ThisIsNotExpression();
+  }
+
+  DExpression getRightExpression() {
+    if (right is DExpression) {
+      return right as DExpression;
+    }
+    throw ThisIsNotExpression();
+  }
 
   @override
   String tran(LanguageTip tip) {
@@ -27,7 +46,7 @@ abstract class DCalculate implements DExpression {
     checkLeftRight();
     return sprintf(format, [
       left.tran(tip),
-      tip.getOperatorInfo(operator.sign).sign,
+      getOperatorSign(tip),
       right.tran(tip),
     ]);
   }
@@ -44,14 +63,14 @@ abstract class DCalculate implements DExpression {
   }
 }
 
-class OCalculate with DCalculate {
-  @override
-  DStatement left;
-  @override
-  DStatement right;
-  OCalculate({required this.left, required this.right});
+// class OCalculate with DCalculate {
+//   @override
+//   DStatement left;
+//   @override
+//   DStatement right;
+//   OCalculate({required this.left, required this.right});
 
-  @override
-  // TODO: implement operator
-  OperatorEnum get operator => throw UnimplementedError();
-}
+//   @override
+//   // TODO: implement operator
+//   OperatorEnum get operator => throw UnimplementedError();
+// }
