@@ -11,17 +11,18 @@ abstract class DOperator extends DExpression {
 }
 
 abstract class DCalculate implements DExpression {
-  DCalculate(this.operator, this.left, this.right);
-
-  OperatorEnum operator;
+  OperatorEnum get operator;
   // why we use DStatement? because we should throw the exception to the user,
   // we should not let user lose free
-  DStatement left;
-  DStatement right;
+  DStatement get left;
+  DStatement get right;
 
   bool isPriority = false;
 
-  String getOperatorSign(LanguageTip tip);
+  /// 実際の出力時に使われる記号, ocamlの時にはoverrideした方が良い
+  String getOperatorSign(LanguageTip tip) {
+    return tip.getOperatorInfo(operator.sign).sign;
+  }
 
   DExpression getLeftExpression() {
     if (left is DExpression) {
@@ -45,9 +46,9 @@ abstract class DCalculate implements DExpression {
     }
     checkLeftRight();
     return sprintf(format, [
-      left.tran(tip),
+      getLeftExpression().tran(tip),
       getOperatorSign(tip),
-      right.tran(tip),
+      getRightExpression().tran(tip),
     ]);
   }
 
@@ -62,15 +63,3 @@ abstract class DCalculate implements DExpression {
     }
   }
 }
-
-// class OCalculate with DCalculate {
-//   @override
-//   DStatement left;
-//   @override
-//   DStatement right;
-//   OCalculate({required this.left, required this.right});
-
-//   @override
-//   // TODO: implement operator
-//   OperatorEnum get operator => throw UnimplementedError();
-// }

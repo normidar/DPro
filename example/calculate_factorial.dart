@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/value/operator/num_operator/dtimes.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines calculateFactorial() {
@@ -25,11 +26,9 @@ OCodeLines funcLines() {
           objects: [
             OGive(
               target: OVar("rt"),
-              content: OCalculate(
-                left: OVar("rt"),
-                cal: DCals.dTimes,
-                right: OCalculate(
-                    cal: DCals.dPlus, left: OVar("i"), right: OInt(1)),
+              content: OTimes(
+                OVar("rt"),
+                OPlus(OVar("i"), OInt(1)),
               ),
             ),
           ],

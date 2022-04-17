@@ -2,15 +2,15 @@ import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
 
-abstract class DPlus extends DCalculate {
+abstract class DBigger extends DCalculate {
   @override
   OperatorEnum get operator {
-    return OperatorEnum.plus;
+    return OperatorEnum.bigger;
   }
 }
 
-class OPlus extends DPlus {
-  OPlus(this.left, this.right);
+class OBigger extends DBigger {
+  OBigger(this.left, this.right);
 
   @override
   DStatement left;

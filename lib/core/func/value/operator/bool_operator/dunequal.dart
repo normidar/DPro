@@ -2,15 +2,15 @@ import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
 
-abstract class DPlus extends DCalculate {
+abstract class DUnequal extends DCalculate {
   @override
   OperatorEnum get operator {
-    return OperatorEnum.plus;
+    return OperatorEnum.unequal;
   }
 }
 
-class OPlus extends DPlus {
-  OPlus(this.left, this.right);
+class OUnequal extends DUnequal {
+  OUnequal(this.left, this.right);
 
   @override
   DStatement left;

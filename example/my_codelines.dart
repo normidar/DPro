@@ -1,3 +1,4 @@
+import 'package:dpro/core/func/value/operator/bool_operator/dbigger.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines sampleIf() {
@@ -9,11 +10,7 @@ OCodeLines sampleIf() {
         type: DTypes.dInt,
       ),
       OIf(
-        condition: OCalculate(
-          cal: DCals.dBigger,
-          left: OVar("a"),
-          right: OInt(12),
-        ),
+        condition: OBigger(OVar("a"), OInt(12)),
         lines: OCodeLines(objects: [
           OPrint(OString("月ではない")),
           OPrint(OString("月ではない")),
@@ -45,19 +42,11 @@ OCodeLines sampleFor() {
         lines: OCodeLines(objects: [
           OGive(
             target: OVar("sum"),
-            content: OCalculate(
-              cal: DCals.dPlus,
-              left: OVar("sum"),
-              right: OVar("i"),
-            ),
+            content: OPlus(OVar("sum"), OVar("i")),
           ),
           OGive(
             target: OVar("sum"),
-            content: OCalculate(
-              cal: DCals.dPlus,
-              left: OVar("sum"),
-              right: OVar("i"),
-            ),
+            content: OPlus(OVar("sum"), OVar("i")),
           ),
         ]),
       ),
