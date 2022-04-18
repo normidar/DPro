@@ -17,12 +17,13 @@ abstract class DCalculate implements DExpression {
   DStatement get left;
   DStatement get right;
 
+  // 包まれた式に変えられる場合もある
   bool isPriority = false;
 
+  OperatorInfo getOpInfo(LanguageTip tip) => tip.getOperatorInfo(operator.sign);
+
   /// 実際の出力時に使われる記号, ocamlの時にはoverrideした方が良い
-  String getOperatorSign(LanguageTip tip) {
-    return tip.getOperatorInfo(operator.sign).sign;
-  }
+  String getOperatorSign(LanguageTip tip) => getOpInfo(tip).sign;
 
   DExpression getLeftExpression() {
     if (left is DExpression) {
@@ -41,25 +42,35 @@ abstract class DCalculate implements DExpression {
   @override
   String tran(LanguageTip tip) {
     String format = tip.getRule("cal");
+    OperatorInfo operatorInfo = getOpInfo(tip);
+    final leftExp = getLeftExpression();
+    final rightExp = getRightExpression();
+    // 括弧が要るかどうかをチェック
+    if (rightExp is DCalculate) {
+      if (rightExp.getOpInfo(tip).preceding < operatorInfo.preceding) {
+        rightExp.isPriority = true;
+      } else if (rightExp.getOpInfo(tip).preceding == operatorInfo.preceding &&
+          operatorInfo.fixity == Fixity.left) {
+        // 優先度同じかつ左結合
+        rightExp.isPriority = true;
+      }
+    }
+    if (leftExp is DCalculate) {
+      if (leftExp.getOpInfo(tip).preceding < operatorInfo.preceding) {
+        leftExp.isPriority = true;
+      } else if (leftExp.getOpInfo(tip).preceding == operatorInfo.preceding &&
+          operatorInfo.fixity == Fixity.right) {
+        leftExp.isPriority = true;
+      }
+    }
+
     if (isPriority) {
       format = "($format)";
     }
-    checkLeftRight();
     return sprintf(format, [
       getLeftExpression().tran(tip),
       getOperatorSign(tip),
       getRightExpression().tran(tip),
     ]);
-  }
-
-  void checkLeftRight() {
-    final _left = left;
-    if (_left is DCalculate) {
-      _left.isPriority = true;
-    }
-    final _right = right;
-    if (_right is DCalculate) {
-      _right.isPriority = true;
-    }
   }
 }

@@ -1,4 +1,6 @@
 import 'package:dpro/core/func/value/operator/bool_operator/dbigger.dart';
+import 'package:dpro/core/func/value/operator/num_operator/dminus.dart';
+import 'package:dpro/core/func/value/operator/num_operator/dtimes.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines sampleIf() {
@@ -22,6 +24,31 @@ OCodeLines sampleIf() {
       ),
     ],
   );
+}
+
+OCodeLines testOperators() {
+  return OCodeLines(objects: [
+    ODefGive(
+      target: OVar("a"),
+      content: OTimes(OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
+      type: DTypes.dInt,
+    ),
+    ODefGive(
+      target: OVar("a"),
+      content: OMinus(OInt(3), OTimes(OInt(2), OInt(1))),
+      type: DTypes.dInt,
+    ),
+    ODefGive(
+      target: OVar("a"),
+      content: OTimes(OMinus(OInt(3), OInt(2)), OInt(1)),
+      type: DTypes.dInt,
+    ),
+    ODefGive(
+      target: OVar("a"),
+      content: OTimes(OMinus(OInt(3), OInt(2)), OMinus(OInt(3), OInt(2))),
+      type: DTypes.dInt,
+    ),
+  ]);
 }
 
 OCodeLines sampleFor() {

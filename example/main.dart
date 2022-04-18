@@ -9,6 +9,6 @@ void main(List<String> arguments) {
 void engineTest() {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
-    codes: cdls.foreachList(),
+    codes: cdls.testOperators(),
   ));
 }
