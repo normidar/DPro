@@ -1,4 +1,5 @@
 enum OperatorEnum {
+  power,
   plus,
   minus,
   times,
