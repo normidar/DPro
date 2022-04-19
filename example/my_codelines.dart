@@ -1,7 +1,3 @@
-import 'package:dpro/core/func/value/operator/bool_operator/dbigger.dart';
-import 'package:dpro/core/func/value/operator/num_operator/dminus.dart';
-import 'package:dpro/core/func/value/operator/num_operator/dpower.dart';
-import 'package:dpro/core/func/value/operator/num_operator/dtimes.dart';
 import 'package:dpro/dpro.dart';
 
 OCodeLines sampleIf() {
