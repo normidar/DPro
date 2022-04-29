@@ -21,4 +21,15 @@ class DType implements DStatement {
       _generics.join(", "),
     ]);
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (other is DType) {
+      return type == other.type;
+    }
+    return super == other;
+  }
+
+  @override
+  int get hashCode => type.hashCode;
 }

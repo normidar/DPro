@@ -1,12 +1,14 @@
 // run this to reset your file: dart run build_runner build
-// remenber to format this file, you can use: dart format .
-
+// remenber to format this file, you can use: dart format
+// publish your package hint: dart pub publish --dry-run
+// if you want to update your packages on power: dart pub upgrade --major-versions
 export 'package:dpro/core/code_lines.dart';
 export 'package:dpro/core/alert/type_alert/type_error.dart';
 export 'package:dpro/core/alert/type_alert/type_maybe_auto_change.dart';
 export 'package:dpro/core/alert/problem/dproblem.dart';
 export 'package:dpro/core/alert/warning/dwarning.dart';
 export 'package:dpro/core/alert/dalert.dart';
+export 'package:dpro/core/alert/error/this_is_not_expression.dart';
 export 'package:dpro/core/alert/error/set_action_as_value_exception.dart';
 export 'package:dpro/core/alert/error/empty_child_exception.dart';
 export 'package:dpro/core/alert/error/deception.dart';
@@ -48,8 +50,20 @@ export 'package:dpro/core/func/value/constant/dbool.dart';
 export 'package:dpro/core/func/value/constant/dchar.dart';
 export 'package:dpro/core/func/value/constant/ddouble.dart';
 export 'package:dpro/core/func/value/operator/operator_enum.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dbigger_eq.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dsmaller_eq.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dbigger.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dunequal.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dequal.dart';
+export 'package:dpro/core/func/value/operator/comparison_operator/dsmaller.dart';
 export 'package:dpro/core/func/value/operator/operator.dart';
+export 'package:dpro/core/func/value/operator/str_operator/dstr_link.dart';
+export 'package:dpro/core/func/value/operator/logical_operator/dand.dart';
+export 'package:dpro/core/func/value/operator/logical_operator/dor.dart';
+export 'package:dpro/core/func/value/operator/num_operator/dtimes.dart';
 export 'package:dpro/core/func/value/operator/num_operator/dplus.dart';
+export 'package:dpro/core/func/value/operator/num_operator/ddivide.dart';
+export 'package:dpro/core/func/value/operator/num_operator/dminus.dart';
 export 'package:dpro/core/func/output/dprint.dart';
 export 'package:dpro/core/func/daction.dart';
 export 'package:dpro/core/func/give/def_give.dart';
@@ -59,15 +73,3 @@ export 'package:dpro/tran/language_tips.dart';
 export 'package:dpro/tran/lang_tips/dpython.dart';
 export 'package:dpro/tran/lang_tips/djava.dart';
 export 'package:dpro/tran/lang_tips/language_tip.dart';
-export 'package:dpro/core/alert/error/this_is_not_expression.dart';
-export 'package:dpro/core/func/value/operator/str_operator/dstr_link.dart';
-export 'package:dpro/core/func/value/operator/num_operator/dtimes.dart';
-export 'package:dpro/core/func/value/operator/num_operator/ddivide.dart';
-export 'package:dpro/core/func/value/operator/num_operator/dpower.dart';
-export 'package:dpro/core/func/value/operator/num_operator/dminus.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dbigger_eq.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dsmaller_eq.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dbigger.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dunequal.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dequal.dart';
-export 'package:dpro/core/func/value/operator/bool_operator/dsmaller.dart';

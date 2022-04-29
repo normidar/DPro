@@ -1,10 +1,11 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
+import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DSearch implements DExpression {
-  DStatement get iterator;
+  DExpression get iterator;
   DStatement get index;
   @override
   String tran(LanguageTip tip) {
@@ -14,11 +15,14 @@ abstract class DSearch implements DExpression {
       index.tran(tip),
     ]);
   }
+
+  @override
+  DType get type => iterator.type.generics.last;
 }
 
 class OSearch with DSearch {
   @override
-  DStatement iterator;
+  DExpression iterator;
   @override
   DStatement index;
   OSearch({required this.iterator, required this.index});

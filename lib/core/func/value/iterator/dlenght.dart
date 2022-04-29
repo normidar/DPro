@@ -1,5 +1,7 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -12,6 +14,9 @@ abstract class DLenght implements DExpression {
       iterator.tran(tip),
     ]);
   }
+
+  @override
+  DType type = DTypes.dInt;
 }
 
 class OLenght with DLenght {

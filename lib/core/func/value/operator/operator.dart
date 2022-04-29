@@ -5,11 +5,7 @@ import 'package:dpro/core/func/value/operator/operator_enum.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DOperator extends DExpression {
-  String get signIndex;
-  // String getSign(LanguageTip tip) {}
-}
-
+/// two elements operator
 abstract class DCalculate implements DExpression {
   OperatorEnum get operator;
   // why we use DStatement? because we should throw the exception to the user,

@@ -1,4 +1,6 @@
 import 'package:dpro/core/func/value/dexpression.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -12,6 +14,9 @@ abstract class DStrSearch implements DExpression {
     final format = tip.getRule("str_search");
     return sprintf(format, [str, key]);
   }
+
+  @override
+  DType type = DTypes.dInt;
 }
 
 class OStrSearch with DStrSearch {

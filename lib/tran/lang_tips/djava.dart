@@ -76,5 +76,15 @@ class DJava extends LanguageTip {
     "mod": OperatorInfo(sign: "%", preceding: 13, fixity: Fixity.left),
     "plus": OperatorInfo(sign: "+", preceding: 12, fixity: Fixity.left),
     "minus": OperatorInfo(sign: "-", preceding: 12, fixity: Fixity.left),
+    // 下は比較の演算子
+    "bigger_eq": OperatorInfo(sign: ">=", preceding: 10, fixity: Fixity.left),
+    "bigger": OperatorInfo(sign: ">", preceding: 10, fixity: Fixity.left),
+    "smaller_eq": OperatorInfo(sign: "<=", preceding: 10, fixity: Fixity.left),
+    "smaller": OperatorInfo(sign: "<", preceding: 10, fixity: Fixity.left),
+    "equal": OperatorInfo(sign: "==", preceding: 9, fixity: Fixity.left),
+    "unequal": OperatorInfo(sign: "!=", preceding: 9, fixity: Fixity.left),
+    // 論理演算子
+    "and": OperatorInfo(sign: "&&", preceding: 5, fixity: Fixity.left),
+    "or": OperatorInfo(sign: "||", preceding: 4, fixity: Fixity.left),
   };
 }

@@ -52,13 +52,13 @@ OCodeLines testOperators() {
     ),
     ODefGive(
       target: OVar("a"),
-      content: OPower(OInt(3), OPower(OInt(2), OInt(1))),
-      type: DTypes.dInt,
+      content: OAnd(OEqual(OBool(false), OBool(true)), OBool(true)),
+      type: DTypes.dBool,
     ),
     ODefGive(
       target: OVar("a"),
-      content: OPower(OPower(OInt(3), OInt(2)), OInt(1)),
-      type: DTypes.dInt,
+      content: OEqual(OAnd(OBool(false), OBool(true)), OBool(true)),
+      type: DTypes.dBool,
     ),
   ]);
 }
@@ -156,9 +156,11 @@ OCodeLines listToMap() {
         lines: OCodeLines(objects: [
           OReplace(index: OVar("e"), value: OVar("e"), iterator: OVar("mymap")),
         ])),
-    OPrint(OSearch(
-      iterator: OVar("mylist"),
-      index: OInt(1),
-    )),
+    // OPrint(
+    //   OSearch(
+    //     iterator: OVar("mylist"),
+    //     index: OInt(1),
+    //   ),
+    // ),
   ]);
 }

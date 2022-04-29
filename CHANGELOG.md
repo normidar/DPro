@@ -1,3 +1,8 @@
+## 0.3.2
+
+- change a lot of things
+- support some new methods
+
 ## 0.3.1
 
 - change and get pub points

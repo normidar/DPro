@@ -1,16 +1,22 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 
-abstract class DPower extends DCalculate {
+/// it often `==`
+abstract class DEqual extends DCalculate {
   @override
   OperatorEnum get operator {
-    return OperatorEnum.power;
+    return OperatorEnum.equal;
   }
+
+  @override
+  DType type = DTypes.dBool;
 }
 
-class OPower extends DPower {
-  OPower(this.left, this.right);
+class OEqual extends DEqual {
+  OEqual(this.left, this.right);
 
   @override
   DStatement left;

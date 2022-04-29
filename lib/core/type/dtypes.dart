@@ -5,7 +5,7 @@ class DTypes {
   static DType dChar = DType(DTypeStrs.dChar);
   static DType dInt = DType(DTypeStrs.dInt);
   static DType dFloat = DType(DTypeStrs.dFloat);
-  static DType dDouble = DType(DTypeStrs.dDouble);
+  // static DType dDouble = DType(DTypeStrs.dDouble); // 前期はDouble要らない
   static DType dBool = DType(DTypeStrs.dBool);
   static DType dVoid = DType(DTypeStrs.dVoid);
   static DType dList = DType(DTypeStrs.dList);

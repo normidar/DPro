@@ -1,16 +1,22 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 
-abstract class DSmallerEq extends DCalculate {
+/// it often `&&` `and`
+abstract class DAnd extends DCalculate {
   @override
   OperatorEnum get operator {
-    return OperatorEnum.smallerEq;
+    return OperatorEnum.and;
   }
+
+  @override
+  DType type = DTypes.dBool;
 }
 
-class OSmallerEq extends DSmallerEq {
-  OSmallerEq(this.left, this.right);
+class OAnd extends DAnd {
+  OAnd(this.left, this.right);
 
   @override
   DStatement left;

@@ -4,6 +4,7 @@ enum OperatorEnum {
   minus,
   times,
   divide,
+  // --
   bigger,
   smaller,
   biggerEq,
@@ -11,6 +12,9 @@ enum OperatorEnum {
   equal,
   unequal,
   strLink,
+  // --
+  and,
+  or,
 }
 
 extension ParseToString on OperatorEnum {

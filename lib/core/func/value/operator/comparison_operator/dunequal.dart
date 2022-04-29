@@ -1,12 +1,18 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/core/type/dtypes.dart';
 
+/// it often `!=` `<>`
 abstract class DUnequal extends DCalculate {
   @override
   OperatorEnum get operator {
     return OperatorEnum.unequal;
   }
+
+  @override
+  DType type = DTypes.dBool;
 }
 
 class OUnequal extends DUnequal {

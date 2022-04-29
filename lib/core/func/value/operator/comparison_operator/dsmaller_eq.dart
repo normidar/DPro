@@ -4,25 +4,19 @@ import 'package:dpro/core/func/value/operator/operator_enum.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 
-/// it often `*`
-abstract class DTimes extends DCalculate {
+/// it often `<=`
+abstract class DSmallerEq extends DCalculate {
   @override
   OperatorEnum get operator {
-    return OperatorEnum.times;
+    return OperatorEnum.smallerEq;
   }
 
   @override
-  DType get type {
-    if (getLeftExpression().type == DTypes.dInt &&
-        getRightExpression().type == DTypes.dInt) {
-      return DTypes.dInt;
-    }
-    return DTypes.dFloat;
-  }
+  DType type = DTypes.dBool;
 }
 
-class OTimes extends DTimes {
-  OTimes(this.left, this.right);
+class OSmallerEq extends DSmallerEq {
+  OSmallerEq(this.left, this.right);
 
   @override
   DStatement left;

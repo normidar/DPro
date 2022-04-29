@@ -1,6 +1,6 @@
 name: dpro
 description: A tool to transform programing langrage. it can transform algorithm to Python and Java now. !! it is a lowcode develop engine.
-version: 0.3.1
+version: 0.3.2
 homepage: https://github.com/normidar/DPro
 
 environment:
@@ -12,7 +12,7 @@ dependencies:
   sprintf: ^6.0.0
 
 dev_dependencies:
-  auto_exporter: ^1.4.0 # please use Dart Barrel File Generator
+  auto_exporter: ^1.4.1 # please use Dart Barrel File Generator
   build_runner: ^2.1.7
   build_test: ^2.1.5
   lints: ^1.0.0

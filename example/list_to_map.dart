@@ -32,12 +32,12 @@ OCodeLines funcLines() {
         end: OLenght(iterator: OVar("myList")),
         lines: OCodeLines(
           objects: [
-            OGive(
-                target: OVar("myMap"),
-                content: OSearch(
-                  iterator: OVar("myList"),
-                  index: OVar("i"),
-                )),
+            // OGive(
+            //     target: OVar("myMap"),
+            //     content: OSearch(
+            //       iterator: OVar("myList"),
+            //       index: OVar("i"),
+            //     )),
           ],
         ),
       ),

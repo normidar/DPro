@@ -1,6 +1,7 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/core/func/value/constant/dconstant.dart';
+import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
@@ -33,7 +34,7 @@ abstract class DefGive implements DAction {
     DType? _type = type;
     if (_type != null) return _type;
     DStatement _content = content;
-    if (_content is DConstant) {
+    if (_content is DExpression) {
       return _content.type;
     }
     throw Exception("this target can not support retype");

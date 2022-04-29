@@ -1,7 +1,5 @@
 import 'package:dpro/dpro.dart';
 
-import 'my_codelines.dart' as cdls;
-
 void main(List<String> arguments) {
   engineTest();
 }
@@ -9,6 +7,35 @@ void main(List<String> arguments) {
 void engineTest() {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
-    codes: cdls.testOperators(),
+    codes: OCodeLines(objects: [
+      ODefGive(
+        target: OVar("a"),
+        content: OTimes(OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OMinus(OInt(3), OTimes(OInt(2), OInt(1))),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OTimes(OMinus(OInt(3), OInt(2)), OInt(1)),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OTimes(OMinus(OInt(3), OInt(2)), OMinus(OInt(3), OInt(2))),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OMinus(OMinus(OInt(4), OMinus(OInt(3), OInt(2))), OInt(1)),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OAnd(OEqual(OBool(false), OBool(true)), OBool(true)),
+      ),
+      ODefGive(
+        target: OVar("a"),
+        content: OEqual(OAnd(OBool(false), OBool(true)), OBool(true)),
+      ),
+    ]),
   ));
 }
