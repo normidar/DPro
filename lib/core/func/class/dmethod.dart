@@ -1,13 +1,13 @@
 import 'package:dpro/core/code_lines.dart';
 import 'package:dpro/core/dstatement.dart';
-import 'package:dpro/core/func/branch/class/dconstrutor.dart';
+import 'package:dpro/core/func/class/dconstrutor.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DClass implements DStatement {
+abstract class DMethod implements DStatement {
+  bool get isStatic;
+  bool get isPublic;
   String get name;
-  DCodeLines get lines;
-  DConstructor? get constructor;
 
   @override
   String tran(LanguageTip tip) {

@@ -7,6 +7,6 @@ v to int or float
 v search
 - regular expression
 - split 文字をリストに分割
--
+- optional value
 
 error check

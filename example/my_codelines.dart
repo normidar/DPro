@@ -110,15 +110,6 @@ OCodeLines sampleFunc() {
   );
 }
 
-OCodeLines sampleClass() {
-  return OCodeLines(objects: [
-    OClass(
-      name: "Oog",
-      lines: sampleFunc(),
-    )
-  ]);
-}
-
 OCodeLines foreachList() {
   return OCodeLines(objects: [
     OForE(
