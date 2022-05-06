@@ -1,5 +1,3 @@
-import 'package:dpro/core/alert/transform/dtransform_alert.dart';
-
 import 'language_tip.dart';
 
 class DPython extends LanguageTip {

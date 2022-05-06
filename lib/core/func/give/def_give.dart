@@ -1,6 +1,5 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/daction.dart';
-import 'package:dpro/core/func/value/constant/dconstant.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';

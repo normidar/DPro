@@ -3,9 +3,9 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 class DType implements DStatement {
-  String type;
-  List<DType> generics;
-  DType(this.type, {this.generics = const []});
+  final String type;
+  final List<DType> generics;
+  const DType(this.type, {this.generics = const []});
 
   @override
   String tran(LanguageTip tip) {

@@ -1,25 +1,25 @@
 import 'package:dpro/core/type/dtype.dart';
 
 class DTypes {
-  static DType dStr = DType(DTypeStrs.dStr);
-  static DType dChar = DType(DTypeStrs.dChar);
-  static DType dInt = DType(DTypeStrs.dInt);
-  static DType dFloat = DType(DTypeStrs.dFloat);
+  static const DType dStr = DType(DTypeStrs.dStr);
+  static const DType dChar = DType(DTypeStrs.dChar);
+  static const DType dInt = DType(DTypeStrs.dInt);
+  static const DType dFloat = DType(DTypeStrs.dFloat);
   // static DType dDouble = DType(DTypeStrs.dDouble); // 前期はDouble要らない
-  static DType dBool = DType(DTypeStrs.dBool);
-  static DType dVoid = DType(DTypeStrs.dVoid);
-  static DType dList = DType(DTypeStrs.dList);
-  static DType dMap = DType(DTypeStrs.dMap);
+  static const DType dBool = DType(DTypeStrs.dBool);
+  static const DType dVoid = DType(DTypeStrs.dVoid);
+  static const DType dList = DType(DTypeStrs.dList);
+  static const DType dMap = DType(DTypeStrs.dMap);
 }
 
 class DTypeStrs {
-  static String dStr = "str";
-  static String dChar = "char";
-  static String dInt = "int";
-  static String dFloat = "float";
-  static String dDouble = "double";
-  static String dBool = "bool";
-  static String dVoid = "void";
-  static String dList = "list";
-  static String dMap = "map";
+  static const String dStr = "str";
+  static const String dChar = "char";
+  static const String dInt = "int";
+  static const String dFloat = "float";
+  static const String dDouble = "double";
+  static const String dBool = "bool";
+  static const String dVoid = "void";
+  static const String dList = "list";
+  static const String dMap = "map";
 }

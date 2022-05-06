@@ -1,5 +1,3 @@
-import 'package:dpro/core/alert/transform/dtransform_alert.dart';
-
 import 'language_tip.dart';
 
 class DJava extends LanguageTip {
@@ -32,8 +30,10 @@ class DJava extends LanguageTip {
     "foreach": "for (%s %s : %s) {\n%s\n%s}",
     // タイプ、ネーム、パラメータ、コード、インデント
     "func": "%s %s(%s){\n%s\n%s}",
+    "method": "%s %s(%s){\n%s\n%s}",
     "constructor": "%s(%s){\n%s\n%s}",
     "para": "%s %s",
+    "argument": "%s %s",
     "return": "return %s;",
     // ネーム、コード、インデント
     "class": "class %s {\n%s\n%s}",
@@ -48,6 +48,21 @@ class DJava extends LanguageTip {
   String getRule(String index) {
     return rule[index]!;
   }
+
+  final Map<String, bool> settings = {
+    "is_method_can_private": true,
+  };
+
+  bool getSetting(String index) {
+    return settings[index]!;
+  }
+
+  final Map<String, String> keywords = {
+    "final": "final",
+    "public": "public",
+    "private": "private",
+    "static": "static",
+  };
 
   @override
   Map<String, String> typeMap() {

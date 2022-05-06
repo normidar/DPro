@@ -1,7 +1,7 @@
-import 'package:dpro/core/dstatement.dart';
-import 'package:dpro/core/func/value/dexpression.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
-import 'package:sprintf/sprintf.dart';
+// import 'package:dpro/core/dstatement.dart';
+// import 'package:dpro/core/func/value/dexpression.dart';
+// import 'package:dpro/tran/lang_tips/language_tip.dart';
+// import 'package:sprintf/sprintf.dart';
 
 // TODO: make it be new
 // abstract class DCall implements DExpression {
