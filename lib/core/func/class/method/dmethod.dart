@@ -19,12 +19,32 @@ abstract class DMethod implements DStatement {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.getRule("class");
+    final format = tip.getRule("method");
     return sprintf(format, [
-      name,
+      getHeadString(tip),
+      getArgsString(tip),
       lines.tran(tip),
       " " * tip.indent,
     ]);
+  }
+
+  String getHeadString(LanguageTip tip) {
+    String rt = "";
+    if (!isConstruct) {
+      if (isStatic) rt += tip.getKeyword("static") + " ";
+      if (isPrivate) rt += tip.getKeyword("private") + " ";
+      rt += type.tran(tip) + " ";
+    }
+    rt += name;
+    return rt;
+  }
+
+  String getArgsString(LanguageTip tip) {
+    String rt = "";
+    for (var e in arguments) {
+      rt += e.tran(tip);
+    }
+    return rt;
   }
 }
 

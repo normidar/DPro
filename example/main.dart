@@ -8,7 +8,20 @@ void main(List<String> arguments) {
 void engineTest() {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
-    codes: OCodeLines(objects: []),
+    codes: OCodeLines(objects: [
+      OMethod(
+          name: "abc",
+          isConstruct: true,
+          lines: OCodeLines(
+            objects: [
+              ODefGive(
+                target: OVar("a"),
+                content:
+                    OTimes(OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
+              ),
+            ],
+          ))
+    ]),
   ));
 }
 

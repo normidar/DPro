@@ -6,6 +6,8 @@ abstract class LanguageTip {
   // Map<String, String> ruleMap();
 
   String getRule(String index);
+  bool getSetting(String index);
+  String getKeyword(String name);
 
   OperatorInfo getOperatorInfo(String index);
 

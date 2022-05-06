@@ -29,8 +29,8 @@ class DJava extends LanguageTip {
     // タイプ、変数名、リストネーム、コード、インデント
     "foreach": "for (%s %s : %s) {\n%s\n%s}",
     // タイプ、ネーム、パラメータ、コード、インデント
-    "func": "%s %s(%s){\n%s\n%s}",
-    "method": "%s %s(%s){\n%s\n%s}",
+    "func": "%s %s(%s) {\n%s\n%s}",
+    "method": "%s(%s) {\n%s\n%s}",
     "constructor": "%s(%s){\n%s\n%s}",
     "para": "%s %s",
     "argument": "%s %s",
@@ -53,6 +53,7 @@ class DJava extends LanguageTip {
     "is_method_can_private": true,
   };
 
+  @override
   bool getSetting(String index) {
     return settings[index]!;
   }
@@ -63,6 +64,11 @@ class DJava extends LanguageTip {
     "private": "private",
     "static": "static",
   };
+
+  @override
+  String getKeyword(String name) {
+    return keywords[name]!;
+  }
 
   @override
   Map<String, String> typeMap() {
