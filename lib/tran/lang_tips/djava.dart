@@ -32,6 +32,7 @@ class DJava extends LanguageTip {
     "func": "%s %s(%s) {\n%s\n%s}",
     "method": "%s(%s) {\n%s\n%s}",
     "constructor": "%s(%s){\n%s\n%s}",
+    "field": "%s %s;",
     "para": "%s %s",
     "argument": "%s %s",
     "return": "return %s;",
@@ -70,14 +71,14 @@ class DJava extends LanguageTip {
     return keywords[name]!;
   }
 
+  final Map<String, String> typeMap = {
+    "str": "String",
+    "list": "List",
+    "map": "Map",
+  };
+
   @override
-  Map<String, String> typeMap() {
-    return {
-      "str": "String",
-      "list": "List",
-      "map": "Map",
-    };
-  }
+  String? getType(String name) => typeMap[name];
 
   @override
   String toString() {

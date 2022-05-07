@@ -40,10 +40,7 @@ abstract class DMethod implements DStatement {
   }
 
   String getArgsString(LanguageTip tip) {
-    String rt = "";
-    for (var e in arguments) {
-      rt += e.tran(tip);
-    }
+    String rt = arguments.map((e) => e.tran(tip)).join(", ");
     return rt;
   }
 }

@@ -2,13 +2,14 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import 'dstatement.dart';
 
-abstract class DCodeLines implements DStatement {
-  List<DStatement> get objects;
+abstract class DCodeLines<T extends DStatement> implements DStatement {
+  List<T> get objects;
   bool _isAddIndent = false;
   void addIndent() {
     _isAddIndent = true;
   }
 
+  /// codeline will auto remove the indent after tran
   @override
   String tran(LanguageTip tip) {
     if (_isAddIndent) tip.addIndent();
@@ -29,8 +30,8 @@ abstract class DCodeLines implements DStatement {
   }
 }
 
-class OCodeLines with DCodeLines {
+class OCodeLines<T extends DStatement> with DCodeLines<T> {
   @override
-  List<DStatement> objects;
+  List<T> objects;
   OCodeLines({required this.objects});
 }

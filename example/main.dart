@@ -9,18 +9,29 @@ void engineTest() {
   TranEngine.tip = LanguageTips.java;
   print(TranEngine.tran(
     codes: OCodeLines(objects: [
-      OMethod(
-          name: "abc",
-          isConstruct: true,
-          lines: OCodeLines(
-            objects: [
-              ODefGive(
-                target: OVar("a"),
-                content:
-                    OTimes(OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
-              ),
-            ],
-          ))
+      OClass(
+          name: "Abc",
+          fieldMembers: OCodeLines(objects: [
+            OField(type: DTypes.dInt, isPrivate: true, name: "id"),
+            OField(type: DTypes.dInt, name: "id2"),
+          ]),
+          methodMembers: OCodeLines(objects: [
+            OMethod(
+                name: "abc",
+                arguments: [
+                  OArgument(type: DTypes.dStr, insideName: "arg1"),
+                  OArgument(type: DTypes.dStr, insideName: "arg2"),
+                ],
+                lines: OCodeLines(
+                  objects: [
+                    ODefGive(
+                      target: OVar("a"),
+                      content: OTimes(
+                          OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
+                    ),
+                  ],
+                ))
+          ])),
     ]),
   ));
 }

@@ -9,7 +9,7 @@ class DType implements DStatement {
 
   @override
   String tran(LanguageTip tip) {
-    String _type = tip.typeMap()[type] ?? type;
+    String _type = tip.getType(type) ?? type;
     if (generics.isEmpty || tip.toString() != "java") {
       return _type;
     }
