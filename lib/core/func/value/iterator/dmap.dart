@@ -9,6 +9,16 @@ abstract class DMap implements DConstant {
   DType get keyType;
   DType get valueType;
   Map<DStatement, DStatement> get map;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this, isFinal: map.isEmpty);
+    for (var k in map.keys) {
+      yield* k.getIterable();
+      yield* map[k]!.getIterable();
+    }
+  }
+
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("map");

@@ -1,27 +1,27 @@
-import 'package:dpro/core/dstatement.dart';
-import 'package:dpro/core/type/dtype.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
-import 'package:sprintf/sprintf.dart';
+// import 'package:dpro/core/dstatement.dart';
+// import 'package:dpro/core/type/dtype.dart';
+// import 'package:dpro/tran/lang_tips/language_tip.dart';
+// import 'package:sprintf/sprintf.dart';
 
-abstract class DPara implements DStatement {
-  DType get type;
-  String get name;
+// abstract class DPara implements DStatement {
+//   DType get type;
+//   String get name;
 
-  @override
-  String tran(LanguageTip tip) {
-    final format = tip.getRule("para");
-    return sprintf(format, [
-      type.tran(tip),
-      name,
-    ]);
-  }
-}
+//   @override
+//   String tran(LanguageTip tip) {
+//     final format = tip.getRule("para");
+//     return sprintf(format, [
+//       type.tran(tip),
+//       name,
+//     ]);
+//   }
+// }
 
-class OPara with DPara {
-  @override
-  String name;
-  @override
-  DType type;
+// class OPara with DPara {
+//   @override
+//   String name;
+//   @override
+//   DType type;
 
-  OPara({required this.type, required this.name});
-}
+//   OPara({required this.type, required this.name});
+// }

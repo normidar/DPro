@@ -12,6 +12,14 @@ abstract class DefGive implements DAction {
   DStatement get content;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    // do not see type now
+    yield* target.getIterable();
+    yield* content.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     final defFormat = tip.getRule("def");
     final giveFormat = tip.getRule("give");

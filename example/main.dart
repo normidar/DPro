@@ -19,8 +19,8 @@ void engineTest() {
             OMethod(
                 name: "abc",
                 arguments: [
-                  OArgument(type: DTypes.dStr, insideName: "arg1"),
-                  OArgument(type: DTypes.dStr, insideName: "arg2"),
+                  OArgument(type: DTypes.dStr, name: "arg1"),
+                  OArgument(type: DTypes.dStr, name: "arg2"),
                 ],
                 lines: OCodeLines(
                   objects: [

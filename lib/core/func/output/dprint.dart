@@ -6,6 +6,12 @@ abstract class DPrint implements DStatement {
   DStatement get context;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* context.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("print");
     return sprintf(format, [

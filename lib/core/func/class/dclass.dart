@@ -13,6 +13,13 @@ abstract class DClass implements DStatement {
   DCodeLines<DMethod> get methodMembers;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* fieldMembers.getIterable();
+    yield* methodMembers.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("class");
     return sprintf(format, [

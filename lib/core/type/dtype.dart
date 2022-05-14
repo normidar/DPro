@@ -8,6 +8,14 @@ class DType implements DStatement {
   const DType(this.type, {this.generics = const []});
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this, isFinal: generics.isEmpty);
+    for (var element in generics) {
+      yield* element.getIterable();
+    }
+  }
+
+  @override
   String tran(LanguageTip tip) {
     String _type = tip.getType(type) ?? type;
     if (generics.isEmpty || tip.toString() != "java") {

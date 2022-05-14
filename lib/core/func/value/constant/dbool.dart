@@ -4,7 +4,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import 'dconstant.dart';
 
-abstract class DBool implements DConstant {
+abstract class DBool extends DConstant {
   bool get value;
 
   @override
@@ -16,7 +16,7 @@ abstract class DBool implements DConstant {
   final DType type = DTypes.dBool;
 }
 
-class OBool with DBool {
+class OBool extends DBool {
   @override
   bool value;
   OBool(this.value);

@@ -10,6 +10,13 @@ abstract class DGive implements DAction {
   DStatement get content;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* target.getIterable();
+    yield* content.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("give");
     return sprintf(format, [

@@ -1,3 +1,5 @@
+import 'package:dpro/core/dstatement.dart';
+import 'package:dpro/core/func/value/constant/dstring.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
@@ -6,8 +8,15 @@ import 'package:sprintf/sprintf.dart';
 
 /// use a key to search in str(it will return int, when cant find it will return -1)
 abstract class DStrSearch implements DExpression {
-  String get str;
-  String get key;
+  DString get str;
+  DString get key;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* str.getIterable();
+    yield* key.getIterable();
+  }
 
   @override
   String tran(LanguageTip tip) {
@@ -21,8 +30,8 @@ abstract class DStrSearch implements DExpression {
 
 class OStrSearch with DStrSearch {
   @override
-  String str;
+  DString str;
   @override
-  String key;
+  DString key;
   OStrSearch({required this.str, required this.key});
 }

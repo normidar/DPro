@@ -6,6 +6,14 @@ import 'package:sprintf/sprintf.dart';
 abstract class DWhile implements DStatement {
   DStatement get condition;
   DCodeLines get lines;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* condition.getIterable();
+    yield* lines.getIterable();
+  }
+
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();

@@ -5,7 +5,7 @@ import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';
 
-abstract class DChar implements DConstant {
+abstract class DChar extends DConstant {
   String get value;
 
   @override
@@ -18,7 +18,7 @@ abstract class DChar implements DConstant {
   final DType type = DTypes.dStr;
 }
 
-class OChar with DChar {
+class OChar extends DChar {
   @override
   String value;
   OChar(this.value);

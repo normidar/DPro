@@ -5,7 +5,7 @@ import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';
 
-abstract class DFloat implements DConstant {
+abstract class DFloat extends DConstant {
   double get value;
 
   @override
@@ -18,7 +18,7 @@ abstract class DFloat implements DConstant {
   final DType type = DTypes.dFloat;
 }
 
-class OFloat with DFloat {
+class OFloat extends DFloat {
   @override
   double value;
   OFloat(this.value);

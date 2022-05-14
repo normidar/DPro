@@ -18,6 +18,16 @@ abstract class DField implements DStatement {
   String get name;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* type.getIterable();
+    final _defaultValue = defaultValue;
+    if (_defaultValue != null) {
+      yield* _defaultValue.getIterable();
+    }
+  }
+
+  @override
   String tran(LanguageTip tip) {
     // まずjavaだけを考える
     return getFieldString(tip);

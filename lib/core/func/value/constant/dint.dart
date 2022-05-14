@@ -4,7 +4,7 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import 'dconstant.dart';
 
-abstract class DInt implements DConstant {
+abstract class DInt extends DConstant {
   int get value;
 
   @override
@@ -16,7 +16,7 @@ abstract class DInt implements DConstant {
   final DType type = DTypes.dInt;
 }
 
-class OInt with DInt {
+class OInt extends DInt {
   @override
   int value;
   OInt(this.value);

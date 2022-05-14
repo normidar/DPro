@@ -8,6 +8,13 @@ abstract class DElseIf implements DStatement {
   DCodeLines get lines;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* condition.getIterable();
+    yield* lines.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     lines.addIndent();
     final format = tip.getRule("elif");

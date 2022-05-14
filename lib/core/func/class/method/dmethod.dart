@@ -17,6 +17,16 @@ abstract class DMethod implements DStatement {
   DCodeLines get lines;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* type.getIterable();
+    for (var element in arguments) {
+      yield* element.getIterable();
+    }
+    yield* lines.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     lines.addIndent();
     final format = tip.getRule("method");

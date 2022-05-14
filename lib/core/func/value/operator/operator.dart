@@ -13,6 +13,13 @@ abstract class DCalculate implements DExpression {
   DStatement get left;
   DStatement get right;
 
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* left.getIterable();
+    yield* right.getIterable();
+  }
+
   // 包まれた式に変えられる場合もある
   bool isPriority = false;
 

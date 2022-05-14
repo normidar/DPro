@@ -94,22 +94,6 @@ OCodeLines sampleFor() {
   );
 }
 
-OCodeLines sampleFunc() {
-  return OCodeLines(
-    objects: [
-      OFunc(
-        type: DTypes.dInt,
-        name: "test",
-        lines: sampleFor(),
-        paras: OParams(params: [
-          OPara(type: DTypes.dStr, name: "param1"),
-          OPara(type: DTypes.dStr, name: "param2"),
-        ]),
-      ),
-    ],
-  );
-}
-
 OCodeLines foreachList() {
   return OCodeLines(objects: [
     OForE(

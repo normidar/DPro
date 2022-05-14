@@ -5,7 +5,7 @@ import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';
 
-abstract class DDouble implements DConstant {
+abstract class DDouble extends DConstant {
   double get value;
 
   @override
@@ -18,7 +18,7 @@ abstract class DDouble implements DConstant {
   final DType type = DTypes.dFloat;
 }
 
-class ODouble with DDouble {
+class ODouble extends DDouble {
   @override
   double value;
   ODouble(this.value);

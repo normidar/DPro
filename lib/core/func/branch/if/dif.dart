@@ -9,6 +9,17 @@ abstract class DIf implements DStatement {
   DCodeLines? get elseLines;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* condition.getIterable();
+    yield* lines.getIterable();
+    final _elseLines = elseLines;
+    if (_elseLines != null) {
+      yield* _elseLines.getIterable();
+    }
+  }
+
+  @override
   String tran(LanguageTip tip) {
     String _lineString;
     lines.addIndent();

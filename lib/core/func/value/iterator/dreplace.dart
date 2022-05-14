@@ -6,6 +6,15 @@ abstract class DReplace implements DStatement {
   DStatement get iterator;
   DStatement get index;
   DStatement get value;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* iterator.getIterable();
+    yield* index.getIterable();
+    yield* value.getIterable();
+  }
+
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("replace");

@@ -4,9 +4,18 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-abstract class DSearch implements DExpression {
+/// get a element from the iterator with index
+abstract class DGetElement implements DExpression {
   DExpression get iterator;
   DStatement get index;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* iterator.getIterable();
+    yield* index.getIterable();
+  }
+
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("search");
@@ -20,7 +29,7 @@ abstract class DSearch implements DExpression {
   DType get type => iterator.type.generics.last;
 }
 
-class OSearch with DSearch {
+class OSearch with DGetElement {
   @override
   DExpression iterator;
   @override

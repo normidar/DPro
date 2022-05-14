@@ -1,3 +1,5 @@
+import 'package:dpro/core/dstatement.dart';
+import 'package:dpro/core/func/value/constant/dstring.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
@@ -6,7 +8,13 @@ import 'package:sprintf/sprintf.dart';
 
 /// form string to number(Float) like "1.2" -> 1.2f
 abstract class DStrToNum implements DExpression {
-  String get str;
+  DString get str;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* str.getIterable();
+  }
 
   @override
   String tran(LanguageTip tip) {
@@ -20,6 +28,6 @@ abstract class DStrToNum implements DExpression {
 
 class OStrToNum with DStrToNum {
   @override
-  String str;
+  DString str;
   OStrToNum(this.str);
 }

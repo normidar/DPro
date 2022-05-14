@@ -70,8 +70,6 @@ export 'package:dpro/tran/lang_tips/dpython.dart';
 export 'package:dpro/tran/lang_tips/djava.dart';
 export 'package:dpro/tran/lang_tips/language_tip.dart';
 export 'package:dpro/core/func/class/dclass.dart';
-export 'package:dpro/core/func/class/dconstrutor.dart';
-export 'package:dpro/core/func/class/dmember.dart';
 export 'package:dpro/core/func/class/dnew.dart';
 export 'package:dpro/core/func/class/method/dargument.dart';
 export 'package:dpro/core/func/class/method/dmethod.dart';

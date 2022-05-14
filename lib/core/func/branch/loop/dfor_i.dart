@@ -14,6 +14,15 @@ abstract class DForI implements DStatement {
   bool get canSimpler;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* begin.getIterable();
+    yield* end.getIterable();
+    yield* step.getIterable();
+    yield* lines.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     if (canSimpler) {
       return tranOnlyMax(tip);

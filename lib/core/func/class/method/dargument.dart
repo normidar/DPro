@@ -7,17 +7,23 @@ abstract class DArgument implements DStatement {
   DType get type;
 
   /// the name use inside the code lines
-  String get insideName;
+  String get name;
 
   /// like swift it has a name outside
   String? get outsideName;
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* type.getIterable();
+  }
 
   @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("argument");
     return sprintf(format, [
       type.tran(tip),
-      insideName,
+      name,
     ]);
   }
 }
@@ -28,7 +34,7 @@ class OArgument with DArgument {
 
   /// the name use inside the code lines
   @override
-  String insideName;
+  String name;
 
   /// like swift it has a name outside
   @override
@@ -36,7 +42,7 @@ class OArgument with DArgument {
 
   OArgument({
     required this.type,
-    required this.insideName,
+    required this.name,
     this.outsideName,
   });
 }

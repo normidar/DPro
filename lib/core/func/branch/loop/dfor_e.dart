@@ -11,6 +11,13 @@ abstract class DForE implements DStatement {
   String get varName;
 
   @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    yield* list.getIterable();
+    yield* lines.getIterable();
+  }
+
+  @override
   String tran(LanguageTip tip) {
     lines.addIndent();
     final format = tip.getRule("foreach");

@@ -5,8 +5,17 @@ import 'dstatement.dart';
 abstract class DCodeLines<T extends DStatement> implements DStatement {
   List<T> get objects;
   bool _isAddIndent = false;
+
   void addIndent() {
     _isAddIndent = true;
+  }
+
+  @override
+  Iterable<StatementInfo> getIterable() sync* {
+    yield StatementInfo(this);
+    for (var element in objects) {
+      yield* element.getIterable();
+    }
   }
 
   /// codeline will auto remove the indent after tran
