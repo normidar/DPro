@@ -9,6 +9,9 @@ abstract class DClass implements DStatement {
   String get name;
   DCodeLines<DField> get fieldMembers;
 
+  @override
+  final String statementName = "class";
+
   /// methodMembers includes constructor
   DCodeLines<DMethod> get methodMembers;
 

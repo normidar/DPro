@@ -18,6 +18,9 @@ abstract class DField implements DStatement {
   String get name;
 
   @override
+  final String statementName = "field";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* type.getIterable();
@@ -38,7 +41,7 @@ abstract class DField implements DStatement {
     if (isPrivate) rt += "private ";
     if (isStatic) rt += "static ";
     if (isFinal && defaultValue != null) rt += "final ";
-    rt += type.tran(tip) + " " + name;
+    rt += type.tran(tip) + " " + statementName;
     if (defaultValue != null) rt += " = " + defaultValue!.tran(tip);
     rt += ";";
     return rt;

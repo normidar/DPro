@@ -17,6 +17,9 @@ abstract class DMethod implements DStatement {
   DCodeLines get lines;
 
   @override
+  final String statementName = "method";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* type.getIterable();
@@ -45,7 +48,7 @@ abstract class DMethod implements DStatement {
       if (isPrivate) rt += tip.getKeyword("private") + " ";
       rt += type.tran(tip) + " ";
     }
-    rt += name;
+    rt += statementName;
     return rt;
   }
 

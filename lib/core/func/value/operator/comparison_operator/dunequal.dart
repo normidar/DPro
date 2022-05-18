@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `!=` `<>`
 abstract class DUnequal extends DCalculate {
   @override
+  final String statementName = "unequal";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.unequal;
   }

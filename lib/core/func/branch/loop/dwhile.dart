@@ -8,6 +8,9 @@ abstract class DWhile implements DStatement {
   DCodeLines get lines;
 
   @override
+  final String statementName = "while";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* condition.getIterable();

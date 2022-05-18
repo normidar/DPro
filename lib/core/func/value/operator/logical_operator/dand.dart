@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `&&` `and`
 abstract class DAnd extends DCalculate {
   @override
+  final String statementName = "and";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.and;
   }

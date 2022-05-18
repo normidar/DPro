@@ -9,6 +9,9 @@ abstract class DFloat extends DConstant {
   double get value;
 
   @override
+  final String statementName = "float";
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("float");
     return sprintf(format, [value]);

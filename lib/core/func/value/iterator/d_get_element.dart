@@ -10,6 +10,9 @@ abstract class DGetElement implements DExpression {
   DStatement get index;
 
   @override
+  final String statementName = "get_iterator_element";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* iterator.getIterable();

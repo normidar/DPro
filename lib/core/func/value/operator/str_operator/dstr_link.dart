@@ -6,6 +6,9 @@ import 'package:dpro/core/type/dtypes.dart';
 
 abstract class DStrLink extends DCalculate {
   @override
+  final String statementName = "str_link";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.strLink;
   }

@@ -6,6 +6,9 @@ abstract class DPrint implements DStatement {
   DStatement get context;
 
   @override
+  final String statementName = "print";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* context.getIterable();

@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `*`
 abstract class DTimes extends DCalculate {
   @override
+  final String statementName = "times";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.times;
   }

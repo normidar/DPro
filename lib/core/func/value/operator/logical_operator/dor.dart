@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `||` `or`
 abstract class DOr extends DCalculate {
   @override
+  final String statementName = "or";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.or;
   }

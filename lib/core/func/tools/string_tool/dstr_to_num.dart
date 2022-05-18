@@ -11,6 +11,9 @@ abstract class DStrToNum implements DExpression {
   DString get str;
 
   @override
+  final String statementName = "str_to_num";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* str.getIterable();

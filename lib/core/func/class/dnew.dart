@@ -10,6 +10,9 @@ abstract class DNew implements DExpression {
   List<DArgument> get parameters;
 
   @override
+  final String statementName = "new";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     for (var element in parameters) {

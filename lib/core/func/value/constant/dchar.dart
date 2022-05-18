@@ -9,6 +9,9 @@ abstract class DChar extends DConstant {
   String get value;
 
   @override
+  final String statementName = "char";
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("char");
     return sprintf(format, [value.substring(0, 1)]);

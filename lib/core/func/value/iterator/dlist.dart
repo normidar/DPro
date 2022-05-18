@@ -11,6 +11,9 @@ abstract class DList implements DConstant {
   List<DStatement> get values;
 
   @override
+  final String statementName = "list";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this, isFinal: values.isEmpty);
     for (var element in values) {

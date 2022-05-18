@@ -4,7 +4,7 @@ import '../dstatement.dart';
 
 // TODO: change to Exception, this should not in define.
 abstract class DVar implements DStatement {
-  String get name;
+  String get statementName;
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -13,12 +13,12 @@ abstract class DVar implements DStatement {
 
   @override
   String tran(LanguageTip tip) {
-    return name;
+    return statementName;
   }
 }
 
 class OVar with DVar {
   @override
-  String name;
-  OVar(this.name);
+  String statementName;
+  OVar(this.statementName);
 }

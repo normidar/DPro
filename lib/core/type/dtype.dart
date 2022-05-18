@@ -8,6 +8,9 @@ class DType implements DStatement {
   const DType(this.type, {this.generics = const []});
 
   @override
+  String get statementName => "type_" + type;
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this, isFinal: generics.isEmpty);
     for (var element in generics) {

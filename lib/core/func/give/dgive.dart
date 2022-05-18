@@ -1,13 +1,16 @@
 // 値を与える　：＝
+import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-import '../../dstatement.dart';
-
+/// give a value to a variable
 abstract class DGive implements DAction {
   DStatement get target;
   DStatement get content;
+
+  @override
+  final String statementName = "give";
 
   @override
   Iterable<StatementInfo> getIterable() sync* {

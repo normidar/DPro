@@ -9,6 +9,9 @@ abstract class DDouble extends DConstant {
   double get value;
 
   @override
+  final String statementName = "double";
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("double");
     return sprintf(format, [value]);

@@ -8,6 +8,9 @@ abstract class DElseIf implements DStatement {
   DCodeLines get lines;
 
   @override
+  final String statementName = "else";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* condition.getIterable();

@@ -6,6 +6,10 @@ import 'dconstant.dart';
 
 abstract class DInt extends DConstant {
   int get value;
+  int? get bit;
+
+  @override
+  final String statementName = "int";
 
   @override
   String tran(LanguageTip tip) {
@@ -19,5 +23,8 @@ abstract class DInt extends DConstant {
 class OInt extends DInt {
   @override
   int value;
-  OInt(this.value);
+
+  @override
+  int? bit;
+  OInt(this.value, {this.bit});
 }

@@ -13,6 +13,9 @@ abstract class DArgument implements DStatement {
   String? get outsideName;
 
   @override
+  final String statementName = "argument";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* type.getIterable();

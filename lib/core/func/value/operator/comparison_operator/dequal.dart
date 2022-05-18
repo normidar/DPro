@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `==`
 abstract class DEqual extends DCalculate {
   @override
+  final String statementName = "equal";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.equal;
   }

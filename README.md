@@ -74,7 +74,19 @@ TODO:
 - UI designer!
 
 
-语言设定和规范设定的不同:
-语言设定是指构成语言的核心部分,通常包含许多的构造字符,
-规范设定是指某语言的规范, 通常包含缩进的空格数量,是否完全使用括号来包含算式, 使用哪种log输出方式等等.
-
+Future Support Languages:
+- Object Oriented
+    - Type Script
+    - Java
+    - Python
+    - Swift
+    - Dart
+    - C#
+    - GoLang
+- Only Runable
+    - C
+    - machine language
+- Functional
+    - Haskell
+    - OCaml
+    - F#

@@ -10,6 +10,9 @@ abstract class DLenght implements DExpression {
   DStatement get iterator;
 
   @override
+  final String statementName = "get_iterator_lenght";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* iterator.getIterable();

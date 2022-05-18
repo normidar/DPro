@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `/`
 abstract class DDivide extends DCalculate {
   @override
+  final String statementName = "divide";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.divide;
   }

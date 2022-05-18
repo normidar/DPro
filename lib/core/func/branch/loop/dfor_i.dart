@@ -14,6 +14,9 @@ abstract class DForI implements DStatement {
   bool get canSimpler;
 
   @override
+  final String statementName = "for_i";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* begin.getIterable();

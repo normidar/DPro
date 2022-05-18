@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `+`
 abstract class DPlus extends DCalculate {
   @override
+  final String statementName = "plus";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.plus;
   }

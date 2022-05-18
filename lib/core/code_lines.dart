@@ -6,6 +6,9 @@ abstract class DCodeLines<T extends DStatement> implements DStatement {
   List<T> get objects;
   bool _isAddIndent = false;
 
+  @override
+  final String statementName = "code_lines";
+
   void addIndent() {
     _isAddIndent = true;
   }

@@ -12,6 +12,9 @@ abstract class DStrSearch implements DExpression {
   DString get key;
 
   @override
+  final String statementName = "str_search";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* str.getIterable();

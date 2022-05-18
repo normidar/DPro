@@ -5,18 +5,27 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
-/// 定義して 値を与える　：＝
-abstract class DefGive implements DAction {
+/// define variable
+abstract class DDefVariable implements DAction {
   DType? get type;
+
+  /// some time we should auto change the variable name
   DStatement get target;
-  DStatement get content;
+  DStatement? get content;
+  bool get changeable;
+
+  @override
+  final String statementName = "define_variable";
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     // do not see type now
     yield* target.getIterable();
-    yield* content.getIterable();
+    final _content = content;
+    if (_content != null) {
+      yield* _content.getIterable();
+    }
   }
 
   @override
@@ -31,16 +40,17 @@ abstract class DefGive implements DAction {
 
       targetStr = sprintf(defFormat, [_type.tran(tip), targetStr]);
     }
+    // TODO: TEST
     return sprintf(giveFormat, [
       targetStr,
-      content.tran(tip),
+      content?.tran(tip),
     ]);
   }
 
   DType getType() {
     DType? _type = type;
     if (_type != null) return _type;
-    DStatement _content = content;
+    DStatement? _content = content;
     if (_content is DExpression) {
       return _content.type;
     }
@@ -48,12 +58,18 @@ abstract class DefGive implements DAction {
   }
 }
 
-class ODefGive with DefGive {
+class ODefGive with DDefVariable {
   @override
   DType? type;
   @override
   DStatement target;
   @override
-  DStatement content;
-  ODefGive({required this.target, required this.content, this.type});
+  DStatement? content;
+  @override
+  bool changeable;
+  ODefGive(
+      {required this.target,
+      required this.content,
+      this.type,
+      this.changeable = true});
 }

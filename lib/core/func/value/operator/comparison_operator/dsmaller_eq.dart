@@ -7,6 +7,9 @@ import 'package:dpro/core/type/dtypes.dart';
 /// it often `<=`
 abstract class DSmallerEq extends DCalculate {
   @override
+  final String statementName = "smaller_equal";
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.smallerEq;
   }

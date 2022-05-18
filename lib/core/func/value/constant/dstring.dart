@@ -9,6 +9,9 @@ abstract class DString extends DConstant {
   String get value;
 
   @override
+  final String statementName = "str";
+
+  @override
   String tran(LanguageTip tip) {
     final format = tip.getRule("str");
     return sprintf(format, [value]);

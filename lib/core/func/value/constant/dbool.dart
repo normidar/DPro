@@ -8,6 +8,9 @@ abstract class DBool extends DConstant {
   bool get value;
 
   @override
+  final String statementName = "bool";
+
+  @override
   String tran(LanguageTip tip) {
     return value.toString();
   }

@@ -8,6 +8,9 @@ abstract class DReplace implements DStatement {
   DStatement get value;
 
   @override
+  final String statementName = "replace_iterator";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* iterator.getIterable();

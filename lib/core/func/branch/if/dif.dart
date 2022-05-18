@@ -9,6 +9,9 @@ abstract class DIf implements DStatement {
   DCodeLines? get elseLines;
 
   @override
+  final String statementName = "if";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* condition.getIterable();

@@ -11,6 +11,9 @@ abstract class DForE implements DStatement {
   String get varName;
 
   @override
+  final String statementName = "for_each";
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* list.getIterable();
