@@ -1,12 +1,14 @@
+import 'package:dpro/core/d_runable.dart';
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/daction.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// define variable
-abstract class DDefVariable implements DAction {
+abstract class DDefVariable implements DAction, DRunable {
   DType? get type;
 
   /// some time we should auto change the variable name
@@ -16,6 +18,9 @@ abstract class DDefVariable implements DAction {
 
   @override
   final String statementName = "define_variable";
+
+  @override
+  dynamic run(RunTip tip) {}
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
