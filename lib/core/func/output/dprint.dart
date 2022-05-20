@@ -1,7 +1,6 @@
 import 'package:dpro/core/d_runable.dart';
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
-import 'package:dpro/core/func/var.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
@@ -14,8 +13,7 @@ abstract class DPrint implements DStatement, DRunable {
 
   @override
   dynamic run(RunTip tip) {
-    final _context = context;
-    if (_context is DVar) tip.output(_context.run(tip));
+    tip.output(context.run(tip));
   }
 
   @override

@@ -10,6 +10,7 @@ import 'package:sprintf/sprintf.dart';
 
 /// define variable
 abstract class DDefVariable implements DAction, DRunable {
+  // use getType() to get the type
   DType? get type;
 
   /// some time we should auto change the variable name
@@ -23,14 +24,13 @@ abstract class DDefVariable implements DAction, DRunable {
   @override
   dynamic run(RunTip tip) {
     final _content = content;
+
     if (_content != null) {
-      if (_content is DRunable) {
-        tip.runTimeMemory.inputMemory(
-          target.name,
-          (_content as DRunable).run(tip),
-          getType(),
-        );
-      }
+      tip.runTimeMemory.inputMemory(
+        target.name,
+        _content.run(tip),
+        getType(),
+      );
     }
   }
 

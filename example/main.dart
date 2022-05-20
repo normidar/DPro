@@ -8,8 +8,9 @@ void main(List<String> arguments) {
 void engineTest() {
   final codes = OCodeLines<DStatement>(
     objects: [
-      ODefGive(target: OVar("a"), content: OString("succ")),
-      OPrint(OVar("a")),
+      ODefGive(target: OVar("a"), content: OInt(3)),
+      ODefGive(target: OVar("b"), content: OInt(4)),
+      OPrint(OPlus(OVar("a"), OVar("b"))),
     ],
   );
   final engine = RunEngine();

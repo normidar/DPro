@@ -14,7 +14,9 @@ abstract class DVar implements DExpression, DRunable {
   String statementName = "variable";
 
   @override
-  dynamic run(RunTip tip) => tip.runTimeMemory.readMemorySpace(name)?.value;
+  dynamic run(RunTip tip) {
+    return tip.runTimeMemory.readMemorySpace(name)?.value;
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {

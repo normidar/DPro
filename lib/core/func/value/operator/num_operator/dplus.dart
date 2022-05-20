@@ -11,8 +11,9 @@ abstract class DPlus extends DCalculate {
   final String statementName = "plus";
 
   @override
-  dynamic run(RunTip tip) =>
-      getLeftExpression().run(tip) + getRightExpression().run(tip);
+  dynamic run(RunTip tip) {
+    return getLeftExpression().run(tip) + getRightExpression().run(tip);
+  }
 
   @override
   OperatorEnum get operator {
