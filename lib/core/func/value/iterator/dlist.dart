@@ -1,17 +1,22 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/constant/dconstant.dart';
+import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// this is a const list writed in codes
 abstract class DList implements DConstant {
   DType get valueType;
-  List<DStatement> get values;
+  List<DExpression> get values;
 
   @override
   final String statementName = "list";
+
+  @override
+  dynamic run(RunTip tip) => values.map((e) => e.run(tip));
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -41,6 +46,6 @@ class OList with DList {
   @override
   DType valueType;
   @override
-  List<DStatement> values;
+  List<DExpression> values;
   OList({required this.valueType, required this.values});
 }

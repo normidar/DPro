@@ -1,5 +1,6 @@
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -10,6 +11,11 @@ abstract class DChar extends DConstant {
 
   @override
   final String statementName = "char";
+
+  @override
+  dynamic run(RunTip tip) {
+    return value;
+  }
 
   @override
   String tran(LanguageTip tip) {

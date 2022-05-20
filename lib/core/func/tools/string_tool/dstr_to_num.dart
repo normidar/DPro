@@ -3,6 +3,7 @@ import 'package:dpro/core/func/value/constant/dstring.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -12,6 +13,9 @@ abstract class DStrToNum implements DExpression {
 
   @override
   final String statementName = "str_to_num";
+
+  @override
+  dynamic run(RunTip tip) => double.parse(str.run(tip));
 
   @override
   Iterable<StatementInfo> getIterable() sync* {

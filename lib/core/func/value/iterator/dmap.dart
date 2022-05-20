@@ -1,17 +1,28 @@
 import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/value/constant/dconstant.dart';
+import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DMap implements DConstant {
   DType get keyType;
   DType get valueType;
-  Map<DStatement, DStatement> get map;
+  Map<DExpression, DExpression> get map;
 
   @override
   final String statementName = "map";
+
+  @override
+  dynamic run(RunTip tip) {
+    var rt = {};
+    for (var k in map.keys) {
+      rt[k.run(tip)] = map[k.run(tip)];
+    }
+    return rt;
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -64,6 +75,6 @@ class OMap with DMap {
   @override
   DType valueType;
   @override
-  Map<DStatement, DStatement> map;
+  Map<DExpression, DExpression> map;
   OMap({required this.keyType, required this.valueType, required this.map});
 }

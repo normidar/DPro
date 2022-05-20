@@ -1,15 +1,20 @@
+import 'package:dpro/core/func/value/constant/dconstant.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
-
-import 'dconstant.dart';
 
 abstract class DFloat extends DConstant {
   double get value;
 
   @override
   final String statementName = "float";
+
+  @override
+  dynamic run(RunTip tip) {
+    return value;
+  }
 
   @override
   String tran(LanguageTip tip) {

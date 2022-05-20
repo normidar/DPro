@@ -2,6 +2,7 @@ import 'package:dpro/core/dstatement.dart';
 import 'package:dpro/core/func/class/method/dargument.dart';
 import 'package:dpro/core/func/value/dexpression.dart';
 import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
@@ -11,6 +12,10 @@ abstract class DNew implements DExpression {
 
   @override
   final String statementName = "new";
+
+  /// TODO: when support class
+  @override
+  dynamic run(RunTip tip) => null;
 
   @override
   Iterable<StatementInfo> getIterable() sync* {

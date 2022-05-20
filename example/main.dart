@@ -4,37 +4,49 @@ void main(List<String> arguments) {
   engineTest();
 }
 
-/// to test the class object
+// to test the class object
 void engineTest() {
-  TranEngine.tip = LanguageTips.java;
-  print(TranEngine.tran(
-    codes: OCodeLines(objects: [
-      OClass(
-          name: "Abc",
-          fieldMembers: OCodeLines(objects: [
-            OField(type: DTypes.dInt, isPrivate: true, name: "id"),
-            OField(type: DTypes.dInt, name: "id2"),
-          ]),
-          methodMembers: OCodeLines(objects: [
-            OMethod(
-                name: "abc",
-                arguments: [
-                  OArgument(type: DTypes.dStr, name: "arg1"),
-                  OArgument(type: DTypes.dStr, name: "arg2"),
-                ],
-                lines: OCodeLines(
-                  objects: [
-                    ODefGive(
-                      target: OVar("a"),
-                      content: OTimes(
-                          OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
-                    ),
-                  ],
-                ))
-          ])),
-    ]),
-  ));
+  final codes = OCodeLines<DStatement>(
+    objects: [
+      ODefGive(target: OVar("a"), content: OString("succ")),
+      OPrint(OVar("a")),
+    ],
+  );
+  final engine = RunEngine();
+  engine.run(codes);
 }
+
+// /// to test the class object
+// void engineTest() {
+//   TranEngine.tip = LanguageTips.java;
+//   print(TranEngine.tran(
+//     codes: OCodeLines(objects: [
+//       OClass(
+//           name: "Abc",
+//           fieldMembers: OCodeLines(objects: [
+//             OField(type: DTypes.dInt, isPrivate: true, name: "id"),
+//             OField(type: DTypes.dInt, name: "id2"),
+//           ]),
+//           methodMembers: OCodeLines(objects: [
+//             OMethod(
+//                 name: "abc",
+//                 arguments: [
+//                   OArgument(type: DTypes.dStr, name: "arg1"),
+//                   OArgument(type: DTypes.dStr, name: "arg2"),
+//                 ],
+//                 lines: OCodeLines(
+//                   objects: [
+//                     ODefGive(
+//                       target: OVar("a"),
+//                       content: OTimes(
+//                           OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
+//                     ),
+//                   ],
+//                 ))
+//           ])),
+//     ]),
+//   ));
+// }
 
 /// to test the operator
 // void engineTest() {

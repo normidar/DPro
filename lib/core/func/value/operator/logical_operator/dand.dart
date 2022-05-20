@@ -3,11 +3,16 @@ import 'package:dpro/core/func/value/operator/operator.dart';
 import 'package:dpro/core/func/value/operator/operator_enum.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 
 /// it often `&&` `and`
 abstract class DAnd extends DCalculate {
   @override
   final String statementName = "and";
+
+  @override
+  bool run(RunTip tip) =>
+      getLeftExpression().run(tip) + getRightExpression().run(tip);
 
   @override
   OperatorEnum get operator {

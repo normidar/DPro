@@ -1,10 +1,20 @@
+import 'package:dpro/core/d_runable.dart';
+import 'package:dpro/core/func/value/dexpression.dart';
+import 'package:dpro/core/type/dtype.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import '../dstatement.dart';
 
-// TODO: change to Exception, this should not in define.
-abstract class DVar implements DStatement {
-  String get statementName;
+/// A variable
+abstract class DVar implements DExpression, DRunable {
+  String get name;
+
+  @override
+  String statementName = "variable";
+
+  @override
+  dynamic run(RunTip tip) => tip.runTimeMemory.readMemorySpace(name)?.value;
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -12,13 +22,17 @@ abstract class DVar implements DStatement {
   }
 
   @override
+  // TODO: find type in tip and return type
+  DType get type => throw UnimplementedError();
+
+  @override
   String tran(LanguageTip tip) {
-    return statementName;
+    return name;
   }
 }
 
 class OVar with DVar {
   @override
-  String statementName;
-  OVar(this.statementName);
+  String name;
+  OVar(this.name);
 }

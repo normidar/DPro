@@ -1,15 +1,21 @@
+import 'package:dpro/core/func/value/constant/dconstant.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
-
-import 'dconstant.dart';
 
 abstract class DInt extends DConstant {
   int get value;
+
   int? get bit;
 
   @override
   final String statementName = "int";
+
+  @override
+  dynamic run(RunTip tip) {
+    return value;
+  }
 
   @override
   String tran(LanguageTip tip) {

@@ -1,13 +1,26 @@
+import 'package:dpro/core/d_runable.dart';
+import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 
 import 'dstatement.dart';
 
-abstract class DCodeLines<T extends DStatement> implements DStatement {
+abstract class DCodeLines<T extends DStatement>
+    implements DStatement, DRunable {
   List<T> get objects;
   bool _isAddIndent = false;
 
   @override
   final String statementName = "code_lines";
+
+  @override
+  dynamic run(RunTip tip) {
+    for (var e in objects) {
+      final _e = e;
+      if (_e is DRunable) {
+        (_e as DRunable).run(tip);
+      }
+    }
+  }
 
   void addIndent() {
     _isAddIndent = true;
