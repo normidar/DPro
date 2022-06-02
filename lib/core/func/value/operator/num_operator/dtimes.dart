@@ -15,6 +15,13 @@ abstract class DTimes extends DCalculate {
       getLeftExpression().run(tip) * getRightExpression().run(tip);
 
   @override
+  Map toMap() {
+    return {
+      "statement_name": statementName,
+    };
+  }
+
+  @override
   OperatorEnum get operator {
     return OperatorEnum.times;
   }

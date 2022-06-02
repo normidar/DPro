@@ -2,21 +2,21 @@ import 'package:dpro/dpro.dart';
 
 OCodeLines sampleIf() {
   return OCodeLines(
-    objects: [
+    codeLines: [
       ODefGive(
-        target: OVar("a"),
+        target: OVar('a'),
         content: OInt(13),
         type: DTypes.dInt,
       ),
       OIf(
-        condition: OBigger(OVar("a"), OInt(12)),
-        lines: OCodeLines(objects: [
-          OPrint(OString("月ではない")),
-          OPrint(OString("月ではない")),
+        condition: OBigger(OVar('a'), OInt(12)),
+        lines: OCodeLines(codeLines: [
+          OPrint(OString('月ではない')),
+          OPrint(OString('月ではない')),
         ]),
-        elseLines: OCodeLines(objects: [
-          OPrint(OString("月です")),
-          OPrint(OString("月です")),
+        elseLines: OCodeLines(codeLines: [
+          OPrint(OString('月です')),
+          OPrint(OString('月です')),
         ]),
       ),
     ],
@@ -24,39 +24,39 @@ OCodeLines sampleIf() {
 }
 
 OCodeLines testOperators() {
-  return OCodeLines(objects: [
+  return OCodeLines(codeLines: [
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OTimes(OInt(2), OPlus(OPlus(OInt(2), OInt(3)), OInt(4))),
       type: DTypes.dInt,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OMinus(OInt(3), OTimes(OInt(2), OInt(1))),
       type: DTypes.dInt,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OTimes(OMinus(OInt(3), OInt(2)), OInt(1)),
       type: DTypes.dInt,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OTimes(OMinus(OInt(3), OInt(2)), OMinus(OInt(3), OInt(2))),
       type: DTypes.dInt,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OMinus(OMinus(OInt(4), OMinus(OInt(3), OInt(2))), OInt(1)),
       type: DTypes.dInt,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OAnd(OEqual(OBool(false), OBool(true)), OBool(true)),
       type: DTypes.dBool,
     ),
     ODefGive(
-      target: OVar("a"),
+      target: OVar('a'),
       content: OEqual(OAnd(OBool(false), OBool(true)), OBool(true)),
       type: DTypes.dBool,
     ),
@@ -65,60 +65,60 @@ OCodeLines testOperators() {
 
 OCodeLines sampleFor() {
   return OCodeLines(
-    objects: [
+    codeLines: [
       ODefGive(
-        target: OVar("max"),
+        target: OVar('max'),
         content: OInt(100),
         type: DTypes.dInt,
       ),
       ODefGive(
-        target: OVar("sum"),
+        target: OVar('sum'),
         content: OInt(0),
         type: DTypes.dInt,
       ),
       OForI(
-        end: OVar("max"),
-        lines: OCodeLines(objects: [
+        end: OVar('max'),
+        lines: OCodeLines(codeLines: [
           OGive(
-            target: OVar("sum"),
-            content: OPlus(OVar("sum"), OVar("i")),
+            target: OVar('sum'),
+            content: OPlus(OVar('sum'), OVar('i')),
           ),
           OGive(
-            target: OVar("sum"),
-            content: OPlus(OVar("sum"), OVar("i")),
+            target: OVar('sum'),
+            content: OPlus(OVar('sum'), OVar('i')),
           ),
         ]),
       ),
-      OPrint(OVar("sum"))
+      OPrint(OVar('sum'))
     ],
   );
 }
 
 OCodeLines foreachList() {
-  return OCodeLines(objects: [
+  return OCodeLines(codeLines: [
     OForE(
         type: DTypes.dStr,
         list: OList(
             valueType: DTypes.dStr,
-            values: [OString("a"), OString("b"), OString("c"), OString("d")]),
-        lines: OCodeLines(objects: [
-          OPrint(OVar("e")),
+            values: [OString('a'), OString('b'), OString('c'), OString('d')]),
+        lines: OCodeLines(codeLines: [
+          OPrint(OVar('e')),
         ]))
   ]);
 }
 
 OCodeLines listToMap() {
-  return OCodeLines(objects: [
+  return OCodeLines(codeLines: [
     ODefGive(
-      target: OVar("mylist"),
+      target: OVar('mylist'),
       content: OList(valueType: DTypes.dStr, values: [
-        OString("零"),
-        OString("壱"),
-        OString("弐"),
+        OString('零'),
+        OString('壱'),
+        OString('弐'),
       ]),
     ),
     ODefGive(
-      target: OVar("mymap"),
+      target: OVar('mymap'),
       content: OMap(
         keyType: DTypes.dStr,
         valueType: DTypes.dStr,
@@ -127,9 +127,9 @@ OCodeLines listToMap() {
     ),
     OForE(
         type: DTypes.dStr,
-        list: OVar("mylist"),
-        lines: OCodeLines(objects: [
-          OReplace(index: OVar("e"), value: OVar("e"), iterator: OVar("mymap")),
+        list: OVar('mylist'),
+        lines: OCodeLines(codeLines: [
+          // OReplace(index: OVar('e'), value: OVar('e'), iterator: OVar('mymap')),
         ])),
     // OPrint(
     //   OSearch(

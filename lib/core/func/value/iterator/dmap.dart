@@ -25,6 +25,13 @@ abstract class DMap implements DConstant {
   }
 
   @override
+  Map toMap() {
+    return {
+      "statement_name": statementName,
+    };
+  }
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this, isFinal: map.isEmpty);
     for (var k in map.keys) {

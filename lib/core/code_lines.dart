@@ -6,7 +6,7 @@ import 'dstatement.dart';
 
 abstract class DCodeLines<T extends DStatement>
     implements DStatement, DRunable {
-  List<T> get objects;
+  List<T> get codeLines;
   bool _isAddIndent = false;
 
   @override
@@ -14,12 +14,20 @@ abstract class DCodeLines<T extends DStatement>
 
   @override
   dynamic run(RunTip tip) {
-    for (var e in objects) {
+    for (var e in codeLines) {
       final _e = e;
       if (_e is DRunable) {
         (_e as DRunable).run(tip);
       }
     }
+  }
+
+  @override
+  Map toMap() {
+    return {
+      "statement_name": statementName,
+      "code_lines": codeLines.map((e) => e.toMap()).toList()
+    };
   }
 
   void addIndent() {
@@ -29,7 +37,7 @@ abstract class DCodeLines<T extends DStatement>
   @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
-    for (var element in objects) {
+    for (var element in codeLines) {
       yield* element.getIterable();
     }
   }
@@ -39,12 +47,12 @@ abstract class DCodeLines<T extends DStatement>
   String tran(LanguageTip tip) {
     if (_isAddIndent) tip.addIndent();
     String rt = "";
-    for (var i = 0; i < objects.length; i++) {
-      if (i == objects.length - 1) {
-        rt += putin(objects[i], tip);
+    for (var i = 0; i < codeLines.length; i++) {
+      if (i == codeLines.length - 1) {
+        rt += putin(codeLines[i], tip);
         break;
       }
-      rt += putin(objects[i], tip) + "\n";
+      rt += putin(codeLines[i], tip) + "\n";
     }
     if (_isAddIndent) tip.removeIndent();
     return rt;
@@ -57,6 +65,6 @@ abstract class DCodeLines<T extends DStatement>
 
 class OCodeLines<T extends DStatement> with DCodeLines<T> {
   @override
-  List<T> objects;
-  OCodeLines({required this.objects});
+  List<T> codeLines;
+  OCodeLines({required this.codeLines});
 }

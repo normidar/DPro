@@ -17,7 +17,7 @@ linter:
   rules:
     unnecessary_statements: true # これを入れることでメソッドの括弧忘れを防止できる
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 analyzer:
   errors:
     unused_import: error

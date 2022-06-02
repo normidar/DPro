@@ -6,7 +6,7 @@ class TranEngine {
   static LanguageTip tip = LanguageTips.java;
   static String tran({required DCodeLines codes}) {
     String rt = "";
-    for (var i in codes.objects) {
+    for (var i in codes.codeLines) {
       rt += i.tran(tip) + "\n";
     }
     return rt;

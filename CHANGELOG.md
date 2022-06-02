@@ -1,3 +1,7 @@
+## 0.4.0
+
+- support run code
+
 ## 0.3.3
 
 - complited operaters

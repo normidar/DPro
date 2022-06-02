@@ -8,7 +8,17 @@ class DType implements DStatement {
   const DType(this.type, {this.generics = const []});
 
   @override
-  String get statementName => "type_" + type;
+  String get statementName => 'type';
+  // 'type_$type' '_(' + generics.map((e) => e.statementName).join(',') + ')';
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'type': type,
+      'generics': generics.map((e) => e.toMap()).toList(),
+    };
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -21,15 +31,15 @@ class DType implements DStatement {
   @override
   String tran(LanguageTip tip) {
     String _type = tip.getType(type) ?? type;
-    if (generics.isEmpty || tip.toString() != "java") {
+    if (generics.isEmpty || tip.toString() != 'java') {
       return _type;
     }
     // 総称がある時に
-    String format = tip.getRule("generic");
+    String format = tip.getRule('generic');
     List<String> _generics = generics.map((e) => e.tran(tip)).toList();
     return sprintf(format, [
       _type,
-      _generics.join(", "),
+      _generics.join(', '),
     ]);
   }
 

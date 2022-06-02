@@ -1,16 +1,17 @@
 import 'package:dpro/dpro.dart';
 
 void main(List<String> arguments) {
-  engineTest();
+  // engineTest();
+  print(['1', '2'].map((e) => int.parse(e)) is List);
 }
 
 // to test the class object
 void engineTest() {
   final codes = OCodeLines<DStatement>(
-    objects: [
-      ODefGive(target: OVar("a"), content: OInt(3)),
-      ODefGive(target: OVar("b"), content: OInt(4)),
-      OPrint(OPlus(OVar("a"), OVar("b"))),
+    codeLines: [
+      ODefGive(target: OVar('a'), content: OFloat(3)),
+      ODefGive(target: OVar('b'), content: OInt(4)),
+      OPrint(OPlus(OVar('a'), OVar('b'))),
     ],
   );
   final engine = RunEngine();

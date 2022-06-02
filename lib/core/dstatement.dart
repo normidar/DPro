@@ -9,6 +9,9 @@ abstract class DStatement {
 
   /// get iterable to for each statements, each statement will yield itself first
   Iterable<StatementInfo> getIterable();
+
+  /// to map
+  Map toMap();
 }
 
 class StatementInfo {

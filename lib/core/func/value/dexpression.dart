@@ -5,5 +5,5 @@ import 'package:dpro/core/type/dtype.dart';
 /// A DExpression is a can get value object.
 /// expression allway return a value.
 abstract class DExpression extends DAction implements DRunable {
-  DType get type;
+  DType? get type;
 }

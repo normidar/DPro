@@ -10,7 +10,8 @@ abstract class DStrLink extends DCalculate {
   final String statementName = "str_link";
 
   @override
-  dynamic run(RunTip tip) => getLeftExpression().run(tip) + getRightExpression().run(tip);
+  dynamic run(RunTip tip) =>
+      getLeftExpression().run(tip) + getRightExpression().run(tip);
 
   @override
   OperatorEnum get operator {

@@ -14,6 +14,15 @@ abstract class DCalculate implements DExpression {
   DStatement get right;
 
   @override
+  Map toMap() {
+    return {
+      "statement_name": statementName,
+      "left": left.toMap(),
+      "right": right.toMap(),
+    };
+  }
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     yield* left.getIterable();
