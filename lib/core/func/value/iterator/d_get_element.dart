@@ -11,10 +11,19 @@ abstract class DGetElement implements DExpression {
   DExpression get index;
 
   @override
-  final String statementName = "get_iterator_element";
+  final String statementName = 'get_iterator_element';
 
   @override
   dynamic run(RunTip tip) => iterator.run(tip)[index.run(tip)];
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'iterator': iterator.toMap(),
+      'index': index.toMap(),
+    };
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -25,7 +34,7 @@ abstract class DGetElement implements DExpression {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("search");
+    final format = tip.getRule('search');
     return sprintf(format, [
       iterator.tran(tip),
       index.tran(tip),
@@ -33,7 +42,7 @@ abstract class DGetElement implements DExpression {
   }
 
   @override
-  DType get type => iterator.type.generics.last;
+  DType? get type => iterator.type?.generics.last;
 }
 
 class OSearch with DGetElement {

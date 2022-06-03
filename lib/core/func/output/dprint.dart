@@ -9,11 +9,19 @@ abstract class DPrint implements DStatement, DRunable {
   DExpression get context;
 
   @override
-  final String statementName = "print";
+  final String statementName = 'print';
 
   @override
   dynamic run(RunTip tip) {
     tip.output(context.run(tip));
+  }
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'context': context.toMap(),
+    };
   }
 
   @override
@@ -24,7 +32,7 @@ abstract class DPrint implements DStatement, DRunable {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("print");
+    final format = tip.getRule('print');
     return sprintf(format, [
       context.tran(tip),
     ]);

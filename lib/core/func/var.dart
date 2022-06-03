@@ -14,7 +14,7 @@ abstract class DVar implements DExpression {
   DType? get type => null;
 
   @override
-  String statementName = "variable";
+  String statementName = 'variable';
 
   @override
   dynamic run(RunTip tip) {
@@ -24,8 +24,8 @@ abstract class DVar implements DExpression {
   @override
   Map toMap() {
     return {
-      "statement_name": statementName,
-      "name": name,
+      'statement_name': statementName,
+      'name': name,
     };
   }
 

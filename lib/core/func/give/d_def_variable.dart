@@ -1,11 +1,4 @@
-import 'package:dpro/core/d_runable.dart';
-import 'package:dpro/core/dstatement.dart';
-import 'package:dpro/core/func/daction.dart';
-import 'package:dpro/core/func/value/dexpression.dart';
-import 'package:dpro/core/func/var.dart';
-import 'package:dpro/core/type/dtype.dart';
-import 'package:dpro/run/run_tip.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/dpro.dart';
 import 'package:sprintf/sprintf.dart';
 
 /// define variable
@@ -19,7 +12,7 @@ abstract class DDefVariable implements DAction, DRunable {
   bool get changeable;
 
   @override
-  final String statementName = "define_variable";
+  final String statementName = 'define_variable';
 
   @override
   dynamic run(RunTip tip) {
@@ -35,6 +28,15 @@ abstract class DDefVariable implements DAction, DRunable {
   }
 
   @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'type': type?.toMap(),
+      'target': target.toMap(),
+    };
+  }
+
+  @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
     // do not see type now
@@ -47,12 +49,12 @@ abstract class DDefVariable implements DAction, DRunable {
 
   @override
   String tran(LanguageTip tip) {
-    final defFormat = tip.getRule("def");
-    final giveFormat = tip.getRule("give");
+    final defFormat = tip.getRule('def');
+    final giveFormat = tip.getRule('give');
 
     var targetStr = target.tran(tip);
     // 与える時に定義するかどうかを判定
-    if (tip.toString() == "java") {
+    if (tip.toString() == 'java') {
       DType _type = getType();
 
       targetStr = sprintf(defFormat, [_type.tran(tip), targetStr]);
@@ -68,10 +70,12 @@ abstract class DDefVariable implements DAction, DRunable {
     DType? _type = type;
     if (_type != null) return _type;
     DStatement? _content = content;
+    // TODO: change to dynamic not void
+    if (_content == null) return DTypes.dVoid;
     if (_content is DExpression) {
-      return _content.type;
+      return _content.type!;
     }
-    throw Exception("this target can not support retype");
+    throw Exception('this target can not support retype');
   }
 }
 

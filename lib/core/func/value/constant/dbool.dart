@@ -6,10 +6,11 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'dconstant.dart';
 
 abstract class DBool extends DConstant {
+  @override
   bool get value;
 
   @override
-  final String statementName = "bool";
+  final String statementName = 'bool';
 
   @override
   dynamic run(RunTip tip) {

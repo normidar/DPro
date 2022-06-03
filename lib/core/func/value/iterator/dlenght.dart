@@ -11,10 +11,18 @@ abstract class DLenght implements DExpression {
   DExpression get iterator;
 
   @override
-  final String statementName = "get_iterator_lenght";
+  final String statementName = 'get_iterator_lenght';
 
   @override
   dynamic run(RunTip tip) => iterator.run(tip).length;
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'iterator': iterator.toMap(),
+    };
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -24,7 +32,7 @@ abstract class DLenght implements DExpression {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("len");
+    final format = tip.getRule('len');
     return sprintf(format, [
       iterator.tran(tip),
     ]);

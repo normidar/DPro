@@ -7,10 +7,11 @@ import 'package:sprintf/sprintf.dart';
 import 'dconstant.dart';
 
 abstract class DDouble extends DConstant {
+  @override
   double get value;
 
   @override
-  final String statementName = "double";
+  final String statementName = 'double';
 
   @override
   dynamic run(RunTip tip) {
@@ -19,7 +20,7 @@ abstract class DDouble extends DConstant {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("double");
+    final format = tip.getRule('double');
     return sprintf(format, [value]);
   }
 

@@ -6,10 +6,11 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DFloat extends DConstant {
+  @override
   double get value;
 
   @override
-  final String statementName = "float";
+  final String statementName = 'float';
 
   @override
   dynamic run(RunTip tip) {
@@ -18,7 +19,7 @@ abstract class DFloat extends DConstant {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("float");
+    final format = tip.getRule('float');
     return sprintf(format, [value]);
   }
 

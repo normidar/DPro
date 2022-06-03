@@ -10,7 +10,16 @@ abstract class DGive implements DAction {
   DStatement get content;
 
   @override
-  final String statementName = "give";
+  final String statementName = 'give';
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'target': target.toMap(),
+      'content': content.toMap(),
+    };
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -21,7 +30,7 @@ abstract class DGive implements DAction {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("give");
+    final format = tip.getRule('give');
     return sprintf(format, [
       target.tran(tip),
       content.tran(tip),

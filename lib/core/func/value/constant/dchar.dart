@@ -7,10 +7,11 @@ import 'package:sprintf/sprintf.dart';
 import 'dconstant.dart';
 
 abstract class DChar extends DConstant {
+  @override
   String get value;
 
   @override
-  final String statementName = "char";
+  final String statementName = 'char';
 
   @override
   dynamic run(RunTip tip) {
@@ -19,7 +20,7 @@ abstract class DChar extends DConstant {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("char");
+    final format = tip.getRule('char');
     return sprintf(format, [value.substring(0, 1)]);
   }
 

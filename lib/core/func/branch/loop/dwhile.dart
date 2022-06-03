@@ -8,7 +8,16 @@ abstract class DWhile implements DStatement {
   DCodeLines get lines;
 
   @override
-  final String statementName = "while";
+  final String statementName = 'while';
+
+  @override
+  Map toMap() {
+    return {
+      'statement_name': statementName,
+      'condition': condition.toMap(),
+      'lines': lines.toMap(),
+    };
+  }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
@@ -20,11 +29,11 @@ abstract class DWhile implements DStatement {
   @override
   String tran(LanguageTip tip) {
     lines.addIndent();
-    final format = tip.getRule("while");
+    final format = tip.getRule('while');
     return sprintf(format, [
       condition.tran(tip),
       lines.tran(tip),
-      " " * tip.indent,
+      ' ' * tip.indent,
     ]);
   }
 }
