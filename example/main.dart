@@ -1,8 +1,13 @@
 import 'package:dpro/dpro.dart';
 
 void main(List<String> arguments) {
-  // engineTest();
-  print(['1', '2'].map((e) => int.parse(e)) is List);
+  final startTime = DateTime.now().millisecondsSinceEpoch;
+  engineTest();
+  final endTime = DateTime.now().millisecondsSinceEpoch;
+  print('used time: ' + (endTime - startTime).toString());
+  final l = [String];
+
+  // print(['1', '2'].map((e) => int.parse(e)) is List);
 }
 
 // to test the class object
@@ -14,8 +19,7 @@ void engineTest() {
       OPrint(OPlus(OVar('a'), OVar('b'))),
     ],
   );
-  final engine = RunEngine();
-  engine.run(codes);
+  print(TranEngine.toJson(codes: codes, isReadAble: true));
 }
 
 // /// to test the class object

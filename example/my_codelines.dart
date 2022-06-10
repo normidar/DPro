@@ -76,19 +76,19 @@ OCodeLines sampleFor() {
         content: OInt(0),
         type: DTypes.dInt,
       ),
-      OForI(
-        end: OVar('max'),
-        lines: OCodeLines(codeLines: [
-          OGive(
-            target: OVar('sum'),
-            content: OPlus(OVar('sum'), OVar('i')),
-          ),
-          OGive(
-            target: OVar('sum'),
-            content: OPlus(OVar('sum'), OVar('i')),
-          ),
-        ]),
-      ),
+      // OForI(
+      //   end: OVar('max'),
+      //   lines: OCodeLines(codeLines: [
+      //     OGive(
+      //       target: OVar('sum'),
+      //       content: OPlus(OVar('sum'), OVar('i')),
+      //     ),
+      //     OGive(
+      //       target: OVar('sum'),
+      //       content: OPlus(OVar('sum'), OVar('i')),
+      //     ),
+      //   ]),
+      // ),
       OPrint(OVar('sum'))
     ],
   );
@@ -96,14 +96,14 @@ OCodeLines sampleFor() {
 
 OCodeLines foreachList() {
   return OCodeLines(codeLines: [
-    OForE(
-        type: DTypes.dStr,
-        list: OList(
-            valueType: DTypes.dStr,
-            values: [OString('a'), OString('b'), OString('c'), OString('d')]),
-        lines: OCodeLines(codeLines: [
-          OPrint(OVar('e')),
-        ]))
+    // OForE(
+    //     type: DTypes.dStr,
+    //     list: OList(
+    //         valueType: DTypes.dStr,
+    //         values: [OString('a'), OString('b'), OString('c'), OString('d')]),
+    //     lines: OCodeLines(codeLines: [
+    //       OPrint(OVar('e')),
+    //     ]))
   ]);
 }
 
@@ -125,12 +125,12 @@ OCodeLines listToMap() {
         map: {},
       ),
     ),
-    OForE(
-        type: DTypes.dStr,
-        list: OVar('mylist'),
-        lines: OCodeLines(codeLines: [
-          // OReplace(index: OVar('e'), value: OVar('e'), iterator: OVar('mymap')),
-        ])),
+    // OForE(
+    //     type: DTypes.dStr,
+    //     list: OVar('mylist'),
+    //     lines: OCodeLines(codeLines: [
+    //       // OReplace(index: OVar('e'), value: OVar('e'), iterator: OVar('mymap')),
+    //     ])),
     // OPrint(
     //   OSearch(
     //     iterator: OVar("mylist"),
