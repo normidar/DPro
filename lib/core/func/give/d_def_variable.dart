@@ -11,8 +11,7 @@ abstract class DDefVariable implements DAction, DRunable {
   DExpression? get content;
   bool get changeable;
 
-  @override
-  final String statementName = 'define_variable';
+  static final String statementName = 'define_variable';
 
   @override
   dynamic run(RunTip tip) {

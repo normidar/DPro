@@ -13,8 +13,7 @@ abstract class DList implements DExpression {
   DType getValueType() => valueType!;
   List<DExpression> get values;
 
-  @override
-  final String statementName = 'list';
+  static final String statementName = 'list';
 
   @override
   dynamic run(RunTip tip) => values.map((e) => e.run(tip));

@@ -8,8 +8,7 @@ import 'package:sprintf/sprintf.dart';
 abstract class DPrint implements DStatement, DRunable {
   DExpression get context;
 
-  @override
-  final String statementName = 'print';
+  static final String statementName = 'print';
 
   @override
   dynamic run(RunTip tip) {

@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `>`
 abstract class DBigger extends DCalculate {
+  static final String statementName = 'bigger';
   @override
-  final String statementName = "bigger";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>

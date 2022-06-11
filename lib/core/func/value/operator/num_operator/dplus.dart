@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `+`
 abstract class DPlus extends DCalculate {
+  static final String statementName = 'plus';
   @override
-  final String statementName = "plus";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {

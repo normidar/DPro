@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `||` `or`
 abstract class DOr extends DCalculate {
+  static final String statementName = 'or';
   @override
-  final String statementName = "or";
+  String get mapStatementName => statementName;
 
   @override
   bool run(RunTip tip) =>

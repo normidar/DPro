@@ -7,6 +7,8 @@ import 'package:sprintf/sprintf.dart';
 
 /// two elements operator
 abstract class DCalculate implements DExpression {
+  String get mapStatementName;
+
   OperatorEnum get operator;
   // why we use DStatement? because we should throw the exception to the user,
   // we should not let user lose free
@@ -16,9 +18,9 @@ abstract class DCalculate implements DExpression {
   @override
   Map toMap() {
     return {
-      "statement_name": statementName,
-      "left": left.toMap(),
-      "right": right.toMap(),
+      'statement_name': mapStatementName,
+      'left': left.toMap(),
+      'right': right.toMap(),
     };
   }
 
@@ -53,7 +55,7 @@ abstract class DCalculate implements DExpression {
 
   @override
   String tran(LanguageTip tip) {
-    String format = tip.getRule("cal");
+    String format = tip.getRule('cal');
     OperatorInfo operatorInfo = getOpInfo(tip);
     final leftExp = getLeftExpression();
     final rightExp = getRightExpression();
@@ -77,7 +79,7 @@ abstract class DCalculate implements DExpression {
     }
 
     if (isPriority) {
-      format = "($format)";
+      format = '($format)';
     }
     return sprintf(format, [
       getLeftExpression().tran(tip),

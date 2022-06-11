@@ -7,8 +7,7 @@ abstract class DWhile implements DStatement {
   DStatement get condition;
   DCodeLines get lines;
 
-  @override
-  final String statementName = 'while';
+  static final String statementName = 'while';
 
   @override
   Map toMap() {

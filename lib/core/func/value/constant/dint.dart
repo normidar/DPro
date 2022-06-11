@@ -10,8 +10,9 @@ abstract class DInt extends DConstant {
 
   int? get bit;
 
+  static final String statementName = 'int';
   @override
-  final String statementName = 'int';
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {

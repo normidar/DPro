@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `/`
 abstract class DDivide extends DCalculate {
+  static final String statementName = 'divide';
   @override
-  final String statementName = "divide";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>

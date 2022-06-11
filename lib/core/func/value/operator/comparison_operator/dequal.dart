@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `==`
 abstract class DEqual extends DCalculate {
+  static final String statementName = 'equal';
   @override
-  final String statementName = "equal";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>

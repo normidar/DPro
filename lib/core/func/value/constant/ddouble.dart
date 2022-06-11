@@ -10,8 +10,9 @@ abstract class DDouble extends DConstant {
   @override
   double get value;
 
+  static final String statementName = 'double';
   @override
-  final String statementName = 'double';
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {

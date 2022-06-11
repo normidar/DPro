@@ -10,8 +10,9 @@ abstract class DChar extends DConstant {
   @override
   String get value;
 
+  static final String statementName = 'char';
   @override
-  final String statementName = 'char';
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {

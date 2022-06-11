@@ -9,8 +9,7 @@ abstract class DCodeLines<T extends DStatement>
   List<T> get codeLines;
   bool _isAddIndent = false;
 
-  @override
-  final String statementName = "code_lines";
+  static final String statementName = "code_lines";
 
   @override
   dynamic run(RunTip tip) {

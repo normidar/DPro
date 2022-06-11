@@ -10,8 +10,7 @@ import 'package:sprintf/sprintf.dart';
 abstract class DLenght implements DExpression {
   DExpression get iterator;
 
-  @override
-  final String statementName = 'get_iterator_lenght';
+  static final String statementName = 'get_iterator_lenght';
 
   @override
   dynamic run(RunTip tip) => iterator.run(tip).length;

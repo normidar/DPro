@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `<`
 abstract class DSmaller extends DCalculate {
+  static final String statementName = 'smaller';
   @override
-  final String statementName = "smaller";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>

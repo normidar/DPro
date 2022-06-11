@@ -10,8 +10,9 @@ abstract class DString extends DConstant {
   @override
   String get value;
 
+  static final String statementName = 'str';
   @override
-  final String statementName = "str";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {
@@ -20,7 +21,7 @@ abstract class DString extends DConstant {
 
   @override
   String tran(LanguageTip tip) {
-    final format = tip.getRule("str");
+    final format = tip.getRule('str');
     return sprintf(format, [value]);
   }
 

@@ -9,8 +9,9 @@ abstract class DFloat extends DConstant {
   @override
   double get value;
 
+  static final String statementName = 'float';
   @override
-  final String statementName = 'float';
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {

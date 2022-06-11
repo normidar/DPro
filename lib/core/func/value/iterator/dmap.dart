@@ -11,8 +11,7 @@ abstract class DMap implements DExpression {
   DType? get valueType;
   Map<DExpression, DExpression> get map;
 
-  @override
-  final String statementName = 'map';
+  static final String statementName = 'map';
 
   @override
   dynamic run(RunTip tip) {

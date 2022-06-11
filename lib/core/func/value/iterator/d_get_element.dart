@@ -10,8 +10,7 @@ abstract class DGetElement implements DExpression {
   DExpression get iterator;
   DExpression get index;
 
-  @override
-  final String statementName = 'get_iterator_element';
+  static final String statementName = 'get_iterator_element';
 
   @override
   dynamic run(RunTip tip) => iterator.run(tip)[index.run(tip)];

@@ -7,8 +7,9 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `&&` `and`
 abstract class DAnd extends DCalculate {
+  static final String statementName = 'and';
   @override
-  final String statementName = "and";
+  String get mapStatementName => statementName;
 
   @override
   bool run(RunTip tip) =>

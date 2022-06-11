@@ -9,8 +9,7 @@ abstract class DIf implements DStatement {
   DCodeLines get lines;
   DCodeLines? get elseLines;
 
-  @override
-  final String statementName = 'if';
+  static final String statementName = 'if';
 
   @override
   Map toMap() {

@@ -9,8 +9,7 @@ abstract class DGive implements DAction {
   DStatement get target;
   DStatement get content;
 
-  @override
-  final String statementName = 'give';
+  static final String statementName = 'give';
 
   @override
   Map toMap() {

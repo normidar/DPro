@@ -6,8 +6,9 @@ import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 
 abstract class DStrLink extends DCalculate {
+  static final String statementName = 'str_link';
   @override
-  final String statementName = "str_link";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>

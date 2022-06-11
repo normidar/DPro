@@ -9,8 +9,9 @@ abstract class DBool extends DConstant {
   @override
   bool get value;
 
+  static final String statementName = 'bool';
   @override
-  final String statementName = 'bool';
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) {
