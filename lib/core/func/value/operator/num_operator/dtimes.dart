@@ -4,6 +4,7 @@ import 'package:dpro/core/func/value/operator/operator_enum.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
+import 'package:dpro/tran/tran_engine.dart';
 
 /// it often `*`
 abstract class DTimes extends DCalculate {
@@ -11,6 +12,13 @@ abstract class DTimes extends DCalculate {
 
   @override
   String get mapStatementName => statementName;
+
+  static DTimes formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    final _left = TranEngine.formMap(m['left']);
+    final _right = TranEngine.formMap(m['right']);
+    return OTimes(_left, _right);
+  }
 
   @override
   dynamic run(RunTip tip) =>

@@ -5,7 +5,6 @@ void main(List<String> arguments) {
   engineTest();
   final endTime = DateTime.now().millisecondsSinceEpoch;
   print('used time: ' + (endTime - startTime).toString());
-  final l = [String];
 
   // print(['1', '2'].map((e) => int.parse(e)) is List);
 }
@@ -14,7 +13,7 @@ void main(List<String> arguments) {
 void engineTest() {
   final codes = OCodeLines<DStatement>(
     codeLines: [
-      OPrint(OString('hello world.')),
+      OPrint(OStrLink(OString('hello world.'), OString('hello world.'))),
     ],
   );
   final t = TranEngine.toJson(codes: codes, isReadAble: true);

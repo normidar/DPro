@@ -42,5 +42,6 @@ class TranEngine {
     DInt.statementName: DInt.formMap,
     DPrint.statementName: DPrint.formMap,
     DCodeLines.statementName: DCodeLines.formMap,
+    DStrLink.statementName: DStrLink.formMap,
   };
 }
