@@ -1,15 +1,11 @@
-import 'package:dpro/core/d_runable.dart';
-import 'package:dpro/run/run_tip.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
-
-import 'dstatement.dart';
+import 'package:dpro/dpro.dart';
 
 abstract class DCodeLines<T extends DStatement>
     implements DStatement, DRunable {
   List<T> get codeLines;
   bool _isAddIndent = false;
 
-  static final String statementName = "code_lines";
+  static final String statementName = 'code_lines';
 
   @override
   dynamic run(RunTip tip) {
@@ -21,11 +17,21 @@ abstract class DCodeLines<T extends DStatement>
     }
   }
 
+  static DCodeLines formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    final codeList = m['code_lines'];
+    List<DStatement> codes = [];
+    for (var e in codeList) {
+      codes.add(TranEngine.formMap(e));
+    }
+    return OCodeLines(codeLines: codes);
+  }
+
   @override
   Map toMap() {
     return {
-      "statement_name": statementName,
-      "code_lines": codeLines.map((e) => e.toMap()).toList()
+      'statement_name': statementName,
+      'code_lines': codeLines.map((e) => e.toMap()).toList()
     };
   }
 
@@ -45,20 +51,20 @@ abstract class DCodeLines<T extends DStatement>
   @override
   String tran(LanguageTip tip) {
     if (_isAddIndent) tip.addIndent();
-    String rt = "";
+    String rt = '';
     for (var i = 0; i < codeLines.length; i++) {
       if (i == codeLines.length - 1) {
         rt += putin(codeLines[i], tip);
         break;
       }
-      rt += putin(codeLines[i], tip) + "\n";
+      rt += putin(codeLines[i], tip) + '\n';
     }
     if (_isAddIndent) tip.removeIndent();
     return rt;
   }
 
   String putin(DStatement object, LanguageTip tip) {
-    return " " * tip.indent + object.tran(tip);
+    return ' ' * tip.indent + object.tran(tip);
   }
 }
 

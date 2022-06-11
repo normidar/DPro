@@ -14,6 +14,11 @@ abstract class DChar extends DConstant {
   @override
   String get mapStatementName => statementName;
 
+  static DChar formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OChar(m['value']);
+  }
+
   @override
   dynamic run(RunTip tip) {
     return value;

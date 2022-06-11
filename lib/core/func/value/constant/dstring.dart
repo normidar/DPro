@@ -14,6 +14,11 @@ abstract class DString extends DConstant {
   @override
   String get mapStatementName => statementName;
 
+  static DString formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OString(m['value']);
+  }
+
   @override
   dynamic run(RunTip tip) {
     return value;

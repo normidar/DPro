@@ -14,6 +14,11 @@ abstract class DInt extends DConstant {
   @override
   String get mapStatementName => statementName;
 
+  static DInt formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OInt(m['value']);
+  }
+
   @override
   dynamic run(RunTip tip) {
     return value;

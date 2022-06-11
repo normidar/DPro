@@ -14,12 +14,12 @@ void main(List<String> arguments) {
 void engineTest() {
   final codes = OCodeLines<DStatement>(
     codeLines: [
-      ODefGive(target: OVar('a'), content: OFloat(3)),
-      ODefGive(target: OVar('b'), content: OInt(4)),
-      OPrint(OPlus(OVar('a'), OVar('b'))),
+      OPrint(OString('hello world.')),
     ],
   );
-  print(TranEngine.toJson(codes: codes, isReadAble: true));
+  final t = TranEngine.toJson(codes: codes, isReadAble: true);
+  final o = TranEngine.formJson(t);
+  print(TranEngine.tran(codes: o as OCodeLines<DStatement>));
 }
 
 // /// to test the class object

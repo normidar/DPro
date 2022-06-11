@@ -43,7 +43,6 @@ export 'package:dpro/core/func/value/constant/dfloat.dart';
 export 'package:dpro/core/func/value/constant/dint.dart';
 export 'package:dpro/core/func/value/constant/dbool.dart';
 export 'package:dpro/core/func/value/constant/dchar.dart';
-export 'package:dpro/core/func/value/constant/ddouble.dart';
 export 'package:dpro/core/func/value/operator/operator_enum.dart';
 export 'package:dpro/core/func/value/operator/comparison_operator/dbigger_eq.dart';
 export 'package:dpro/core/func/value/operator/comparison_operator/dsmaller_eq.dart';

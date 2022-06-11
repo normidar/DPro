@@ -1,14 +1,15 @@
-import 'package:dpro/core/d_runable.dart';
-import 'package:dpro/core/dstatement.dart';
-import 'package:dpro/core/func/value/dexpression.dart';
-import 'package:dpro/run/run_tip.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/dpro.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DPrint implements DStatement, DRunable {
   DExpression get context;
 
   static final String statementName = 'print';
+
+  static DPrint formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OPrint(TranEngine.formMap(m['context']) as DExpression);
+  }
 
   @override
   dynamic run(RunTip tip) {

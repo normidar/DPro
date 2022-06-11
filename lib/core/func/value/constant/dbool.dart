@@ -13,6 +13,11 @@ abstract class DBool extends DConstant {
   @override
   String get mapStatementName => statementName;
 
+  static DBool formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OBool(m['value']);
+  }
+
   @override
   dynamic run(RunTip tip) {
     return value;

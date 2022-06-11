@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:dpro/core/code_lines.dart';
-import 'package:dpro/tran/lang_tips/language_tip.dart';
-import 'package:dpro/tran/language_tips.dart';
+import 'package:dpro/dpro.dart';
 
 class TranEngine {
   static LanguageTip tip = LanguageTips.java;
@@ -24,4 +22,25 @@ class TranEngine {
       return encoder.convert(codes.toMap());
     }
   }
+
+  static DStatement formJson(String json) {
+    Map m = jsonDecode(json);
+    return formMap(m);
+  }
+
+  static DStatement formMap(Map m) {
+    final func = formMapTran[m['statement_name']];
+    assert(func != null);
+    return func!(m);
+  }
+
+  static Map<String, DStatement Function(Map)> formMapTran = {
+    DBool.statementName: DBool.formMap,
+    DChar.statementName: DChar.formMap,
+    DString.statementName: DString.formMap,
+    DFloat.statementName: DFloat.formMap,
+    DInt.statementName: DInt.formMap,
+    DPrint.statementName: DPrint.formMap,
+    DCodeLines.statementName: DCodeLines.formMap,
+  };
 }
