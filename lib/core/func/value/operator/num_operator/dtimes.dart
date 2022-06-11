@@ -7,8 +7,10 @@ import 'package:dpro/run/run_tip.dart';
 
 /// it often `*`
 abstract class DTimes extends DCalculate {
+  static final String statementName = 'times';
+
   @override
-  final String statementName = "times";
+  String get mapStatementName => statementName;
 
   @override
   dynamic run(RunTip tip) =>
@@ -17,7 +19,7 @@ abstract class DTimes extends DCalculate {
   @override
   Map toMap() {
     return {
-      "statement_name": statementName,
+      'statement_name': statementName,
     };
   }
 

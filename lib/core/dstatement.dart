@@ -2,7 +2,7 @@ import '../tran/lang_tips/language_tip.dart';
 
 /// everything is Statement
 abstract class DStatement {
-  String get statementName;
+  // String get statementName;
 
   /// transform to target code, the target information is in the tip
   String tran(LanguageTip tip);
