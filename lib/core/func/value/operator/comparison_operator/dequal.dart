@@ -16,7 +16,7 @@ abstract class DEqual extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OEqual(_left, _right);
+    return OEqual(left: _left, right: _right);
   }
 
   @override
@@ -33,11 +33,11 @@ abstract class DEqual extends DCalculate {
 }
 
 class OEqual extends DEqual {
-  OEqual(this.left, this.right);
+  OEqual({this.left, this.right});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

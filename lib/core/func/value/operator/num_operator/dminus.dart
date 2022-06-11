@@ -16,7 +16,7 @@ abstract class DMinus extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OMinus(_left, _right);
+    return OMinus(left: _left, right: _right);
   }
 
   @override
@@ -39,11 +39,11 @@ abstract class DMinus extends DCalculate {
 }
 
 class OMinus extends DMinus {
-  OMinus(this.left, this.right);
+  OMinus({this.left = null, this.right = null});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

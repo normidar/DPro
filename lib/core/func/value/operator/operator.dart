@@ -12,23 +12,27 @@ abstract class DCalculate implements DExpression {
   OperatorEnum get operator;
   // why we use DStatement? because we should throw the exception to the user,
   // we should not let user lose free
-  DStatement get left;
-  DStatement get right;
+  DStatement? get left;
+  DStatement? get right;
 
   @override
   Map toMap() {
     return {
       'statement_name': mapStatementName,
-      'left': left.toMap(),
-      'right': right.toMap(),
+      'left': left?.toMap(),
+      'right': right?.toMap(),
     };
   }
 
   @override
   Iterable<StatementInfo> getIterable() sync* {
     yield StatementInfo(this);
-    yield* left.getIterable();
-    yield* right.getIterable();
+    if (left != null) {
+      yield* left!.getIterable();
+    }
+    if (right != null) {
+      yield* right!.getIterable();
+    }
   }
 
   // 包まれた式に変えられる場合もある

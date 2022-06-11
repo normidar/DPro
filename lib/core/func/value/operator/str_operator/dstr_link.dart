@@ -15,7 +15,7 @@ abstract class DStrLink extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OStrLink(_left, _right);
+    return OStrLink(left: _left, right: _right);
   }
 
   @override
@@ -32,11 +32,11 @@ abstract class DStrLink extends DCalculate {
 }
 
 class OStrLink extends DStrLink {
-  OStrLink(this.left, this.right);
+  OStrLink({this.left, this.right});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

@@ -43,5 +43,17 @@ class TranEngine {
     DPrint.statementName: DPrint.formMap,
     DCodeLines.statementName: DCodeLines.formMap,
     DStrLink.statementName: DStrLink.formMap,
+    DBiggerEq.statementName: DBiggerEq.formMap,
+    DBigger.statementName: DBigger.formMap,
+    DEqual.statementName: DEqual.formMap,
+    DSmallerEq.statementName: DSmallerEq.formMap,
+    DSmaller.statementName: DSmaller.formMap,
+    DUnequal.statementName: DUnequal.formMap,
+    DAnd.statementName: DAnd.formMap,
+    DOr.statementName: DOr.formMap,
+    DDivide.statementName: DDivide.formMap,
+    DMinus.statementName: DMinus.formMap,
+    DPlus.statementName: DPlus.formMap,
+    DTimes.statementName: DTimes.formMap,
   };
 }

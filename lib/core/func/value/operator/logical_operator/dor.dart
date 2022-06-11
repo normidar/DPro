@@ -16,7 +16,7 @@ abstract class DOr extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OOr(_left, _right);
+    return OOr(left: _left, right: _right);
   }
 
   @override
@@ -33,11 +33,11 @@ abstract class DOr extends DCalculate {
 }
 
 class OOr extends DOr {
-  OOr(this.left, this.right);
+  OOr({this.left = null, this.right = null});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

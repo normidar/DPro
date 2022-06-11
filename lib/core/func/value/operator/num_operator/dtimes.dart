@@ -17,7 +17,7 @@ abstract class DTimes extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OTimes(_left, _right);
+    return OTimes(left: _left, right: _right);
   }
 
   @override
@@ -47,11 +47,11 @@ abstract class DTimes extends DCalculate {
 }
 
 class OTimes extends DTimes {
-  OTimes(this.left, this.right);
+  OTimes({this.left, this.right});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

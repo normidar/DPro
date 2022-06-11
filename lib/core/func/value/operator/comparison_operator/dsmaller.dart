@@ -16,7 +16,7 @@ abstract class DSmaller extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OSmaller(_left, _right);
+    return OSmaller(left: _left, right: _right);
   }
 
   @override
@@ -33,11 +33,11 @@ abstract class DSmaller extends DCalculate {
 }
 
 class OSmaller extends DSmaller {
-  OSmaller(this.left, this.right);
+  OSmaller({this.left, this.right});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

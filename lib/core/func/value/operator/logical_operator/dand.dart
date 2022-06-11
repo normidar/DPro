@@ -16,7 +16,7 @@ abstract class DAnd extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OAnd(_left, _right);
+    return OAnd(left: _left, right: _right);
   }
 
   @override
@@ -33,11 +33,11 @@ abstract class DAnd extends DCalculate {
 }
 
 class OAnd extends DAnd {
-  OAnd(this.left, this.right);
+  OAnd({this.left = null, this.right = null});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }

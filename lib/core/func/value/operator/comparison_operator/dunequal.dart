@@ -16,7 +16,7 @@ abstract class DUnequal extends DCalculate {
     assert(m['statement_name'] == statementName);
     final _left = TranEngine.formMap(m['left']);
     final _right = TranEngine.formMap(m['right']);
-    return OUnequal(_left, _right);
+    return OUnequal(left: _left, right: _right);
   }
 
   @override
@@ -33,11 +33,11 @@ abstract class DUnequal extends DCalculate {
 }
 
 class OUnequal extends DUnequal {
-  OUnequal(this.left, this.right);
+  OUnequal({this.left = null, this.right = null});
 
   @override
-  DStatement left;
+  DStatement? left;
 
   @override
-  DStatement right;
+  DStatement? right;
 }
