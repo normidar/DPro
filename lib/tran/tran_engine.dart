@@ -23,12 +23,12 @@ class TranEngine {
     }
   }
 
-  static DStatement formJson(String json) {
+  static DStatement? formJson(String json) {
     Map m = jsonDecode(json);
     return formMap(m);
   }
 
-  static DStatement formMap(Map m) {
+  static DStatement? formMap(Map m) {
     final func = formMapTran[m['statement_name']];
     assert(func != null);
     return func!(m);
@@ -55,5 +55,8 @@ class TranEngine {
     DMinus.statementName: DMinus.formMap,
     DPlus.statementName: DPlus.formMap,
     DTimes.statementName: DTimes.formMap,
+    DVar.statementName: DVar.formMap,
+    DDefVariable.statementName: DDefVariable.formMap,
+    DGive.statementName: DGive.formMap,
   };
 }

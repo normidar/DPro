@@ -26,12 +26,27 @@ abstract class DDefVariable implements DAction, DRunable {
     }
   }
 
+  static DDefVariable formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    final _type = TranEngine.formMap(m['type']);
+    final _target = TranEngine.formMap(m['target']);
+    final _content = TranEngine.formMap(m['content']);
+    return ODefVariable(
+      type: _type as DType?,
+      target: _target as DVar,
+      content: _content as DExpression?,
+      changeable: m['changeable'],
+    );
+  }
+
   @override
   Map toMap() {
     return {
       'statement_name': statementName,
       'type': type?.toMap(),
       'target': target.toMap(),
+      'content': content?.toMap(),
+      'changeable': changeable,
     };
   }
 
@@ -78,7 +93,7 @@ abstract class DDefVariable implements DAction, DRunable {
   }
 }
 
-class ODefGive with DDefVariable {
+class ODefVariable with DDefVariable {
   @override
   DType? type;
   @override
@@ -87,7 +102,7 @@ class ODefGive with DDefVariable {
   DExpression? content;
   @override
   bool changeable;
-  ODefGive(
+  ODefVariable(
       {required this.target,
       required this.content,
       this.type,

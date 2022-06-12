@@ -22,7 +22,7 @@ abstract class DCodeLines<T extends DStatement>
     final codeList = m['code_lines'];
     List<DStatement> codes = [];
     for (var e in codeList) {
-      codes.add(TranEngine.formMap(e));
+      codes.add(TranEngine.formMap(e)!);
     }
     return OCodeLines(codeLines: codes);
   }

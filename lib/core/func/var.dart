@@ -13,8 +13,12 @@ abstract class DVar implements DExpression {
   // TODO: find type in tip and return type
   DType? get type => null;
 
-  @override
-  String statementName = 'variable';
+  static final String statementName = 'variable';
+
+  static DVar formMap(Map m) {
+    assert(m['statement_name'] == statementName);
+    return OVar(m['name']);
+  }
 
   @override
   dynamic run(RunTip tip) {
