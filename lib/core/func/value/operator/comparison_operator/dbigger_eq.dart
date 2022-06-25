@@ -12,10 +12,10 @@ abstract class DBiggerEq extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DBiggerEq formMap(Map m) {
+  static DBiggerEq formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(m['left']);
-    final _right = TranEngine.formMap(m['right']);
+    final _left = TranEngine.formMap(f, m['left']);
+    final _right = TranEngine.formMap(f, m['right']);
     return OBiggerEq(left: _left, right: _right);
   }
 
@@ -33,7 +33,7 @@ abstract class DBiggerEq extends DCalculate {
 }
 
 class OBiggerEq extends DBiggerEq {
-  OBiggerEq({this.left = null, this.right = null});
+  OBiggerEq({this.left, this.right});
 
   @override
   DStatement? left;

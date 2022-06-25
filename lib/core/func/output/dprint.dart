@@ -6,9 +6,9 @@ abstract class DPrint implements DStatement, DRunable {
 
   static final String statementName = 'print';
 
-  static DPrint formMap(Map m) {
+  static DPrint formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    return OPrint(TranEngine.formMap(m['context']) as DExpression);
+    return f.printFunc(TranEngine.formMap(f, m['context']) as DExpression);
   }
 
   @override

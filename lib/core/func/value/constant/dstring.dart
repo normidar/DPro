@@ -2,6 +2,7 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/tran/tran_engine.dart';
 import 'package:sprintf/sprintf.dart';
 
 import 'dconstant.dart';
@@ -14,9 +15,9 @@ abstract class DString extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DString formMap(Map m) {
+  static DString formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    return OString(m['value']);
+    return f.stringFunc(m['value']);
   }
 
   @override

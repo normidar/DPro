@@ -12,10 +12,10 @@ abstract class DBigger extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DBigger formMap(Map m) {
+  static DBigger formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(m['left']);
-    final _right = TranEngine.formMap(m['right']);
+    final _left = TranEngine.formMap(f, m['left']);
+    final _right = TranEngine.formMap(f, m['right']);
     return OBigger(left: _left, right: _right);
   }
 

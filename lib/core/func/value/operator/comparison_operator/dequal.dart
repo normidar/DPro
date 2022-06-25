@@ -12,10 +12,10 @@ abstract class DEqual extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DEqual formMap(Map m) {
+  static DEqual formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(m['left']);
-    final _right = TranEngine.formMap(m['right']);
+    final _left = TranEngine.formMap(f, m['left']);
+    final _right = TranEngine.formMap(f, m['right']);
     return OEqual(left: _left, right: _right);
   }
 

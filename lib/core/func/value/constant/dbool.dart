@@ -2,6 +2,7 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/tran/tran_engine.dart';
 
 import 'dconstant.dart';
 
@@ -13,9 +14,9 @@ abstract class DBool extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DBool formMap(Map m) {
+  static DBool formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    return OBool(m['value']);
+    return f.boolFunc(m['value']);
   }
 
   @override
@@ -25,6 +26,7 @@ abstract class DBool extends DConstant {
 
   @override
   String tran(LanguageTip tip) {
+    // DBool Function(bool) i = OBool.new;
     return value.toString();
   }
 

@@ -26,11 +26,11 @@ abstract class DDefVariable implements DAction, DRunable {
     }
   }
 
-  static DDefVariable formMap(Map m) {
+  static DDefVariable formMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _type = TranEngine.formMap(m['type']);
-    final _target = TranEngine.formMap(m['target']);
-    final _content = TranEngine.formMap(m['content']);
+    final _type = TranEngine.formMap(f, m['type']);
+    final _target = TranEngine.formMap(f, m['target']);
+    final _content = TranEngine.formMap(f, m['content']);
     return ODefVariable(
       type: _type as DType?,
       target: _target as DVar,
