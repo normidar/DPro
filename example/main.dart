@@ -13,9 +13,7 @@ void main(List<String> arguments) {
 void engineTest() {
   final codes = OCodeLines<DStatement>(
     codeLines: [
-      OPrint(OStrLink(
-          left: OString('hello world.'), right: OString('hello world.'))),
-      OPrint(OVar('abc')),
+      OPrint(OString('hello world.')),
     ],
   );
   final t = TranEngine.toJson(codes: codes, isReadAble: true);
