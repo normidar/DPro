@@ -1,6 +1,6 @@
 name: dpro
 description: A tool to transform programing langrage. it can transform algorithm to Python and Java now. !! it is a lowcode develop engine.
-version: 0.4.0
+version: 0.5.0
 homepage: https://github.com/normidar/DPro
 
 environment:
