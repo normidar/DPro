@@ -12,10 +12,10 @@ abstract class DAnd extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DAnd formMap(FormMapTip f,Map m) {
+  static DAnd fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(f,m['left']);
-    final _right = TranEngine.formMap(f,m['right']);
+    final _left = TranEngine.fromMap(f, m['left']);
+    final _right = TranEngine.fromMap(f, m['right']);
     return OAnd(left: _left, right: _right);
   }
 
@@ -33,7 +33,7 @@ abstract class DAnd extends DCalculate {
 }
 
 class OAnd extends DAnd {
-  OAnd({this.left = null, this.right = null});
+  OAnd({this.left, this.right});
 
   @override
   DStatement? left;

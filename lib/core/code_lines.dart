@@ -17,12 +17,12 @@ abstract class DCodeLines<T extends DStatement>
     }
   }
 
-  static DCodeLines formMap(FormMapTip f, Map m) {
+  static DCodeLines fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
     final codeList = m['code_lines'];
     List<DStatement> codes = [];
     for (var e in codeList) {
-      codes.add(TranEngine.formMap(f, e)!);
+      codes.add(TranEngine.fromMap(f, e)!);
     }
     return f.codeLinesFunc(codeLines: codes);
   }

@@ -15,7 +15,7 @@ abstract class DVar implements DExpression {
 
   static final String statementName = 'variable';
 
-  static DVar formMap(Map m) {
+  static DVar fromMap(Map m) {
     assert(m['statement_name'] == statementName);
     return OVar(m['name']);
   }

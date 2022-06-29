@@ -15,7 +15,7 @@ abstract class DString extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DString formMap(FormMapTip f, Map m) {
+  static DString fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
     return f.stringFunc(m['value']);
   }

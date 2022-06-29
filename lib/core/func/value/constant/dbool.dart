@@ -14,7 +14,7 @@ abstract class DBool extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DBool formMap(FormMapTip f, Map m) {
+  static DBool fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
     return f.boolFunc(m['value']);
   }

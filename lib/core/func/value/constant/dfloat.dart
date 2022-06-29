@@ -13,7 +13,7 @@ abstract class DFloat extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DFloat formMap(Map m) {
+  static DFloat fromMap(Map m) {
     assert(m['statement_name'] == statementName);
     return OFloat(m['value']);
   }

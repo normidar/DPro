@@ -11,10 +11,10 @@ abstract class DPlus extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  // static DPlus formMap(Map m) {
+  // static DPlus fromMap(Map m) {
   //   assert(m['statement_name'] == statementName);
-  //   final _left = TranEngine.formMap(m['left']);
-  //   final _right = TranEngine.formMap(m['right']);
+  //   final _left = TranEngine.fromMap(m['left']);
+  //   final _right = TranEngine.fromMap(m['right']);
   //   return OPlus(left: _left, right: _right);
   // }
 

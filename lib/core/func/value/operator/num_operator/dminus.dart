@@ -11,10 +11,10 @@ abstract class DMinus extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  // static DMinus formMap(Map m) {
+  // static DMinus fromMap(Map m) {
   //   assert(m['statement_name'] == statementName);
-  //   final _left = TranEngine.formMap(m['left']);
-  //   final _right = TranEngine.formMap(m['right']);
+  //   final _left = TranEngine.fromMap(m['left']);
+  //   final _right = TranEngine.fromMap(m['right']);
   //   return OMinus(left: _left, right: _right);
   // }
 

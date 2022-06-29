@@ -12,10 +12,10 @@ abstract class DOr extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DOr formMap(FormMapTip f, Map m) {
+  static DOr fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(f, m['left']);
-    final _right = TranEngine.formMap(f, m['right']);
+    final _left = TranEngine.fromMap(f, m['left']);
+    final _right = TranEngine.fromMap(f, m['right']);
     return OOr(left: _left, right: _right);
   }
 

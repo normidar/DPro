@@ -12,10 +12,10 @@ abstract class DGive implements DAction {
 
   static final String statementName = 'give';
 
-  static DGive formMap(FormMapTip f, Map m) {
+  static DGive fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _target = TranEngine.formMap(f, m['target']);
-    final _content = TranEngine.formMap(f, m['content']);
+    final _target = TranEngine.fromMap(f, m['target']);
+    final _content = TranEngine.fromMap(f, m['content']);
     return OGive(target: _target, content: _content);
   }
 

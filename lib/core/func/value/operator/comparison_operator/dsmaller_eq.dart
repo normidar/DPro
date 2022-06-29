@@ -12,10 +12,10 @@ abstract class DSmallerEq extends DCalculate {
   @override
   String get mapStatementName => statementName;
 
-  static DSmallerEq formMap(FormMapTip f, Map m) {
+  static DSmallerEq fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    final _left = TranEngine.formMap(f, m['left']);
-    final _right = TranEngine.formMap(f, m['right']);
+    final _left = TranEngine.fromMap(f, m['left']);
+    final _right = TranEngine.fromMap(f, m['right']);
     return OSmallerEq(left: _left, right: _right);
   }
 

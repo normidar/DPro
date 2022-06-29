@@ -27,38 +27,38 @@ class TranEngine {
   static DStatement? formJson(String json,
       {FormMapTip tip = defaultFormMapTip}) {
     Map m = jsonDecode(json);
-    return formMap(tip, m);
+    return fromMap(tip, m);
   }
 
-  static DStatement? formMap(FormMapTip constrators, Map m) {
-    final func = formMapTran[m['statement_name']];
+  static DStatement? fromMap(FormMapTip constrators, Map m) {
+    final func = fromMapTran[m['statement_name']];
     assert(func != null);
     return func!(constrators, m);
   }
 
-  static Map<String, Function> formMapTran = {
-    DBool.statementName: DBool.formMap,
-    DString.statementName: DString.formMap,
-    // DFloat.statementName: DFloat.formMap,
-    // DInt.statementName: DInt.formMap,
-    DPrint.statementName: DPrint.formMap,
-    DCodeLines.statementName: DCodeLines.formMap,
-    // DStrLink.statementName: DStrLink.formMap,
-    // DBiggerEq.statementName: DBiggerEq.formMap,
-    // DBigger.statementName: DBigger.formMap,
-    // DEqual.statementName: DEqual.formMap,
-    // DSmallerEq.statementName: DSmallerEq.formMap,
-    // DSmaller.statementName: DSmaller.formMap,
-    // DUnequal.statementName: DUnequal.formMap,
-    // DAnd.statementName: DAnd.formMap,
-    // DOr.statementName: DOr.formMap,
-    // DDivide.statementName: DDivide.formMap,
-    // DMinus.statementName: DMinus.formMap,
-    // DPlus.statementName: DPlus.formMap,
-    // DTimes.statementName: DTimes.formMap,
-    // DVar.statementName: DVar.formMap,
-    // DDefVariable.statementName: DDefVariable.formMap,
-    // DGive.statementName: DGive.formMap,
+  static Map<String, Function> fromMapTran = {
+    DBool.statementName: DBool.fromMap,
+    DString.statementName: DString.fromMap,
+    // DFloat.statementName: DFloat.fromMap,
+    // DInt.statementName: DInt.fromMap,
+    DPrint.statementName: DPrint.fromMap,
+    DCodeLines.statementName: DCodeLines.fromMap,
+    // DStrLink.statementName: DStrLink.fromMap,
+    // DBiggerEq.statementName: DBiggerEq.fromMap,
+    // DBigger.statementName: DBigger.fromMap,
+    // DEqual.statementName: DEqual.fromMap,
+    // DSmallerEq.statementName: DSmallerEq.fromMap,
+    // DSmaller.statementName: DSmaller.fromMap,
+    // DUnequal.statementName: DUnequal.fromMap,
+    // DAnd.statementName: DAnd.fromMap,
+    // DOr.statementName: DOr.fromMap,
+    // DDivide.statementName: DDivide.fromMap,
+    // DMinus.statementName: DMinus.fromMap,
+    // DPlus.statementName: DPlus.fromMap,
+    // DTimes.statementName: DTimes.fromMap,
+    // DVar.statementName: DVar.fromMap,
+    // DDefVariable.statementName: DDefVariable.fromMap,
+    // DGive.statementName: DGive.fromMap,
   };
   static const FormMapTip defaultFormMapTip = FormMapTip(
     boolFunc: OBool.new,
