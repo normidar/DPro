@@ -1,3 +1,7 @@
+## 0.5.1
+
+- change name
+
 ## 0.5.0
 
 - support json transfrom
