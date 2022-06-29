@@ -21,6 +21,7 @@ linter:
 analyzer:
   errors:
     unused_import: error
+    # mixin_inherits_from_not_object: ignore
 # Uncomment the following section to specify additional rules.
 
 # linter:
