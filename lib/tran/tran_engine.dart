@@ -39,8 +39,8 @@ class TranEngine {
   static Map<String, Function> fromMapTran = {
     DBool.statementName: DBool.fromMap,
     DString.statementName: DString.fromMap,
-    // DFloat.statementName: DFloat.fromMap,
-    // DInt.statementName: DInt.fromMap,
+    DFloat.statementName: DFloat.fromMap,
+    DInt.statementName: DInt.fromMap,
     DPrint.statementName: DPrint.fromMap,
     DCodeLines.statementName: DCodeLines.fromMap,
     // DStrLink.statementName: DStrLink.fromMap,
@@ -63,6 +63,8 @@ class TranEngine {
   static const FormMapTip defaultFormMapTip = FormMapTip(
     boolFunc: OBool.new,
     stringFunc: OString.new,
+    intFunc: OInt.new,
+    floatFunc: OFloat.new,
     printFunc: OPrint.new,
     codeLinesFunc: OCodeLines.new,
   );
@@ -71,6 +73,8 @@ class TranEngine {
 class FormMapTip {
   final DBool Function(bool) boolFunc;
   final DString Function(String) stringFunc;
+  final DInt Function(int) intFunc;
+  final DFloat Function(double) floatFunc;
   final DPrint Function(DExpression) printFunc;
   final DCodeLines Function({required List<DStatement> codeLines})
       codeLinesFunc;
@@ -79,5 +83,7 @@ class FormMapTip {
     required this.stringFunc,
     required this.printFunc,
     required this.codeLinesFunc,
+    required this.floatFunc,
+    required this.intFunc
   });
 }

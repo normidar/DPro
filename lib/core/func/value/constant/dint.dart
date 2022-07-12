@@ -3,6 +3,7 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/tran/tran_engine.dart';
 
 abstract class DInt extends DConstant {
   @override
@@ -14,9 +15,9 @@ abstract class DInt extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DInt fromMap(Map m) {
+  static DInt fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    return OInt(m['value']);
+    return f.intFunc(m['value']);
   }
 
   @override

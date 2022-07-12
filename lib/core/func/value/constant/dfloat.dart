@@ -3,6 +3,7 @@ import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
+import 'package:dpro/tran/tran_engine.dart';
 import 'package:sprintf/sprintf.dart';
 
 abstract class DFloat extends DConstant {
@@ -13,9 +14,9 @@ abstract class DFloat extends DConstant {
   @override
   String get mapStatementName => statementName;
 
-  static DFloat fromMap(Map m) {
+  static DFloat fromMap(FormMapTip f, Map m) {
     assert(m['statement_name'] == statementName);
-    return OFloat(m['value']);
+    return f.floatFunc(m['value']);
   }
 
   @override

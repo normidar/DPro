@@ -14,6 +14,9 @@ void engineTest() {
   final codes = OCodeLines<DStatement>(
     codeLines: [
       OPrint(OString('hello world.')),
+      OInt(123),
+      OFloat(1.1),
+      OBool(true),
     ],
   );
   final t = TranEngine.toJson(codes: codes, isReadAble: true);
