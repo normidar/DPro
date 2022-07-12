@@ -40,7 +40,7 @@ export 'package:dpro/core/func/value/iterator/dreplace.dart';
 export 'package:dpro/core/func/value/iterator/d_get_element.dart';
 export 'package:dpro/core/func/value/iterator/dlenght.dart';
 export 'package:dpro/core/func/value/constant/dstring.dart';
-export 'package:dpro/core/func/value/constant/dconstant.dart';
+export 'package:dpro/core/func/value/constant/dliteral.dart';
 export 'package:dpro/core/func/value/constant/dfloat.dart';
 export 'package:dpro/core/func/value/constant/dint.dart';
 export 'package:dpro/core/func/value/constant/dbool.dart';

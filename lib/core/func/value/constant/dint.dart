@@ -1,11 +1,11 @@
-import 'package:dpro/core/func/value/constant/dconstant.dart';
+import 'package:dpro/core/func/value/constant/dliteral.dart';
 import 'package:dpro/core/type/dtype.dart';
 import 'package:dpro/core/type/dtypes.dart';
 import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:dpro/tran/tran_engine.dart';
 
-abstract class DInt extends DConstant {
+abstract class DInt extends DLiteral {
   @override
   int get value;
 

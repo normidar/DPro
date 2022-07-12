@@ -5,9 +5,9 @@ import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:dpro/tran/tran_engine.dart';
 import 'package:sprintf/sprintf.dart';
 
-import 'dconstant.dart';
+import 'dliteral.dart';
 
-abstract class DString extends DConstant {
+abstract class DString extends DLiteral {
   @override
   String get value;
 

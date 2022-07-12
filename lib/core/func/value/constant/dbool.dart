@@ -4,9 +4,9 @@ import 'package:dpro/run/run_tip.dart';
 import 'package:dpro/tran/lang_tips/language_tip.dart';
 import 'package:dpro/tran/tran_engine.dart';
 
-import 'dconstant.dart';
+import 'dliteral.dart';
 
-abstract class DBool extends DConstant {
+abstract class DBool extends DLiteral {
   @override
   bool get value;
 
